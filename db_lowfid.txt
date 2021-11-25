@@ -1,0 +1,49 @@
+
+-> Users
+	Nama : 
+	Email : 
+	Password :
+
+-> users_details
+	- id_users
+	- Cabang Lomba
+	- instansi / sekolah
+	- nim
+	- smter 
+	- no_telpon
+	- tanggal-lahir
+	- alamat
+	- konsumsi
+	- validation_1_url
+	- validation_2_url
+	- validation_3_url
+	- validation_4_url
+	- validation_5_url
+
+-> instansi -> 
+	- id
+	- Category-instansi 
+	- Nama Instansi 
+
+-> coach ->
+	- id_instansi 
+	- Nama 
+	- NIP (Opsional)
+	- id_competition
+	
+
+-> tabel_blog
+ isi apa ?
+	-> id_users
+	-> title
+	-> articles
+
+-> competition_category
+	- nama_category
+	- enum [univ or scholl] (Kalau dia) 
+	- url (text)
+	- open-register
+	- close-register
+	
+
+
