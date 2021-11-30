@@ -19,7 +19,7 @@ class CreateMentorsTable extends Migration
             $table->foreignId('event_id');
             $table->string('name');
             $table->string('phone');
-            $table->string('identity_code');
+            $table->string('identity_code')->nullable();
             $table->timestamps();
 
             $table->foreign('academy_id')->references('id')->on('academies');
