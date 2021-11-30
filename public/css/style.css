@@ -1,12 +1,14 @@
 .gradient-text {
   background-image: linear-gradient(92.82deg, #FF4D4D 5.22%, #F9CB28 101.1%);
   -webkit-background-clip: text;
+  -moz-background-clip: text;
   color: transparent;
 }
 
 .btn-orange {
   background-color: #FE6F44;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-weight: 600;
   color: #FFFFFF;
   -webkit-transition: .5s;
   transition: .5s;
@@ -24,8 +26,9 @@
   border: 1px solid rgba(31, 31, 31, 0.3);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 10px;
-  color: #1F1F1FB2;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #666666;
 }
 
 .hero-section {
@@ -52,27 +55,72 @@
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 900;
   line-height: 1;
-  color: #333333;
+  color: #000000;
 }
 
 .hero-section .championship-theme {
-  font-size: 24px;
-  color: #1F1F1FB2;
+  font-size: 1,25rem;
+  color: #666666;
+  font-style: italic;
+}
+
+.hero-section .banner-logo {
+  font-size: 100px;
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  line-height: 1;
+  color: #000000;
+}
+
+.hero-section .championship-theme {
+  font-size: 18px;
+  color: #666666;
   font-style: italic;
 }
 
 @media only screen and (max-width: 600px) {
+  .hero-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 700px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hero-section .banner-logo {
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    line-height: 1;
+    color: #000000;
+  }
+  .hero-section .championship-theme {
+    font-size: 24px;
+    color: #666666;
+    font-style: italic;
+  }
   .hero-section .banner-logo {
     font-size: 40px;
     text-align: center;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 900;
     line-height: 1;
-    color: #333333;
+    color: #000000;
   }
   .hero-section .championship-theme {
     font-size: 12px;
-    color: #1F1F1FB2;
+    color: #666666;
     font-style: italic;
   }
 }

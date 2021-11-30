@@ -8,11 +8,11 @@
 	- id_users
 	- Cabang Lomba
 	- instansi / sekolah
-	- nim
-	- smter 
-	- no_telpon
+	- identity_code
+	- smter / kelas
+	- no_telpon 
 	- tanggal-lahir
-	- alamat
+	- alamat 
 	- konsumsi
 	- validation_1_url
 	- validation_2_url
@@ -41,6 +41,8 @@
 -> competition_category
 	- nama_category
 	- enum [univ or scholl] (Kalau dia) 
+	- tm_time
+	- tm_method ['youtube','zoom']
 	- url (text)
 	- open-register
 	- close-register

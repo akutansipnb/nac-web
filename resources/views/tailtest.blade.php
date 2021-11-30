@@ -30,8 +30,7 @@
         {{-- With Tailwinds --}}
         <p class="text-3xl font-light"> SCSS With <span class="font-bold">Tailwind</span> class </p>
         <hr class="my-5">
-        <button class="btn-orange py-4 px-12">Orange Button</button>
-        <button class="btn-secondary py-4 px-12">White Button</button>
+        
     </div>
 
 </body>

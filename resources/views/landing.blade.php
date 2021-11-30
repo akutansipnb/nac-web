@@ -27,9 +27,9 @@
         <section class="hero-section">
             <div class="banner-logo"> <h1>National</h1> <h1 class="gradient-text">Accounting</h1> <h1>Competition</h1></div>
             <div class="px-10 md:px-52 text-center my-10"> <p class="championship-theme">"Melalui Kompetisi Wujudkan Sumber Daya Manusia di bidang Akuntansi dan Perpajakan yang Berkualitas, Kompetitif dan Berintegritas di Era Digital"</p> </div>
-            <div class="flex-col">
-                <button class="btn-orange py-2 px-4 md:py-4 md:px-12 mx-4">Daftar Sekarang</button>
-                <button class="btn-secondary py-2 px-4 md:py-4 md:px-12 mx-4">Pelajari Lebih Lanjut</button>
+            <div class="md:flex-col">
+                <button class="btn-orange py-2 px-4 px-4 lg:py-4 lg:px-12  md:mx-2 mx-1 ">Daftar Sekarang</button>
+                <button class="btn-secondary py-2 px-4 px-4 lg:py-4 lg:px-12 md:mx-2 mx-1">Unduh Panduan</button>
             </div>
         </section>
 
