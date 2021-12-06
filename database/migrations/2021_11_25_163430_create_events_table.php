@@ -18,6 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('event_name',150);
             $table->string('aliases',15);
             $table->string('icon_url')->nullable(false);
+            $table->string('background_url')->nullable(false);
             $table->enum('audience',['university','school']);
             $table->date('tm_time')->nullable(true);
             $table->enum('tm_method',['youtube','zoom'])->nullable(true);
