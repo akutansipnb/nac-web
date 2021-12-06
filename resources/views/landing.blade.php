@@ -57,7 +57,7 @@
         </div>
 
         <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-auto">
-            <img src="https://www.hyperui.dev/code/photos/women-2.jpeg" alt="Women smiling at college"
+            <img src="{{asset('img/theme/cta_icon.jpg')}}" alt="Accounting Tools"
                 class="absolute inset-0 object-cover w-full h-full" />
         </div>
     </aside>
