@@ -30,10 +30,12 @@
               <span class="w-20 h-10 bg-gray-600 rounded-lg"></span>
       
               <nav class="hidden text-sm font-medium space-x-8 lg:flex">
-                <a href="">About</a>
-                <a href="">Blog</a>
-                <a href="">Projects</a>
-                <a href="">Contact</a>
+                <a href="">Beranda</a>
+                <a href="">Tentang</a>
+                <a href="">Daftar</a>
+                <a href="">Galeri</a>
+                <a href="">Blogs</a>
+                <a href="">Kontak</a>
               </nav>
             </div>
       
@@ -126,9 +128,203 @@
           </aside>
           
        </section>
+       
+       <div class="grid grid-cols-1 mx-5 mt-20">
+         <div class="text-center">
+           <h2 class="font-bold text-2xl">Daftar Lomba</h2>
+         </div>
+       </div>
 
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-20">
+        <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
+          <img class="object-cover w-full h-56" src="https://www.hyperui.dev/code/photos/university-4.jpeg" alt="" />
+        
+          <div class="relative pt-20 text-center">
+            <div class="absolute w-24 h-24 bg-gray-900 rounded-lg shadow-xl transform -translate-x-1/2 -top-10 left-1/2">
+              ...
+            </div>
+        
+            <div class="px-6 sm:px-12">
+              <h5 class="text-xl font-bold text-gray-900">Lorem ipsum dolor sit amet.</h5>
+        
+              <p class="mt-2 text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi eligendi officiis laboriosam autem
+                eveniet.
+              </p>
+            </div>
+        
+            <dl
+              class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12"
+            >
+              <div class="flex items-center">
+                <a href="" class="p-0.5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                  <span class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                    Daftar
+                  </span>
+                </a>
+                
+              </div>
+        
+              <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
+                <a href="" class="px-8 py-2 font-medium text-black rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                  Detail
+                </a>
+                
+              </div>
+            </dl>
+          </div>
+        </div>
+        
+        <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
+          <img class="object-cover w-full h-56" src="https://www.hyperui.dev/code/photos/university-4.jpeg" alt="" />
+        
+          <div class="relative pt-20 text-center">
+            <div class="absolute w-24 h-24 bg-gray-900 rounded-lg shadow-xl transform -translate-x-1/2 -top-10 left-1/2">
+              ...
+            </div>
+        
+            <div class="px-6 sm:px-12">
+              <h5 class="text-xl font-bold text-gray-900">Lorem ipsum dolor sit amet.</h5>
+        
+              <p class="mt-2 text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi eligendi officiis laboriosam autem
+                eveniet.
+              </p>
+            </div>
+        
+            <dl
+              class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12"
+            >
+              <div class="flex items-center">
+                <a href="" class="p-0.5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                  <span class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                    Daftar
+                  </span>
+                </a>
+                
+              </div>
+        
+              <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
+                <a href="" class="px-8 py-2 font-medium text-black rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                  Detail
+                </a>
+                
+              </div>
+            </dl>
+          </div>
+        </div>
 
-    
+          <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
+            <img class="object-cover w-full h-56" src="https://www.hyperui.dev/code/photos/university-4.jpeg" alt="" />
+          
+            <div class="relative pt-20 text-center">
+              <div class="absolute w-24 h-24 bg-gray-900 rounded-lg shadow-xl transform -translate-x-1/2 -top-10 left-1/2">
+                ...
+              </div>
+          
+              <div class="px-6 sm:px-12">
+                <h5 class="text-xl font-bold text-gray-900">Lorem ipsum dolor sit amet.</h5>
+          
+                <p class="mt-2 text-sm text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi eligendi officiis laboriosam autem
+                  eveniet.
+                </p>
+              </div>
+          
+              <dl
+                class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12"
+              >
+                <div class="flex items-center">
+                  <a href="" class="p-0.5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                    <span class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                      Daftar
+                    </span>
+                  </a>
+                  
+                </div>
+          
+                <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
+                  <a href="" class="px-8 py-2 font-medium text-black rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                    Detail
+                  </a>
+                  
+                </div>
+              </dl>
+            </div>
+          </div>
+      </div>
+  <div class="bg-gray-100 flex flex-col">
+
+      <div class="grid grid-cols-1 mx-5 mt-16">
+        <div class="text-center">
+          <h2 class="font-bold text-2xl">Daftar Berita</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-20">
+        
+        <div class="block border-2 rounded-lg bg-white">
+          <img class="object-cover w-full h-96" src="https://www.hyperui.dev/code/photos/art-1.jpeg" alt="" />
+          
+          <div class="mx-5">
+            <h5 class="mt-4 text-xl font-bold text-gray-900">Lorem, ipsum dolor.</h5>
+        
+            <p class="max-w-sm mt-2 text-gray-700">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.
+            </p>
+          </div>
+          
+          <div class="my-5 text-center">
+            <a href="" class="inline-block p-0.5 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+              <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                Detail Berita
+              </span>
+            </a>
+          </div>
+        </div>
+          
+        <div class="block border-2 rounded-lg bg-white">
+          <img class="object-cover w-full h-96" src="https://www.hyperui.dev/code/photos/art-1.jpeg" alt="" />
+          
+          <div class="mx-5">
+            <h5 class="mt-4 text-xl font-bold text-gray-900">Lorem, ipsum dolor.</h5>
+        
+            <p class="max-w-sm mt-2 text-gray-700">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.
+            </p>
+          </div>
+          
+          <div class="my-5 text-center">
+            <a href="" class="inline-block p-0.5 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+              <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                Detail Berita
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="block border-2 rounded-lg bg-white">
+          <img class="object-cover w-full h-96" src="https://www.hyperui.dev/code/photos/art-1.jpeg" alt="" />
+          
+          <div class="mx-5">
+            <h5 class="mt-4 text-xl font-bold text-gray-900">Lorem, ipsum dolor.</h5>
+        
+            <p class="max-w-sm mt-2 text-gray-700">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis sequi ipsam incidunt.
+            </p>
+          </div>
+          
+          <div class="my-5 text-center">
+            <a href="" class="inline-block p-0.5 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+              <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                Detail Berita
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
         <footer class="text-white bg-gray-900 lg:grid lg:grid-cols-5">
             <aside class="hidden lg:relative lg:col-span-2 lg:block">
               <img
