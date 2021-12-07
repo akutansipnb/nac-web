@@ -79,7 +79,19 @@ $black : #000000;
     
 }
 
+.bg-cover-blog{
+    height: 300px;
+}
 
+.bg-blog{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blog-card{
+    background-color: #FFFFFF;
+}
 
 @media only screen and (max-width: 600px) {
     .hero-section{
