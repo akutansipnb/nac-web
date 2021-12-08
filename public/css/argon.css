@@ -8769,7 +8769,7 @@ a.close.disabled
 
 .bg-primary
 {
-    background-color: #5e72e4 !important;
+    background-color: #f0932b !important;
 }
 
 a.bg-primary:hover,
@@ -8777,7 +8777,7 @@ a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus
 {
-    background-color: #324cdd !important;
+    background-color: #f0932b !important;
 }
 
 .bg-secondary
