@@ -12,7 +12,7 @@
         <p class="championship-theme">"Melalui Kompetisi Wujudkan Sumber Daya Manusia di bidang Akuntansi dan
             Perpajakan yang Berkualitas, Kompetitif dan Berintegritas di Era Digital"</p>
     </div>
-    <div class="md:flex-col">
+    <div class="flex-col text-center">
         <a href="" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
             <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                 Daftar Sekarang
