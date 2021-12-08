@@ -27,6 +27,24 @@
 
 <body>
 
+    <div id="mySidenav" class="delay-300 duration-300 ease-in-out bg-gray-900 w-0 h-full z-50 fixed overflow-x-hidden top-0 left-0 flex flex-col items-center pt-36">
+        <div class="hover:text-red-700 duration-500 focus:outline-none ease-in-out absolute top-5 right-4 text-blue-500 text-3xl">
+            <a href="#" onclick="closeNav()">
+                <x-vaadin-close class="w-7 h-7 text-red-600"/>
+            </a>
+        </div>
+        <div class="flex flex-col items-center space-y-4 text-white">
+            <a class="hover:text-gray-400 duration-500 ease-in-out text-lg font-semibold" href="#">Beranda</a>
+            <a class="hover:text-gray-400 duration-500 ease-in-out text-lg font-semibold" href="#">Tentang</a>
+            <a class="hover:text-gray-400 duration-500 ease-in-out text-lg font-semibold" href="#">Daftar</a>
+            <a class="hover:text-gray-400 duration-500 ease-in-out text-lg font-semibold" href="#">Galeri</a>
+            <a class="hover:text-gray-400 duration-500 ease-in-out text-lg font-semibold" href="#">Blogs</a>
+            <a class="hover:text-gray-400 duration-500 ease-in-out text-lg font-semibold" href="#">Kontak</a>
+            <a href=""><button class="uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold px-16 py-3 text-white text-sm focus:outline-none">Masuk</button></a>
+        </div>
+        
+    </div>
+
     <header class="text-white bg-gray-900">
         <div class="px-4 mx-auto sm:pr-0 max-w-screen-2xl">
             <div class="flex items-center justify-between h-16">
@@ -52,7 +70,7 @@
                     </a>
                 </div>
 
-                <div class="sm:hidden">
+                <div class="sm:hidden" onclick="openNav()">
                     <button class="p-2 text-gray-100 bg-gray-800 rounded-lg" type="button">
                         <span class="sr-only">Open menu</span>
                         <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"
@@ -184,7 +202,14 @@
         </div>
     </footer>
 
-
+    <script type="text/javascript">
+		function openNav() {
+			document.getElementById("mySidenav").style.width="100%";
+		}
+		function closeNav() {
+			document.getElementById("mySidenav").style.width="0";
+		}
+	</script>
 </body>
 
 </html>
