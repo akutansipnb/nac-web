@@ -50,7 +50,7 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center space-x-10">
                     <span class="w-30 h-10 bg-white rounded-lg flex justify-center"> 
-                        <img src="{{asset('img/brand/blue.png')}}" alt="" srcset="" class="w-50 p-2">
+                        <img src="{{asset('img/brand/logo.png')}}" alt="" srcset="" class="w-50 p-2">
                     </span>
 
                     <nav class="hidden text-sm font-medium space-x-8 lg:flex">
