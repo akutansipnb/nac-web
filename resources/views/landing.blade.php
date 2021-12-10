@@ -13,14 +13,14 @@
             Perpajakan yang Berkualitas, Kompetitif dan Berintegritas di Era Digital"</p>
     </div>
     <div class="flex-col text-center">
+
         <a href="" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+
             <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                 Daftar Sekarang
             </span>
         </a>
-
-
-        <a href="" class="inline-block px-5 text-gray-400 hover:text-gray-600 transition-100 delay-50 font-bold">
+        <a href="" class="inline-block px-5 md:my-0 my-3 text-gray-400 hover:text-gray-600 transition-100 delay-50 font-bold">
             Ketentuan Lomba
         </a>
     </div>
@@ -74,7 +74,7 @@
 {{-- Daftar Lomba --}}
 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-20">
     <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
-        <img class="object-cover w-full h-56" src="https://www.hyperui.dev/code/photos/university-4.jpeg" alt="" />
+        <img class="object-cover w-full h-56" src="{{asset('img/theme/cta_icon.jpg')}}" alt="" />
 
         <div class="relative pt-20 text-center">
             <div
@@ -117,7 +117,7 @@
     </div>
 
     <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
-        <img class="object-cover w-full h-56" src="https://www.hyperui.dev/code/photos/university-4.jpeg" alt="" />
+        <img class="object-cover w-full h-56" src="{{asset('img/theme/cta_icon.jpg')}}" alt="" />
 
         <div class="relative pt-20 text-center">
             <div
@@ -139,9 +139,9 @@
                 class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12">
                 <div class="flex items-center">
                     <a href=""
-                        class="p-0.5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                        class="p-0.5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span
-                            class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                            class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                             Daftar
                         </span>
                     </a>
@@ -160,16 +160,16 @@
     </div>
 
     <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
-        <img class="object-cover w-full h-56" src="https://www.hyperui.dev/code/photos/university-4.jpeg" alt="" />
+        <img class="object-cover w-full h-56" src="{{asset('img/theme/cta_icon.jpg')}}" alt="" />
 
         <div class="relative pt-20 text-center">
             <div
-                class="absolute w-24 h-24 bg-gray-900 rounded-lg shadow-xl transform -translate-x-1/2 -top-10 left-1/2">
+                class="absolute w-24 h-24 bg-gray-900 rounded-xl shadow-xl transform -translate-x-1/2 -top-10 left-1/2">
                 ...
             </div>
 
             <div class="px-6 sm:px-12">
-                <h5 class="text-xl font-bold text-gray-900">Lorem ipsum dolor sit amet.</h5>
+                <h5 class="text-xl rounded-full text-gray-900">Lorem ipsum dolor sit amet.</h5>
 
                 <p class="mt-2 text-sm text-gray-500">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi eligendi officiis
@@ -182,9 +182,9 @@
                 class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12">
                 <div class="flex items-center">
                     <a href=""
-                        class="p-0.5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                        class="p-0.5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span
-                            class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                            class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                             Daftar
                         </span>
                     </a>
