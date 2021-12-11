@@ -138,4 +138,28 @@
     font-style: italic;
   }
 }
+
+@media screen and (min-width: 280px){
+  .bg-detail{
+    height: 1100px;
+  }
+}
+
+@media screen and (min-width: 540px){
+  .bg-detail{
+    height: 1000px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .bg-detail{
+    height: 900px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .bg-detail{
+    height: 700px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
