@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>NAC | National Accounting Competition</title>
 
     {{-- Tailwinds --}}
 
@@ -97,14 +97,11 @@
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <div>
                     <p class="font-medium">
-                        <span class="text-xs tracking-widest uppercase">Call</span>
-                        <a href="" class="block text-3xl">0123456789</a>
+                        <span class="text-xs tracking-widest uppercase">Telepon</span>
+                        <a href="" class="block text-3xl">081234788023</a>
                     </p>
 
-                    <ul class="mt-8 space-y-2 text-sm">
-                        <li>Monday to Friday: 10am - 5pm</li>
-                        <li>Weekend: 10am - 3pm</li>
-                    </ul>
+                    
 
                     <div class="flex mt-16 space-x-3">
                         <a href="" target="_blank" rel="noreferrer" aria-label="Facebook"
@@ -186,7 +183,7 @@
                         <a href="">Returns Policy</a>
                     </div>
 
-                    <p class="mt-4 sm:mt-0">© Name Company Name</p>
+                    <p class="mt-4 sm:mt-0">© HImpunan Mahasiswa Jurusan Akutansi Politeknik Negeri Bali</p>
                 </div>
 
                 <p class="mt-8 text-xs text-gray-500">

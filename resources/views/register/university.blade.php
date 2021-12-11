@@ -1,8 +1,6 @@
 @extends('layouts.users')
 
 @section('content')
-
-
        <div class="relative block p-8 overflow-hidden border border-gray-100 rounded-lg" href="">
         <span class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
       

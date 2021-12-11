@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\EventsController;
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Builder\Class_;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +16,17 @@ use Illuminate\Support\Facades\Route;
 // 
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::get('/', [LandingController::class,'index']);
 
 Route::get('/blog', function () {
     return view('blog');
 });
+
+
+Route::get('/dashboard', function () {
+    return view('admin.index');
+});
+
 
 
 
@@ -27,3 +34,15 @@ Route::get('/blog', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+route::prefix('dashboard')->group(function(){
+
+    
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+
+
+    route::resource('events',EventsController::class);
+
+});

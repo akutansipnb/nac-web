@@ -12,12 +12,21 @@ class Event extends Model
         'event_name',
         'aliases',
         'icon_url',
+        'background_url',
         'audience',
+        'registration_fee',
         'tm_time',
         'tm_method',
         'max_slot',
         'register_time',
-        'regiter_close'
+        'register_close',
+        'blog',
+        'status'
     ];
+
+
+    // public function users(){
+    //     return $this->hasMany(UserDetails::class);
+    // }
 
 }

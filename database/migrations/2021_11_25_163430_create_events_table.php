@@ -22,10 +22,12 @@ class CreateEventsTable extends Migration
             $table->enum('audience',['university','school']);
             $table->date('tm_time')->nullable(true);
             $table->enum('tm_method',['youtube','zoom'])->nullable(true);
-            $table->integer('registration fee')->nullable('false');
+            $table->integer('registration_fee')->nullable('false');
             $table->integer('max_slot')->nullable(false);
             $table->date('register_time');
             $table->date('register_close');
+            $table->text('blog')->nullable();
+            $table->enum('status',['open','close']);
             $table->timestamps();
         });
     }
