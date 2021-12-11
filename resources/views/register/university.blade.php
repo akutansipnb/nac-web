@@ -1,78 +1,113 @@
 @extends('layouts.users')
 
 @section('content')
-       <div class="relative block p-8 overflow-hidden border border-gray-100 rounded-lg" href="">
-        <span class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
       
-        <form class="w-full max-w-lg lg:max-w-full mt-5" method="POST" action="">
-        	
-   
-           <div class="flex flex-wrap -mx-3 mb-6">
-               <div class="w-full md:w-100 px-3">
-                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                       for="grid-judul">
-                       Judul Buku
-                   </label>
-                   <input
-                       class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                       id="grid-judul" type="text" placeholder="Das Kapitalis" name="judul_buku">
-               </div>
-           </div>
+<div class="max-w-screen-xl px-2 py-5 mx-auto sm:px-6 lg:px-8 my-10">
+    <div class="max-w-lg mx-auto">
+      <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">Nama Cabang Lomba</h1>
+  
+      <p class="max-w-md mx-auto mt-4 text-center text-gray-500">
+        Pendaftaran cabang lomba Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, voluptas?
+      </p>
+  
+      <form action="" class="p-8 mt-6 mb-5 space-y-4 rounded-lg shadow-2xl">
 
-           <div class="flex flex-wrap -mx-3 mb-6">
-               
-               <div class="w-full w-1/2 md:w-100  px-3">
-                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                       for="grid-kode-buku">
-                       Penulis
-                   </label>
-                   <input
-                       class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                       id="grid-kode-buku" type="text" placeholder="Karl Marx" name="penulis">
-               </div>
-           </div>
-           
-           <div class="flex flex-wrap -mx-3 mb-2">
-               <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-tahun-terbit">
-                       Tahun Terbit
-                   </label>
-                   <input
-                       class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                       id="grid-tahun-terbit" type="number"  type="text" placeholder="2020" name="tahun_terbit">
-               </div>
-               <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                   <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-penerbit">
-                       Penerbit
-                   </label>
-                   <div class="relative">
-                       <select
-                           class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                           id="grid-penerbit" name="penerbit">
-                           <option value="gramedia">Gramedia</option>
-                           <option value="alex">Penerbit Alex</option>
-                           <option value="airlangga">Penerbit Airlangga</option>
-                       </select>
-                   </div>
-               </div>
 
-           </div>
-           <div class="flex flex-wrap -mx-3 mb-6">
-               
-               <div class="w-full w-1/2 md:w-100  px-3">
-                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                       for="grid-kode-buku">
-                       Harga
-                   </label>
-                   <input
-                       class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                       id="grid-kode-buku" type="text" placeholder="Rp.10.000" name="harga">
-               </div>
-           </div>
+        <div class="bg-input flex justify-center">
+            <div class="input flex flex-col w-10/12 xl:w-11/12">
+                <form action="" method="">
+                    <label for="text" class="font-medium font-semibold">Text</label>
+                    <div class="relative">
+                      
+                        <input
+                          type="text"
+                          id="text"
+                          placeholder="Masukkan Text"
+                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        />
+                      </div>
 
-           <button type="submit" class="bg-blue-700 w-full rounded-2xl p-2 md:mt-5 text-white"> Tambahkan Data </button>  
-           </div>
-       </form>
+                      <label for="email" class="font-medium font-semibold">Email</label>
+                    <div class="relative">
+                      
+                        <input
+                          type="email"
+                          id="email"
+                          placeholder="Masukkan Email"
+                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        />
+                      </div>
+
+                      <label for="number" class="font-medium font-semibold">Number</label>
+                    <div class="relative">
+                      
+                        <input
+                          type="number"
+                          id="number"
+                          placeholder="Masukkan Number"
+                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        />
+                      </div>
+
+                      <label for="textarea" class="font-medium font-semibold">Textarea</label>
+                    <div class="relative">
+                      
+                        <textarea
+                          rows="4"
+                          id="textarea"
+                          placeholder="Masukkan Textarea"
+                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        ></textarea>
+                      </div>
+
+                      <label for="select" class="font-medium font-semibold">Select</label>
+                    <div class="relative">
+                      
+                        <select
+                          id="select"
+                          placeholder="Masukkan Textarea"
+                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        >
+                        <option value="">1</option>
+                        <option value="">2</option>
+                    </select>
+                      </div>
+                      <label for="Radio" class="font-medium font-semibold">Radio</label>
+                      <div class="mt-2">
+                        <div>
+                          <label class="inline-flex items-center">
+                            <input
+                              type="radio"
+                              class="form-radio"
+                              name="radio"
+                              value="1"
+                              checked
+                            />
+                            <span class="ml-2">Laki-laki</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label class="inline-flex items-center">
+                            <input type="radio" class="form-radio" name="radio" value="2" />
+                            <span class="ml-2">Perempuan</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="text-center mt-10">
+                        <button type="submit" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                            <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                                Daftar Sekarang
+                            </span>
+                        </button>
+                      </div>
+                      
+                </form>
+            </div>
+        </div>
+
+        </p>
+      </form>
     </div>
+  </div>
       
 @endsection

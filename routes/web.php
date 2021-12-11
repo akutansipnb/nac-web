@@ -19,7 +19,7 @@ use PhpParser\Builder\Class_;
 Route::get('/', [LandingController::class,'index']);
 
 Route::get('/blog', function () {
-    return view('blog');
+    return view('register.university');
 });
 
 
