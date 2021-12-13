@@ -27,6 +27,10 @@ Route::get('/dashboard', function () {
     return view('admin.index');
 });
 
+Route::get('/detaillomba', function () {
+    return view('competition-detail');
+});
+
 
 
 
