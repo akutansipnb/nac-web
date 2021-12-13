@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\EventsController;
+use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
@@ -44,5 +45,6 @@ route::prefix('dashboard')->group(function(){
 
 
     route::resource('events',EventsController::class);
+    route::resource('tm',TechnicalMeetingController::class);
 
 });

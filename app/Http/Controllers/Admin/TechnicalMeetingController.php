@@ -14,7 +14,7 @@ class TechnicalMeetingController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,7 +24,7 @@ class TechnicalMeetingController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -46,7 +46,7 @@ class TechnicalMeetingController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.event.tm.add');
     }
 
     /**

@@ -85,6 +85,11 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        @if ($item->tm_time == NULL)
+                          <a class="dropdown-item" href="{{route('tm.show',['id' => $item->id])}}">Atur Technical Meeting</a>
+                        @else
+                          <a class="dropdown-item" href="#">Edit Technical Meeting</a>
+                        @endif
                         @if ($item->registration_fee == NULL)
                           <a class="dropdown-item" href="#">Atur Biaya Pendaftaran</a>
                         @else

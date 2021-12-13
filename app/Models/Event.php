@@ -17,6 +17,7 @@ class Event extends Model
         'registration_fee',
         'tm_time',
         'tm_method',
+        'tm_url',
         'max_slot',
         'register_time',
         'register_close',
@@ -25,8 +26,8 @@ class Event extends Model
     ];
 
 
-    // public function users(){
-    //     return $this->hasMany(UserDetails::class);
-    // }
+    public function users(){
+        return $this->hasMany(UserDetails::class);
+    }
 
 }

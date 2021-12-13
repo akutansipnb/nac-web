@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->string('background_url')->nullable(false);
             $table->enum('audience',['university','school']);
             $table->date('tm_time')->nullable(true);
+            $table->text('tm_url')->nullable(true);
             $table->enum('tm_method',['youtube','zoom'])->nullable(true);
             $table->integer('registration_fee')->nullable('false');
             $table->integer('max_slot')->nullable(false);
