@@ -98,7 +98,10 @@
                             placeholder="Masukkan universitas anda"
                             class="w-full mt-2 mb-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           >
-                            <option value="">Masukan Universitas Anda</option>
+                          <option value="" disabled>Masukan Sekolah Anda</option>
+                          @foreach ($academies as $item)
+                          <option value="">{{$item->academy_name}}</option>
+                          @endforeach
                           </select>
 
                           <small for="text" class="font-medium font-semibold">
