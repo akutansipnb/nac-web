@@ -4,7 +4,7 @@
 
 <div class="max-w-screen-xl px-2 py-5 mx-auto sm:px-6 lg:px-8 my-10">
     <div class="max-w-lg mx-auto">
-      <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">Nama Cabang Lomba</h1>
+      <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">{{$data['event_name']}} ({{$data['aliases']}})</h1>
 
       <p class="max-w-md mx-auto mt-4 text-center text-gray-500">
         Pendaftaran cabang lomba Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, voluptas?
@@ -98,7 +98,10 @@
                             placeholder="Masukkan universitas anda"
                             class="w-full mt-2 mb-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           >
-                            <option value="">Masukan Universitas Anda</option>
+                          <option value="" disabled>Masukan Sekolah Anda</option>
+                          @foreach ($academies as $item)
+                          <option value="">{{$item->academy_name}}</option>
+                          @endforeach
                           </select>
 
                           <small for="text" class="font-medium font-semibold">

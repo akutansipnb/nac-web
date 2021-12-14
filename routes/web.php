@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcademiesController;
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\EventController;
@@ -48,7 +49,20 @@ Route::get('/detaillomba', function () {
 
 Route::prefix('/event')->group(function(){
 
+     // AcademyRegister
+        Route::get('school',function(){
+            return view('register.academy.school');
+        })->name('academies.scholl');
+    
+        // UniversityRegister
+        Route::get('university',function(){
+            return view('register.academy.university');
+        })->name('academies.university');
+    
+    
     Route::get('/{id}',[EventController::class,'index'])->name('event.detail');
+    Route::get('/{id}/form',[EventController::class,'form'])->name('event.form');
+    Route::resource('academies',AcademiesController::class);
 
 });
 
