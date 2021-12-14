@@ -22,6 +22,7 @@
                         <input
                           type="text"
                           id="name"
+                          name="name"
                           placeholder="Masukkan Nama Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -33,6 +34,7 @@
                         <input
                           type="email"
                           id="email"
+                          name="email"
                           placeholder="Masukkan Email Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -44,6 +46,7 @@
                         <input
                           type="password"
                           id="password"
+                          name="password"
                           placeholder="Masukkan Password Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -54,7 +57,8 @@
 
                         <input
                           type="number"
-                          id="nis"
+                          id="identity_code"
+                          name="identity_code"
                           placeholder="Masukkan NIS Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -75,7 +79,8 @@
                     <div class="relative">
 
                           <select
-                            id="semester"
+                            id="edu_stage"
+                            name="edu_stage"
                             placeholder="Masukkan Textarea"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           >
@@ -107,7 +112,8 @@
 
                           <input
                             type="number"
-                            id="handphone"
+                            id="phone"
+                            name="phone"
                             placeholder="Masukkan No HP anda"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           />
@@ -151,7 +157,8 @@
 
                       <textarea
                         rows="4"
-                        id="addres"
+                        id="adress"
+                        name="adress"
                         placeholder="Masukkan Alamat Anda"
                         class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                       ></textarea>
