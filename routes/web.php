@@ -49,6 +49,7 @@ Route::get('/detaillomba', function () {
 Route::prefix('/event')->group(function(){
 
     Route::get('/{id}',[EventController::class,'index'])->name('event.detail');
+    Route::get('/{id}/form',[EventController::class,'form'])->name('event.form');
 
 });
 

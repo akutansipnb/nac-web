@@ -20,6 +20,12 @@ class EventController extends Controller
 
     public function form($id){
         $data = Event::find($id);
+        if($data['audience'] == "school"){
+            return view('register.school',compact('data'));
+        }else{
+            return view('register.university',compact('data'));
+        }
+
     }
 
 }
