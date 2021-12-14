@@ -16,9 +16,7 @@ class EventRegisterController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        $userDetail=UserDetail::all();
-        return view('admin.event.er.index', compact('user','userDetail'));
+
     }
 
     /**
@@ -28,7 +26,7 @@ class EventRegisterController extends Controller
      */
     public function create()
     {
-        return view('admin.event.er.add');
+
     }
 
     /**
@@ -44,21 +42,29 @@ class EventRegisterController extends Controller
         //     'identity_code'=>'required',
 
         // ])
+        try {
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password)
+            ]);
+            $data_parsing = User::where('email',$request->email)->first();
+            UserDetail::create([
+                'id_users' => $data_parsing['id'],
+                'id_academy' => $request->id_academy,
+                'id_events' => $request->id_events,
+                'identity_code' => $request->identity_code,
+                'edu_stage' => $request->edu_stage,
+                'birth_date' => $request->birth_date,
+                'phone' => $request->phone,
+                'gender' => $request->gender,
+                'department' => $request->department,
+                'adress' => $request->adress
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
 
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-
-        $data_parsing = User::where('email',$request->email)->first();
-
-        UserDetail::create([
-            'id_user' => $data_parsing['id'],
-            'identity_code' => $request->identity_code,
-            'identity_code' => $request->identity_code,
-
-        ]);
     }
 
     /**
