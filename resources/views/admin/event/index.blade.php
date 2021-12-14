@@ -24,7 +24,7 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
-            <table class="table align-items-center table-flush">
+            <table class="table align-items-center table-flush" style="height: 200px">
               <thead class="thead-light">
                 <tr>
                   <th scope="col" class="sort" data-sort="name">Cabang Lomba</th>
@@ -44,7 +44,7 @@
                         <img alt="Image placeholder" src="{{asset($item->icon_url)}}" class="p-2">
                       </a>
                       <div class="media-body">
-                        <span class="name mb-0 text-sm">{{$item->event_name}}</span>
+                        <span class="name mb-0 text-sm">{{$item->event_name}} ({{ $item['year'] }})  </span>
                       </div>
                     </div>
                   </th>
@@ -86,7 +86,7 @@
                       </a>
                       <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                         @if ($item->tm_time == NULL)
-                          <a class="dropdown-item" href="{{route('tm.show',['id' => $item->id])}}">Atur Technical Meeting</a>
+                          <a class="dropdown-item" href="#">Atur Technical Meeting</a>
                         @else
                           <a class="dropdown-item" href="#">Edit Technical Meeting</a>
                         @endif
@@ -97,7 +97,12 @@
                         @endif
                         <a class="dropdown-item" href="#">Edit Lomba</a>
                         <a class="dropdown-item" href="#">Tutup Pendaftaran</a>
-                        <a class="dropdown-item" href="#">Hapus Lomba</a>
+                          <form action="{{route('events.destroy',['event' => $item->id])}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button class="dropdown-item">Hapus Lomba</button>
+                          </form>
+                        
                       </div>
                     </div>
                   </td>

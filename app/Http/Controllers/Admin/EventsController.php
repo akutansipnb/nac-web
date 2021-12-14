@@ -41,19 +41,23 @@ class EventsController extends Controller
         $icon = $request->file('icon_url');
         $cover = $request->file('background_url');
 
-        $icon_name = strtolower($request->aliases)."-icon.".$icon->getClientOriginalExtension();
-        $cover_name = strtolower($request->aliases)."-cover.".$cover->getClientOriginalExtension();
+        $icon_name = strtolower($request->aliases)."-" . $request->register_year ."-icon.".$icon->getClientOriginalExtension();
+        $cover_name = strtolower($request->aliases)."-" . $request->register_year ."-cover.".$cover->getClientOriginalExtension();
 
         try {
             Event::create([
                 'event_name' => $request->event_name ,
                 'aliases' => $request->aliases,
+                'year' => $request->register_year,
                 'icon_url' => 'img/events/icons/'.$icon_name,
                 'background_url' => 'img/events/covers/'.$cover_name,
                 'audience' => $request->audience,
                 'max_slot' => $request->max_slot,
+                'registration_fee' => $request->registration_fee,
                 'register_time' => $request->register_time,
                 'register_close' => $request->register_close,
+                'quotes' => $request->quotes,
+                'desc' => $request->desc,
                 'blog' => $request->blog,
                 'status' => 'open',
             ]);
@@ -114,6 +118,8 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Event::destroy($id);
+        return redirect()->back();
+
     }
 }

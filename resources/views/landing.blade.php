@@ -108,9 +108,9 @@
                 </div>
 
                 <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
-                    <a href=""
+                    <a href={{route('event.detail',['id' => $item->id])}}
                         class="px-8 py-2 font-medium text-black rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
-                        Detail
+                        Detail Lomba
                     </a>
 
                 </div>

@@ -59,6 +59,21 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-date-open">Tahun Lomba *</label>
+                      <input type="number" id="input-date-open" class="form-control" name="register_year" placeholder="2020">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-date-open">Biaya Pendaftaran *</label>
+                      <input type="number" id="input-date-open" class="form-control" name="registration_fee" placeholder="50.000">
+                    </div>
+                  </div>
+                  
+                </div>
 
                 {{-- Target --}}
                 <div class="row">
@@ -80,6 +95,8 @@
                     </div>
                   </div>
               </div>
+
+              
               <hr class="my-4" />
 
               <!-- Icons -->
@@ -135,7 +152,25 @@
               </div> --}}
               <hr class="my-4" />
               <!-- Description -->
+
+              
               <h6 class="heading-small text-muted mb-4">Keterangan Lomba</h6>
+
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label">Deskripsi</label>
+                  <textarea rows="1" class="form-control" name="desc" placeholder="Deskripsi Lomba ..."></textarea>
+                </div>
+              </div>
+              
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label">Motivasi</label>
+                  <textarea rows="1" class="form-control" name="quotes" placeholder="Motivasi ..."></textarea>
+                </div>
+              </div>
+
+              
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Tentang Lomba</label>

@@ -11,6 +11,7 @@ class Event extends Model
     protected $fillable = [
         'event_name',
         'aliases',
+        'year',
         'icon_url',
         'background_url',
         'audience',
@@ -21,6 +22,8 @@ class Event extends Model
         'max_slot',
         'register_time',
         'register_close',
+        'quotes',
+        'desc',
         'blog',
         'status'
     ];

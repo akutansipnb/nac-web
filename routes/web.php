@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
@@ -45,7 +46,11 @@ Route::get('/detaillomba', function () {
 });
 
 
+Route::prefix('/event')->group(function(){
 
+    Route::get('/{id}',[EventController::class,'index'])->name('event.detail');
+
+});
 
 
 Auth::routes();

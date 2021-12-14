@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('event_name',150);
             $table->string('aliases',15);
+            $table->string('year');
             $table->string('icon_url')->nullable(false);
             $table->string('background_url')->nullable(false);
             $table->enum('audience',['university','school']);
@@ -27,6 +28,8 @@ class CreateEventsTable extends Migration
             $table->integer('max_slot')->nullable(false);
             $table->date('register_time');
             $table->date('register_close');
+            $table->text('quotes')->nullable();
+            $table->text('desc')->nullable();
             $table->text('blog')->nullable();
             $table->enum('status',['open','close']);
             $table->timestamps();
