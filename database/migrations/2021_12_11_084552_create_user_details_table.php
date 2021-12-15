@@ -22,6 +22,8 @@ class CreateUserDetailsTable extends Migration
             $table->string('edu_stage');
             $table->date('birth_date');
             $table->string('phone');
+            $table->string('gender');
+            $table->string('department');
             $table->text('adress');
             $table->enum('consumsion',['vegetarian','normal']);
             $table->text('validation_1')->nullable();

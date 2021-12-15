@@ -15,7 +15,7 @@ class AcademiesController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -25,7 +25,7 @@ class AcademiesController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -43,7 +43,6 @@ class AcademiesController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-
 
         } catch (\Throwable $th) {
             throw $th;

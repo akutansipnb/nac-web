@@ -10,18 +10,21 @@
         Pendaftaran cabang lomba Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, voluptas?
       </p>
 
-      <form action="" class="p-8 mt-6 mb-5 space-y-4 rounded-lg shadow-2xl">
+      <div class="p-8 mt-6 mb-5 space-y-4 rounded-lg shadow-2xl">
 
 
         <div class="bg-input flex justify-center">
             <div class="input flex flex-col w-10/12 xl:w-11/12">
-                <form action="" method="">
+                <form action="{{ route('register.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id_events" value="{{ $data['id'] }}">
                     <label for="text" class="font-medium font-semibold">Nama Peserta</label>
                     <div class="relative">
 
                         <input
                           type="text"
                           id="name"
+                          name="name"
                           placeholder="Masukkan Nama Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -33,6 +36,7 @@
                         <input
                           type="email"
                           id="email"
+                          name="email"
                           placeholder="Masukkan Email Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -44,6 +48,7 @@
                         <input
                           type="password"
                           id="password"
+                          name="password"
                           placeholder="Masukkan Password Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -54,7 +59,8 @@
 
                         <input
                           type="number"
-                          id="nim"
+                          id="identity_code"
+                          name="identity_code"
                           placeholder="Masukkan NIM Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -66,6 +72,7 @@
                         <input
                           type="text"
                           id="department"
+                          name="department"
                           placeholder="Masukkan Jurusan Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -75,33 +82,35 @@
                     <div class="relative">
 
                           <select
-                            id="semester"
+                            id="edu_stage"
+                            name="edu_stage"
                             placeholder="Masukkan Textarea"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           >
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">6</option>
-                            <option value="">7</option>
-                            <option value="">8</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
                           </select>
                     </div>
 
                     <label for="select" class="font-medium font-semibold">Universitas/Instansi</label>
-                    <div class="relative">
+                    <div class="relative mb-5">
 
                           <select
-                            id="university"
+                            id="id_academy"
+                            name="id_academy"
                             placeholder="Masukkan universitas anda"
                             class="w-full mt-2 mb-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           >
-                          <option value="" disabled>Masukan Sekolah Anda</option>
-                          @foreach ($academies as $item)
-                          <option value="">{{$item->academy_name}}</option>
-                          @endforeach
+                            <option value="" disabled>Masukan Sekolah Anda</option>
+                            @foreach ($academies as $item)
+                            <option value={{ $item->id }}>{{$item->academy_name}}</option>
+                            @endforeach
                           </select>
 
                           <small for="text" class="font-medium font-semibold">
@@ -110,25 +119,26 @@
                           </small>
                     </div>
 
-                    <label for="number" class="font-medium font-semibold mt-5">No HP Peserta</label>
+                    <label for="number" class="font-medium font-semibold">No HP Peserta</label>
                     <div class="relative">
 
                           <input
                             type="number"
-                            id="handphone"
+                            id="phone"
+                            name="phone"
                             placeholder="Masukkan No HP anda"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           />
                     </div>
 
                     <label for="Radio" class="font-medium font-semibold">Jenis Kelamin</label>
-                    <div class="mt-2">
+                    <div class="relative mb-5">
                         <div>
                           <label class="inline-flex items-center">
                             <input
                               type="radio"
                               class="form-radio"
-                              name="radio"
+                              name="gender"
                               value="1"
                               checked
                             />
@@ -137,7 +147,7 @@
                         </div>
                         <div>
                           <label class="inline-flex items-center">
-                            <input type="radio" class="form-radio" name="radio" value="2" />
+                            <input type="radio" class="form-radio" name="gender" value="2" />
                             <span class="ml-2">Perempuan</span>
                           </label>
                         </div>
@@ -148,7 +158,8 @@
 
                         <input
                           type="date"
-                          id="date"
+                          id="birth_date"
+                          name="birth_date"
                           placeholder="Masukkan Nama Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
@@ -159,7 +170,8 @@
 
                       <textarea
                         rows="4"
-                        id="addres"
+                        id="adrees"
+                        name="adress"
                         placeholder="Masukkan Alamat Anda"
                         class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                       ></textarea>
@@ -178,7 +190,7 @@
         </div>
 
         </p>
-      </form>
+    </div>
     </div>
   </div>
 
