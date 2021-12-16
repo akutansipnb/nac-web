@@ -4,6 +4,7 @@ use App\Http\Controllers\AcademiesController;
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
@@ -53,16 +54,17 @@ Route::prefix('/event')->group(function(){
         Route::get('school',function(){
             return view('register.academy.school');
         })->name('academies.scholl');
-    
+
         // UniversityRegister
         Route::get('university',function(){
             return view('register.academy.university');
         })->name('academies.university');
-    
-    
+
+
     Route::get('/{id}',[EventController::class,'index'])->name('event.detail');
     Route::get('/{id}/form',[EventController::class,'form'])->name('event.form');
     Route::resource('academies',AcademiesController::class);
+    route::resource('register',EventRegisterController::class);
 
 });
 
@@ -81,5 +83,6 @@ route::prefix('dashboard')->group(function(){
 
     route::resource('events',EventsController::class);
     route::resource('tm',TechnicalMeetingController::class);
+
 
 });
