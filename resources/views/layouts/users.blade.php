@@ -49,7 +49,7 @@
         <div class="px-4 mx-auto sm:pr-0 max-w-screen-2xl">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center space-x-10">
-                    <span class="w-30 h-10 bg-white rounded-lg flex justify-center"> 
+                    <span class="w-16 md:w-30 md:h-10 bg-white rounded-lg flex justify-center"> 
                         <img src="{{asset('img/brand/logo.png')}}" alt="" srcset="" class="w-50 p-2">
                     </span>
 

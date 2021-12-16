@@ -100,7 +100,7 @@
                     <a href=""
                         class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span
-                            class="block px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                            class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
                             Daftar
                         </span>
                     </a>
@@ -109,7 +109,7 @@
 
                 <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
                     <a href={{route('event.detail',['id' => $item->id])}}
-                        class="px-8 py-2 font-medium text-black rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                        class="px-8 py-2 text-sm font-medium text-black rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         Detail Lomba
                     </a>
 
