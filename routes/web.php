@@ -43,6 +43,18 @@ Route::get('/dashboard', function () {
     return view('admin.index');
 });
 
+Route::get('/dashboard-user', function () {
+    return view('user.index');
+});
+
+Route::get('/time', function () {
+    return view('user.time');
+});
+
+Route::get('/pendamping', function () {
+    return view('user.pendamping');
+});
+
 Route::get('/detaillomba', function () {
     return view('competition-detail');
 });
