@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class TechnicalMeetingController extends Controller
@@ -46,7 +47,7 @@ class TechnicalMeetingController extends Controller
      */
     public function show($id)
     {
-        return view('admin.event.tm.add');
+        
     }
 
     /**
@@ -57,7 +58,11 @@ class TechnicalMeetingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Event::find($id);
+        if($data !== NULL){
+            return view('admin.event.tm.add',compact('data'));
+        }
+        echo "Lomba tidak ada";
     }
 
     /**
@@ -69,7 +74,7 @@ class TechnicalMeetingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

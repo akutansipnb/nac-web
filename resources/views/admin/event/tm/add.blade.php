@@ -20,12 +20,8 @@
             <form method="POST" enctype="multipart/form-data" action="{{route('tm.store')}}">
               @csrf
               <input type="hidden" name="id" value="">
-              <h6 class="heading-small text-muted mb-4">Informasi Technical Meeting : Lomba A</h6>
-              <div class="pl-lg-4">
-
-
-
-              
+              <h6 class="heading-small text-muted mb-4">Informasi Technical Meeting : {{$data['event_name']}} ({{$data['year']}})</h6>
+              <div class="pl-lg-4">              
               <hr class="my-4" />
               <div class="pl-lg-4">
                 <div class="row">

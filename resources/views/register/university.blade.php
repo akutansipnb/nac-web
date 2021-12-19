@@ -102,7 +102,7 @@
 
                           <small for="text" class="font-medium font-semibold">
                               Kampusmu tidak terdaftar ? Daftarkan
-                              <a href="" class="text-blue-400">Disini</a>
+                              <a href="{{route('academies.university')}}" class="text-blue-400">Disini</a>
                           </small>
                     </div>
 

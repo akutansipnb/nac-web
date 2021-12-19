@@ -77,7 +77,7 @@
 
                             <small for="text" class="font-medium font-semibold">
                                 Sekolahmu tidak terdaftar ? Daftarkan
-                                <a href="{{ route('academies.index') }}" class="text-blue-400">Disini</a>
+                                <a href="{{ route('academies.scholl') }}" class="text-blue-400">Disini</a>
                             </small>
                         </div>
 

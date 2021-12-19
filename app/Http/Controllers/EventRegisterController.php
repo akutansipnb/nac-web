@@ -47,8 +47,10 @@ class EventRegisterController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => bcrypt($request->password)
-            ]);
+            ])->assignRole('Users');
+
             $data_parsing = User::where('email',$request->email)->first();
+
             UserDetail::create([
                 'id_users' => $data_parsing['id'],
                 'id_academy' => $request->id_academy,
