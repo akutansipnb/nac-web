@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\Return_;
 
 class HomeController extends Controller
 {
@@ -27,10 +28,10 @@ class HomeController extends Controller
         
         if(Auth::user()->hasRole('Administrator')){
 
-            echo"Anda Admin";
+            return redirect()->route('admin.dashboard');
             
         }else{
-            echo "Anda Bukan Admin !";
+            return redirect()->route('dashboard.index');
         }
 
     }

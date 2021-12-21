@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AcademiesController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +26,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [LandingController::class,'index']);
 
 Route::get('/blog', function () {
-    return view('register.university');
+    return view('user.setting.edit');
 });
 
 Route::get('/school', function () {
@@ -85,16 +87,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-route::prefix('dashboard')->group(function(){
+// User
 
+route::prefix('user')->group(function(){
+    route::resource('dashboard',UserController::class);
+});
 
+// Admin    
+route::prefix('admin')->group(function(){
     Route::get('/', function () {
         return view('admin.index');
-    });
-
-
+    })->name('admin.dashboard');
+    route::resource('member',AdminController::class);
     route::resource('events',EventsController::class);
     route::resource('tm',TechnicalMeetingController::class);
-
-
 });

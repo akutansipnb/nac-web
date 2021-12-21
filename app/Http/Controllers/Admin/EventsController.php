@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventsController extends Controller
 {
@@ -118,7 +119,14 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
+        
+        $data = Event::find($id);
+        unlink($data['icon_url']);   
+        unlink($data['background_url']);
         $data = Event::destroy($id);
+
+        
+
         return redirect()->back();
 
     }

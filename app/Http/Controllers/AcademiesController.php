@@ -43,6 +43,7 @@ class AcademiesController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
+            
 
         } catch (\Throwable $th) {
             throw $th;

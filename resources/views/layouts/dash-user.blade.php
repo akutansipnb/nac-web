@@ -36,19 +36,19 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" href="{{ url('dashboard-user') }}">
-                <i class="ni ni-tv-2 text-orange"></i>
+                <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('time') }}">
-                <i class="ni ni-bell-55 text-orange"></i>
+                <i class="ni ni-watch-time text-success"></i>
                 <span class="nav-link-text">Time Schedule</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('pendamping') }}">
-                <i class="ni ni-single-02 text-orange"></i>
+                <i class="ni ni-badge text-orange"></i>
                 <span class="nav-link-text">Pendamping</span>
               </a>
             </li>
@@ -105,9 +105,9 @@
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
                     <img alt="Image placeholder" src="{{asset('img/icons/users.png')}}">
-                  </span>
+                  </span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
                   </div>
                 </div>
               </a>
@@ -115,7 +115,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
+                <a href="{{route('dashboard.edit',['id',Auth::user()->id])}}" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>

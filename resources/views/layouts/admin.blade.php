@@ -41,30 +41,36 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/icons.html">
-                <i class="ni ni-planet text-orange"></i>
-                <span class="nav-link-text">Icons</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="examples/map.html">
                 <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Google</span>
+                <span class="nav-link-text">Institusi</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="examples/profile.html">
                 <i class="ni ni-single-02 text-yellow"></i>
-                <span class="nav-link-text">Profile</span>
+                <span class="nav-link-text">Peserta</span>
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="examples/profile.html">
+                <i class="ni ni-briefcase-24 text-info"></i>
+                <span class="nav-link-text">Pendaping</span>
+              </a>
+            </li>
+            {{-- <li class="nav-item">
               <a class="nav-link" href="examples/tables.html">
                 <i class="ni ni-bullet-list-67 text-default"></i>
                 <span class="nav-link-text">Tables</span>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
+              <a class="nav-link" href={{route('register.index')}}>
+                <i class="ni ni-badge text-orange"></i>
+                <span class="nav-link-text">Admin</span>
+              </a>
+            </li>
+            {{-- <li class="nav-item">
               <a class="nav-link" href="examples/login.html">
                 <i class="ni ni-key-25 text-info"></i>
                 <span class="nav-link-text">Login</span>
@@ -81,7 +87,7 @@
                 <i class="ni ni-send text-dark"></i>
                 <span class="nav-link-text">Upgrade</span>
               </a>
-            </li>
+            </li> --}}
           </ul>
           <!-- Divider -->
           <hr class="my-3">
@@ -93,13 +99,13 @@
           <ul class="navbar-nav mb-md-3">
             <li class="nav-item">
               <a class="nav-link" href={{route('events.index')}}>
-                <i class="ni ni-trophy"></i>
+                <i class="ni ni-trophy text-orange"></i>
                 <span class="nav-link-text">Perlombaan</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
-                <i class="ni ni-calendar-grid-58"></i>
+                <i class="ni ni-calendar-grid-58 text-info"></i>
                 <span class="nav-link-text">Lintas Waktu</span>
               </a>
             </li>
@@ -107,7 +113,7 @@
             
             <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
-                <i class="ni ni-settings-gear-65"></i>
+                <i class="ni ni-settings-gear-65 text-danger"></i>
                 <span class="nav-link-text">Landing Page Setting</span>
               </a>
             </li>
@@ -161,10 +167,14 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="{{asset('img/icons/users.png')}}">
+                    @if (Auth::user()->img_url == NULL)
+                      <img alt="Image placeholder" src="{{asset('img/icons/users.png')}}">
+                    @else
+                      <img alt="Image placeholder" src="{{asset(Auth::user()->img_url)}}">
+                    @endif
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                    <span class="mb-0 text-sm  font-weight-bold"> {{ Auth::user()->name }} </span>
                   </div>
                 </div>
               </a>
@@ -189,10 +199,16 @@
                   <span>Support</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-user-run"></i>
-                  <span>Logout</span>
-                </a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="ni ni-user-run"></i>
+                                        <span>Logout</span>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
               </div>
             </li>
           </ul>
