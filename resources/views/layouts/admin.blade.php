@@ -103,6 +103,14 @@
                 <span class="nav-link-text">Perlombaan</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href={{route('blogs.index')}}>
+                <i class="ni ni-collection text-orange"></i>
+                <span class="nav-link-text">Berita</span>
+              </a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
                 <i class="ni ni-calendar-grid-58 text-info"></i>
@@ -231,6 +239,7 @@
   <script src={{asset('vendor/chart.js/dist/Chart.extension.js')}}></script>
   <!-- Argon JS -->
   <script src={{asset('js/argon.js?v=1.2.0')}}></script>
+  <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
 </body>
 
 </html>

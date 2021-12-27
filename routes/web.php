@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\UserController;
@@ -100,5 +101,6 @@ route::prefix('admin')->group(function(){
     })->name('admin.dashboard');
     route::resource('member',AdminController::class);
     route::resource('events',EventsController::class);
+    route::resource('blogs',BlogController::class);
     route::resource('tm',TechnicalMeetingController::class);
 });
