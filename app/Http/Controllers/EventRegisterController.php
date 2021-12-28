@@ -37,11 +37,24 @@ class EventRegisterController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'identity_code'=>'required',
-        //     'identity_code'=>'required',
-
-        // ])
+        $request->validate([
+            'id_users'=>'required',
+            'id_academy'=>'required',
+            'id_events'=>'required',
+            'email'=>'required|unique:users,email',
+            'identity_code'=>'required|unique:user_details,identity_code',
+            'name'=>'required',
+            'password'=>'required',
+            'edu_stage'=>'required',
+            'birth_date'=>'required',
+            'phone'=>'required',
+            'gender'=>'required',
+            'department'=>'required',
+            'adress'=>'required'
+        ],[
+            'email.unique' => "Data Sudah Ada !",
+            'identity_code.unique' => "Data Sudah Ada !"
+        ]);
         try {
             User::create([
                 'name' => $request->name,

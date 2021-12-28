@@ -20,6 +20,7 @@
                           id="name"
                           placeholder="Masukkan Nama Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          required
                         />
                     </div>
 
@@ -30,8 +31,14 @@
                           type="email"
                           id="email"
                           placeholder="Masukkan Email Anda"
-                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm @error('email') border-red-300 @enderror"
+                          required
                         />
+                        @error('email')
+                        <div class="mb-5">
+                            <p class="text-xs text-red-200"> {{ $message }} </p>
+                        </div>
+                        @enderror
                     </div>
 
                     <label for="text" class="font-medium font-semibold">Password</label>
@@ -42,6 +49,7 @@
                           id="password"
                           placeholder="Masukkan Password Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          required
                         />
                     </div>
 
@@ -52,8 +60,14 @@
                           type="number"
                           id="nim"
                           placeholder="Masukkan NIM Anda"
-                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm @error('identity_code') border-red-300 @enderror"
+                          required
                         />
+                        @error('identity_code')
+                            <div class="mb-5">
+                                <p class="text-xs text-red-200"> {{ $message }} </p>
+                            </div>
+                        @enderror
                      </div>
 
                     <label for="text" class="font-medium font-semibold">Jurusan</label>
@@ -64,6 +78,7 @@
                           id="department"
                           placeholder="Masukkan Jurusan Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          required
                         />
                     </div>
 
@@ -74,6 +89,7 @@
                             id="semester"
                             placeholder="Masukkan Textarea"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                            required
                           >
                             <option value="">1</option>
                             <option value="">2</option>
@@ -93,6 +109,7 @@
                             id="university"
                             placeholder="Masukkan universitas anda"
                             class="w-full mt-2 mb-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                            required
                           >
                           <option value="" disabled>Masukan Sekolah Anda</option>
                           @foreach ($academies as $item)
@@ -114,6 +131,7 @@
                             id="handphone"
                             placeholder="Masukkan No HP anda"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                            required
                           />
                     </div>
 
@@ -127,13 +145,14 @@
                               name="radio"
                               value="1"
                               checked
+                              required
                             />
                             <span class="ml-2">Laki-laki</span>
                           </label>
                         </div>
                         <div>
                           <label class="inline-flex items-center">
-                            <input type="radio" class="form-radio" name="radio" value="2" />
+                            <input type="radio" class="form-radio" name="radio" value="2" required/>
                             <span class="ml-2">Perempuan</span>
                           </label>
                         </div>
@@ -147,6 +166,7 @@
                           id="date"
                           placeholder="Masukkan Nama Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          required
                         />
                     </div>
 
@@ -158,6 +178,7 @@
                         id="addres"
                         placeholder="Masukkan Alamat Anda"
                         class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        required
                       ></textarea>
                     </div>
 
