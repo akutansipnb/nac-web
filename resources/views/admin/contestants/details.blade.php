@@ -169,11 +169,12 @@
                   
               </div>
               <div class="pl-lg-4">
-                @if ($data->validation_status == ) 
-                    
-                @else
-                    
-                @endif
+              
+              @if ($data->validation_status == FALSE) 
+              <a href="{{route('validation.acc',['id' => $data['id']])}}" class="btn btn-warning w-100">Validasi Peserta</a>
+              @else
+              <a href="#" class="btn btn-secondary w-100" disabled>Peserta Tervalidasi</a>
+              @endif
             </form>
           </div>
         </div>
