@@ -52,7 +52,7 @@
                     @if ($item->tm_time == NULL)
                         -
                     @else
-                    
+
                       {{$item->tm_time}}
                     @endif
                   </td>
@@ -95,20 +95,20 @@
                         @else
                           <a class="dropdown-item" href="#">Edit Biaya Pendaftaran</a>
                         @endif
-                        <a class="dropdown-item" href="#">Edit Lomba</a>
+                        <a class="dropdown-item" href="{{ route('events.edit',$item->id) }}">Edit Lomba</a>
                         <a class="dropdown-item" href="#">Tutup Pendaftaran</a>
                           <form action="{{route('events.destroy',['event' => $item->id])}}" method="post">
                             @csrf
                             @method('delete')
                             <button class="dropdown-item">Hapus Lomba</button>
                           </form>
-                        
+
                       </div>
                     </div>
                   </td>
                 </tr>
                 @endforeach
-                
+
 
               </tbody>
             </table>
@@ -142,8 +142,8 @@
         </div>
       </div>
     </div>
-    
-    
+
+
   </div>
-    
+
 @endsection

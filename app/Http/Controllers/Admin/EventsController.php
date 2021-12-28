@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\EventController;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -71,10 +72,6 @@ class EventsController extends Controller
         } catch (\Throwable $th) {
             throw $th;
         }
-        
-
-        
-        
     }
 
     /**
@@ -96,7 +93,8 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::find($id);
+        return view('admin.event.edit')->with(compact('event'));
     }
 
     /**
@@ -106,9 +104,52 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
-        //
+
+            try {
+                $update = [
+                    'event_name' => $request->event_name ,
+                    'aliases' => $request->aliases,
+                    'year' => $request->register_year,
+                    'audience' => $request->audience,
+                    'max_slot' => $request->max_slot,
+                    'registration_fee' => $request->registration_fee,
+                    'register_time' => $request->register_time,
+                    'register_close' => $request->register_close,
+                    'quotes' => $request->quotes,
+                    'desc' => $request->desc,
+                    'blog' => $request->blog,
+                    'status' => 'open',
+                ];
+
+
+                if($request->file('icon_url') !== NULL){
+                    $icon = $request->file('icon_url');
+                    $icon_name = strtolower($request->aliases)."-" . $request->register_year ."-icon.".$icon->getClientOriginalExtension();
+                    $update = [
+                        'icon_url' => 'img/events/icons/'.$icon_name,
+                    ];
+                    $icon->move('img/events/icons',$icon_name);
+                };
+
+                if($request->file('background_url') !== NULL){
+                    $cover = $request->file('background_url');
+                    $cover_name = strtolower($request->aliases)."-" . $request->register_year ."-cover.".$cover->getClientOriginalExtension();
+                    $update = [
+                        'background_url' => 'img/events/covers/'.$cover_name,
+                    ];
+                    $cover->move('img/events/covers',$cover_name);
+                }
+
+            $event->update($update);
+
+                // Moves Files
+                return redirect()->route('events.index');
+            } catch (\Throwable $th) {
+                throw $th;
+            }
+
     }
 
     /**
@@ -119,13 +160,13 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $data = Event::find($id);
-        unlink($data['icon_url']);   
+        unlink($data['icon_url']);
         unlink($data['background_url']);
         $data = Event::destroy($id);
 
-        
+
 
         return redirect()->back();
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AcademiesController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EventsController;
+use App\Http\Controllers\Admin\TimeScheduleController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventRegisterController;
@@ -93,12 +94,13 @@ route::prefix('user')->group(function(){
     route::resource('dashboard',UserController::class);
 });
 
-// Admin    
+// Admin
 route::prefix('admin')->group(function(){
     Route::get('/', function () {
         return view('admin.index');
     })->name('admin.dashboard');
     route::resource('member',AdminController::class);
+    route::resource('schedules',TimeScheduleController::class);
     route::resource('events',EventsController::class);
     route::resource('tm',TechnicalMeetingController::class);
 });
