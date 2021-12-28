@@ -13,7 +13,7 @@
                     <div class="card-body">
                       <h3 class="card-title" style="font-weight: 700">Halo , {{Auth::user()->name}}</h3>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Selesaikan Pendaftaran</a>
+                      <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <!-- Card body -->
                 <a href="#" class="card-body px-5">
                   <div class="row">
-                    <div class="col"><h5 class="card-title text-uppercase text-muted mb-0">Keluar Dari WEB</h5>
+                    <div class="col"><h5 class="card-title text-uppercase text-muted mb-0">Keluar Dari WEB  </h5>
                       <span class="h2 font-weight-bold mb-0">Logout</span>
                     </div>
                     <div class="col-auto">

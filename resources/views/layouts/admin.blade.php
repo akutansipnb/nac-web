@@ -47,7 +47,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/profile.html">
+              <a class="nav-link" href={{route('contestants.index')}}>
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">Peserta</span>
               </a>
@@ -65,7 +65,7 @@
               </a>
             </li> --}}
             <li class="nav-item">
-              <a class="nav-link" href={{route('register.index')}}>
+              <a class="nav-link" href={{route('member.index')}}>
                 <i class="ni ni-badge text-orange"></i>
                 <span class="nav-link-text">Admin</span>
               </a>

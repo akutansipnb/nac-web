@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\AcademiesController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ContestantController;
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\User\ValidationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
@@ -30,7 +32,7 @@ Route::get('/blog', function () {
 });
 
 Route::get('/school', function () {
-    return view('register.school');
+    return view('user.validation');
 });
 
 Route::get('/regschool', function () {
@@ -91,6 +93,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 route::prefix('user')->group(function(){
     route::resource('dashboard',UserController::class);
+    route::get('/validation',[ValidationController::class,'index'])->name('user.validation');
+    route::post('/validation',[ValidationController::class,'updateValidation'])->name('user.validate');
 });
 
 // Admin    
@@ -101,4 +105,5 @@ route::prefix('admin')->group(function(){
     route::resource('member',AdminController::class);
     route::resource('events',EventsController::class);
     route::resource('tm',TechnicalMeetingController::class);
+    route::resource('contestants',ContestantController::class);
 });

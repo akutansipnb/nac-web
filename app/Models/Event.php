@@ -30,7 +30,6 @@ class Event extends Model
 
 
     public function users(){
-        return $this->hasMany(UserDetails::class);
+        return $this->hasMany(UserDetail::class,'id_events');
     }
-
 }

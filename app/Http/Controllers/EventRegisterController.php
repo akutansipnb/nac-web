@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendSuccessMail;
 use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 
 class EventRegisterController extends Controller
 {
@@ -63,6 +64,10 @@ class EventRegisterController extends Controller
                 'department' => $request->department,
                 'adress' => $request->adress
             ]);
+
+            Mail::to($request->email)->send(new SendSuccessMail);
+            return view('user.success',compact('request'));
+
         } catch (\Throwable $th) {
             throw $th;
         }

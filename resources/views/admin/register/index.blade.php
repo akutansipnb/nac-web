@@ -39,7 +39,7 @@
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <a href="#" class="avatar rounded-circle mr-3 shadow-lg">
-                                            @if (Auth::user()->img_url == NULL)
+                                            @if ($item->img_url == NULL)
                                             <img alt="Image placeholder" src="{{asset('img/icons/users.png')}}">
                                             @else
                                             <img alt="Image placeholder" src="{{asset(Auth::user()->img_url)}}">

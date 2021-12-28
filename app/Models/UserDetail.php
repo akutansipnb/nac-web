@@ -20,4 +20,8 @@ class UserDetail extends Model
         'department',
         'adress'
     ];
+
+    public function events(){
+        return $this->belongsTo(Event::class,'id');
+    }
 }
