@@ -38,7 +38,6 @@ class EventRegisterController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
         $request->validate([
             'id_users'=>'required',
             'id_academy'=>'required',
@@ -57,8 +56,7 @@ class EventRegisterController extends Controller
             'email.unique' => "Data Sudah Ada !",
             'identity_code.unique' => "Data Sudah Ada !"
         ]);
-=======
->>>>>>> 42a9430de5024a7d946bbe279596df416a00f750
+
         try {
             User::create([
                 'name' => $request->name,
