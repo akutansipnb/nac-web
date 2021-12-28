@@ -38,11 +38,6 @@ class EventRegisterController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'identity_code'=>'required',
-        //     'identity_code'=>'required',
-
-        // ])
         try {
             User::create([
                 'name' => $request->name,
@@ -62,7 +57,8 @@ class EventRegisterController extends Controller
                 'phone' => $request->phone,
                 'gender' => $request->gender,
                 'department' => $request->department,
-                'adress' => $request->adress
+                'adress' => $request->adress,
+                'validation_status' => FALSE
             ]);
 
             Mail::to($request->email)->send(new SendSuccessMail);

@@ -109,5 +109,9 @@ route::prefix('admin')->group(function(){
     route::resource('events',EventsController::class);
     route::resource('blogs',BlogController::class);
     route::resource('tm',TechnicalMeetingController::class);
+    // Contestant
     route::resource('contestants',ContestantController::class);
+
+    // ACC 
+    Route::get('/acc/{id}',[ValidationController::class,'validateAcc'])->name('validation.acc');
 });

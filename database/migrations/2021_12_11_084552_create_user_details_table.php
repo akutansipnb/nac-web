@@ -31,6 +31,7 @@ class CreateUserDetailsTable extends Migration
             $table->text('validation_3')->nullable();
             $table->text('validation_4')->nullable();
             $table->text('validation_5')->nullable();
+            $table->boolean('validation_status');
             $table->timestamps();
         });
 

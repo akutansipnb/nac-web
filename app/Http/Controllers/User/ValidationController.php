@@ -27,7 +27,7 @@ class ValidationController extends Controller
         $event = Auth::user()->details->events;
         $event_name = $event->aliases.$event->year;
 
-        $url = 'img/participant/'.$event_name.'/'.Auth::user()->name;
+        $url = 'img/participant/'.$event_name.'/'. strtolower(str_replace(' ','_',Auth::user()->name));
  
         $validation_1 = $request->file('validation_1');
         $validation_1_name =  $user->identity_code . "-" . str_replace(' ','_',Auth::user()->name) . "-" . $user->events->aliases . $user->events->year. "." . $validation_1->getClientOriginalExtension();
@@ -41,7 +41,7 @@ class ValidationController extends Controller
         
         $update = [
             'validation_1' => $url.'/ktm-'.$validation_1_name,
-            'validation_2' => $url.'/mahasiswa_aktiv-'.$validation_2_name,
+            'validation_2' => $url.'/pernyataan-'.$validation_2_name,
             'validation_3' => $url.'/kuitansi-'.$validation_3_name,
         ];
         
@@ -68,13 +68,25 @@ class ValidationController extends Controller
                 $validation_3->move($url,'/kuitansi-'.$validation_3_name);
                 $validation_4->move($url,'/foto-'.$validation_4_name);
                 $validation_5->move($url,'/integritas-'.$validation_5_name);
+            }else{
+                $validation_1->move($url,'/ktm-'.$validation_1_name);
+                $validation_2->move($url,'/pernyataan-'.$validation_2_name,);
+                $validation_3->move($url,'/kuitansi-'.$validation_3_name);
             }
-            
-            
         } catch (\Throwable $th) {
             throw $th;
         }
-
         // dd($request);
+    }
+
+    public function validateAcc($id){
+        try {
+            UserDetail::find($id)->update([
+                'validation_status' => TRUE
+            ]);
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 }

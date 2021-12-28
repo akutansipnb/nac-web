@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserDetail;
 use Illuminate\Http\Request;
 
 class ContestantController extends Controller
@@ -16,10 +17,7 @@ class ContestantController extends Controller
     public function index()
     {
         //
-        $data = User::join('user_details', 'users.id', '=', 'user_details.id_users')
-                    ->join('academies', 'user_details.id_academy', '=', 'academies.id')
-                    ->join('events', 'user_details.id_events', '=', 'events.id')
-                    ->get();
+        $data = UserDetail::paginate();
         return view('admin.contestants.index',compact('data'));
     }
 
@@ -51,8 +49,9 @@ class ContestantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $data = UserDetail::find($id);
+        return view('admin.contestants.details',compact('data'));
     }
 
     /**
