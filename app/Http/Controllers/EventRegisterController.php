@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendSuccessMail;
 use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 
 class EventRegisterController extends Controller
 {
@@ -37,6 +38,7 @@ class EventRegisterController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $request->validate([
             'id_users'=>'required',
             'id_academy'=>'required',
@@ -55,6 +57,8 @@ class EventRegisterController extends Controller
             'email.unique' => "Data Sudah Ada !",
             'identity_code.unique' => "Data Sudah Ada !"
         ]);
+=======
+>>>>>>> 42a9430de5024a7d946bbe279596df416a00f750
         try {
             User::create([
                 'name' => $request->name,
@@ -74,8 +78,13 @@ class EventRegisterController extends Controller
                 'phone' => $request->phone,
                 'gender' => $request->gender,
                 'department' => $request->department,
-                'adress' => $request->adress
+                'adress' => $request->adress,
+                'validation_status' => FALSE
             ]);
+
+            Mail::to($request->email)->send(new SendSuccessMail);
+            return view('user.success',compact('request'));
+
         } catch (\Throwable $th) {
             throw $th;
         }

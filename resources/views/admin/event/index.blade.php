@@ -52,7 +52,7 @@
                     @if ($item->tm_time == NULL)
                         -
                     @else
-                    
+
                       {{$item->tm_time}}
                     @endif
                   </td>
@@ -60,7 +60,7 @@
                     @if ($item->registration_fee == NULL)
                         -
                     @else
-                      {{$item->registration_fee}}
+                      Rp {{number_format($item->registration_fee,0,',','.')}}
                     @endif
                   </td>
                   <td>
@@ -71,10 +71,11 @@
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
-                      <span class="completion mr-2">60%</span>
+                      <?php $per = (count($item->users)/$item->max_slot)*100 ?>
+                      <span class="completion mr-2">{{$per}}%</span>
                       <div>
                         <div class="progress">
-                          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow={{1}} aria-valuemin="0" aria-valuemax="100" style="width: {{$per}}%;"></div>
                         </div>
                       </div>
                     </div>
@@ -95,20 +96,20 @@
                         @else
                           <a class="dropdown-item" href="#">Edit Biaya Pendaftaran</a>
                         @endif
-                        <a class="dropdown-item" href="#">Edit Lomba</a>
+                        <a class="dropdown-item" href="{{ route('events.edit',$item->id) }}">Edit Lomba</a>
                         <a class="dropdown-item" href="#">Tutup Pendaftaran</a>
                           <form action="{{route('events.destroy',['event' => $item->id])}}" method="post">
                             @csrf
                             @method('delete')
                             <button class="dropdown-item">Hapus Lomba</button>
                           </form>
-                        
+
                       </div>
                     </div>
                   </td>
                 </tr>
                 @endforeach
-                
+
 
               </tbody>
             </table>
@@ -142,8 +143,8 @@
         </div>
       </div>
     </div>
-    
-    
+
+
   </div>
-    
+
 @endsection

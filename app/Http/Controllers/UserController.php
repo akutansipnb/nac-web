@@ -15,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::where('users.id',Auth::user()->id)->join('user_details', 'users.id', '=', 'user_details.id_users')->first();
-        return view('user.index',compact('data'));
+        // $data = User::where('users.id',Auth::user()->id)->join('user_details', 'users.id', '=', 'user_details.id_users')->first();
+        return view('user.index');
 
     }
 

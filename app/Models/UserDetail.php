@@ -18,6 +18,19 @@ class UserDetail extends Model
         'phone',
         'gender',
         'department',
-        'adress'
+        'adress',
+        'validation_status'
     ];
+
+    public function events(){
+        return $this->belongsTo(Event::class,'id');
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class,'id_users');
+    }
+
+    public function academy(){
+        return $this->belongsTo(Academy::class,'id_academy');
+    }
 }

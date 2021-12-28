@@ -74,6 +74,21 @@ class TechnicalMeetingController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = Event::find($request->id);
+        if($data == NULL){
+            return redirect()->back();
+        }
+
+        try {
+            $data->update([
+                'tm_time' => $request->tm_date,
+                'tm_method' => $request->tm_method,
+                'tm_url' => $request->tm_url,
+            ]);
+            echo "Success";
+        } catch (\Throwable $th) {
+            throw $th;
+        }
         
     }
 

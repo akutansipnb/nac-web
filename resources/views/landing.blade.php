@@ -97,7 +97,7 @@
             <dl
                 class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12">
                 <div class="flex items-center">
-                    <a href=""
+                    <a href={{route('event.form',['id' => $item->id])}}
                         class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span
                             class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
