@@ -34,7 +34,7 @@
             </a>
         </div>
         <div class="flex flex-col items-center space-y-4 text-gray-700">
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Beranda</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}">Beranda</a>
             <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Tentang</a>
             <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Daftar</a>
             <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Blogs</a>
@@ -53,7 +53,11 @@
                     </span>
 
                     <nav class="hidden text-sm font-medium space-x-8 lg:flex">
+<<<<<<< HEAD
                         <a href="/">Beranda</a>
+=======
+                        <a href="{{ url('/') }}">Beranda</a>
+>>>>>>> b991759e9160ebf238c7b888108036d157590c65
                         <a href="">Tentang</a>
                         <a href="">Daftar</a>
                         {{-- <a href="">Galeri</a> --}}
