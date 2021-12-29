@@ -53,11 +53,7 @@
                     </span>
 
                     <nav class="hidden text-sm font-medium space-x-8 lg:flex">
-<<<<<<< HEAD
-                        <a href="/">Beranda</a>
-=======
                         <a href="{{ url('/') }}">Beranda</a>
->>>>>>> b991759e9160ebf238c7b888108036d157590c65
                         <a href="">Tentang</a>
                         <a href="">Daftar</a>
                         {{-- <a href="">Galeri</a> --}}
