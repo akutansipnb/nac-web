@@ -22,6 +22,5 @@ class AdminSeeder extends Seeder
             'email' => 'nationalaccountingcompetition@pnb.ac.id',
             'img_url' => NULL
         ])->assignRole('Administrator');
-
     }
 }

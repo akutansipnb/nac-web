@@ -13,13 +13,13 @@
                     <div class="card-body">
                       <h3 class="card-title" style="font-weight: 700">Halo , {{Auth::user()->name}}</h3>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      @if (Auth::user()->details->validation_1 !== NULL || Auth::user()->details->validation_2 !== NULL || Auth::user()->details->validation_3 !== NULL )
+                      @if (Auth::user()->details->validation_status == 'unactive')
                         <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
                       @endif
                     </div>
                 </div>
             </div>
-           @if (Auth::user()->details->validation_status === TRUE)
+           @if (Auth::user()->details->validation_status === 'active')
            <div class="col-xl-6 col-md-6">
             <div class="card card-stats ">
               <!-- Card body -->

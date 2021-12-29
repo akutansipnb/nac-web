@@ -1,5 +1,7 @@
 @extends('layouts.users')
 @section('content')
+
+
 <div class="max-w-screen-xl px-2 py-5 mx-auto sm:px-6 lg:px-8 my-10">
     <div class="max-w-lg mx-auto">
         <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">{{$data['event_name']}}

@@ -86,21 +86,29 @@
 
             <div class="px-6 sm:px-12">
                 <h5 class="text-xl font-bold text-gray-900">{{$item->event_name}}</h5>
+                <h5 class="text-xl font-extrabold text-gray-400">{{$item->year}}</h5>
 
                 <p class="mt-2 text-sm text-gray-500">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi eligendi officiis
                     laboriosam autem
                     eveniet.
                 </p>
+                
+                <dl class=" px-6 py-1 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-1">
+                    <p class="text-gray-400 text-base font-semibold mt-5"> Biaya Pendaftaran </p>
+                <strong class="inline-block px-16 py-2 text-xl font-semibold text-white uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full mt-1">
+                   Rp {{number_format($item->registration_fee,0,',','.')}}
+                </strong>
+                </dl>
             </div>
 
             <dl
                 class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12">
                 <div class="flex items-center">
                     <a href={{route('event.form',['id' => $item->id])}}
-                        class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                        class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span
-                            class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                            class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                             Daftar
                         </span>
                     </a>
@@ -109,7 +117,7 @@
 
                 <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
                     <a href={{route('event.detail',['id' => $item->id])}}
-                        class="px-8 py-2 text-sm font-medium text-black rounded-lg transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                        class="px-8 py-2 text-sm font-medium text-gray-500 rounded-lg transition transform inline-bloc hover:text-gray-800">
                         Detail Lomba
                     </a>
 

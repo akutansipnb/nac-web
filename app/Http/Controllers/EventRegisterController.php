@@ -39,7 +39,6 @@ class EventRegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_users'=>'required',
             'id_academy'=>'required',
             'id_events'=>'required',
             'email'=>'required|unique:users,email',
@@ -66,7 +65,7 @@ class EventRegisterController extends Controller
 
             $data_parsing = User::where('email',$request->email)->first();
 
-            UserDetail::create([
+            $query = UserDetail::create([
                 'id_users' => $data_parsing['id'],
                 'id_academy' => $request->id_academy,
                 'id_events' => $request->id_events,
@@ -77,14 +76,16 @@ class EventRegisterController extends Controller
                 'gender' => $request->gender,
                 'department' => $request->department,
                 'adress' => $request->adress,
-                'validation_status' => FALSE
+                'validation_status' => 'unactive'
             ]);
 
-            Mail::to($request->email)->send(new SendSuccessMail);
+            $e = UserDetail::where('identity_code',$request->identity_code)->first();
+            Mail::to($request->email)->send(new SendSuccessMail($e));
             return view('user.success',compact('request'));
 
         } catch (\Throwable $th) {
             throw $th;
+
         }
 
     }

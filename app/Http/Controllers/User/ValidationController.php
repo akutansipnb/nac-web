@@ -43,6 +43,7 @@ class ValidationController extends Controller
             'validation_1' => $url.'/ktm-'.$validation_1_name,
             'validation_2' => $url.'/pernyataan-'.$validation_2_name,
             'validation_3' => $url.'/kuitansi-'.$validation_3_name,
+            'validation_status' => 'pending'
         ];
         
         if(Auth::user()->details->events->audience === 'school'){
@@ -58,6 +59,7 @@ class ValidationController extends Controller
                 'validation_3' => $url.'/kuitansi-'.$validation_3_name,
                 'validation_4' => $url.'/foto-'.$validation_4_name,
                 'validation_5' => $url.'/integritas-'.$validation_5_name,
+                'validation_status' => 'pending'
             ];
         }
         try {
@@ -82,7 +84,7 @@ class ValidationController extends Controller
     public function validateAcc($id){
         try {
             UserDetail::find($id)->update([
-                'validation_status' => TRUE
+                'validation_status' => 'active'
             ]);
             return redirect()->back();
         } catch (\Throwable $th) {
