@@ -121,7 +121,7 @@
                           type="text"
                           id="username"
                           name="email"
-                          placeholder="Masukkan Username Anda"
+                          placeholder="Masukkan Email Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         />
                     </div>
@@ -130,7 +130,7 @@
                     <div class="relative">
 
                           <input
-                            type="text"
+                            type="password"
                             id="password"
                             name="password"
                             placeholder="Masukkan Password Anda"

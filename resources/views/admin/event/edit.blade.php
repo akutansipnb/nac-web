@@ -109,7 +109,6 @@
 
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <img src="{{asset('icon_url')}}/{{ $event->icon_url }}" class="card-img-top" alt="brt-01">
                         <label class="form-control-label" for="input-logo">Logo Lomba</label>
                         <input class="form-control" type="file" name="icon_url" id="input-logo">
                       </div>
