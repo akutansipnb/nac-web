@@ -128,7 +128,6 @@
     @endforeach
 </div>
 <div class="bg-gray-100 flex flex-col">
-
     <div class="grid grid-cols-1 mx-5 mt-16">
         <div class="text-center">
             <h2 class="font-bold text-5xl gradient-text">Daftar Berita</h2>
@@ -138,19 +137,19 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-20">
 
         @foreach ($blogs as $blog)
-        <div class="block border-2 rounded-lg bg-white">
-            <img class="object-cover w-full h-96" src="{{ asset($blog->background_url) }}" alt="" />
-
+        <div class="block overflow-hidden bg-white shadow-xl rounded-2xl">
+            <img class="object-cover w-full h-56" src="{{ asset($blog->background_url) }}" alt="" />
             <div class="mx-5">
                 <h5 class="mt-4 text-xl font-bold text-gray-900">{{ $blog->title }}</h5>
 
-                <p class="max-w-sm mt-2 text-gray-700"><?= substr(strip_tags($blog->desc),0,30) ?>....</p>
+                <p class="max-w-sm mt-2 text-gray-700"><?= substr(strip_tags($blog->desc),0,50) ?>....</p>
             </div>
 
             <div class="my-5 text-center">
-                <a href="{{ url('detail-berita',['blog'=>$blog->id]) }}"
-                    class="inline-block p-0.5 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-                    <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-lg hover:bg-opacity-75">
+                <a href={{ url('detail-berita',['blog'=>$blog->id]) }}
+                    class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                    <span
+                        class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                         Detail Berita
                     </span>
                 </a>
