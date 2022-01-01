@@ -67,7 +67,7 @@
 {{-- Text Lomba --}}
 <div class="grid grid-cols-1 mx-5 mt-20">
     <div class="text-center">
-        <h2 class="font-bold text-2xl">Daftar Lomba</h2>
+        <h2 class="font-bold text-5xl gradient-text">Daftar Lomba</h2>
     </div>
 </div>
 
@@ -126,18 +126,12 @@
         </div>
     </div>
     @endforeach
-
-   
-
-
-
-  
 </div>
 <div class="bg-gray-100 flex flex-col">
 
     <div class="grid grid-cols-1 mx-5 mt-16">
         <div class="text-center">
-            <h2 class="font-bold text-2xl">Daftar Berita</h2>
+            <h2 class="font-bold text-5xl gradient-text">Daftar Berita</h2>
         </div>
     </div>
 

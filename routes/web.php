@@ -35,29 +35,7 @@ Route::get('/blog', function () {
     return view('user.setting.edit');
 });
 
-Route::get('/school', function () {
-    return view('user.validation');
-});
 
-Route::get('/regschool', function () {
-    return view('register.academy.school');
-});
-
-Route::get('/reguniversity', function () {
-    return view('register.academy.university');
-});
-
-Route::get('/dashboard', function () {
-    return view('admin.index');
-});
-
-Route::get('/dashboard-user', function () {
-    return view('user.index');
-});
-
-Route::get('/time', function () {
-    return view('user.time');
-});
 
 Route::get('/pendamping', function () {
     return view('user.pendamping');
