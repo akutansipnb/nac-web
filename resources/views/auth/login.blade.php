@@ -140,7 +140,7 @@
 
                             <label for="number" class="font-medium font-semibold mt-5">Password</label>
                             <div class="relative">
-                                <input type="text" id="password" name="password" placeholder="Masukkan Password Anda"
+                                <input type="password" id="password" name="password" placeholder="Masukkan Password Anda"
                                     class="w-full mt-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm @error('password') border-red-500 @enderror" />
                                 
                                 @error('password')
@@ -160,6 +160,7 @@
 
                             <hr class="border-gray-300 my-5">
                             <p>Belum punya akun? <span class="gradient-text font-semibold hover:font-bold"><a href="/">Daftar Sekarang</a></span></p>
+
 
                         </form>
                     </div>
