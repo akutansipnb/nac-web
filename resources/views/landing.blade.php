@@ -146,7 +146,7 @@
             </div>
 
 
-            <div class="flex items-center">
+            <div class="flex items-center m-5">
                 <a href={{ url('detail-berita',['blog'=>$blog->id]) }}
                     class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                     <span
