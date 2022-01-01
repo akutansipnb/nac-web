@@ -139,22 +139,20 @@
         @foreach ($blogs as $blog)
         <div class="block overflow-hidden bg-white shadow-xl rounded-2xl">
             <img class="object-cover w-full h-56" src="{{ asset($blog->background_url) }}" alt="" />
-            <div class="mx-5">
+            <div class="m-10">
                 <h5 class="mt-4 text-xl font-bold text-gray-900">{{ $blog->title }}</h5>
-
-                <p class="max-w-sm mt-2 text-gray-700"><?= substr(strip_tags($blog->desc),0,50) ?>....</p>
+                <p class="max-w-sm mt-2 text-gray-700"><?= substr(strip_tags($blog->desc),0,100) ?>....</p>
             </div>
 
 
-            <div class="flex items-center m-5">
+            <div class="flex items-center m-10">
                 <a href={{ url('detail-berita',['blog'=>$blog->id]) }}
                     class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                     <span
-                        class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                        Detail Berita
+                        class="text-center block text-sm px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                        Baca Selengkapnya
                     </span>
                 </a>
-
             </div>
         </div>
         @endforeach
