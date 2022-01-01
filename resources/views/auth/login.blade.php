@@ -158,19 +158,8 @@
                                 </button>
                             </div>
 
-<<<<<<< HEAD
                             <hr class="border-gray-300 my-5">
                             <p>Belum punya akun? <span class="gradient-text font-semibold hover:font-bold"><a href="/">Daftar Sekarang</a></span></p>
-=======
-                          <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Masukkan Password Anda"
-                            class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
-                          />
-                    </div>
->>>>>>> effcc113ead7f7e1accb3c60861d9d905463b2d4
 
                         </form>
                     </div>
