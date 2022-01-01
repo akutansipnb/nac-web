@@ -145,14 +145,15 @@
                 <p class="max-w-sm mt-2 text-gray-700"><?= substr(strip_tags($blog->desc),0,50) ?>....</p>
             </div>
 
-            <div class="my-5 text-center">
-                <a href="{{ url('detail-berita',['blog'=>$blog->id]) }}"
+
+            <div class="flex items-center">
+                <a href={{ url('detail-berita',['blog'=>$blog->id]) }}
                     class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
-                    <span class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                    <span
+                        class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                         Detail Berita
                     </span>
                 </a>
-
 
             </div>
         </div>
