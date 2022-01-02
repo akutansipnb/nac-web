@@ -40,6 +40,14 @@ class AdminController extends Controller
         $icon = $request->file('img_url');
         $icon_name = strtolower(str_replace(' ', '', $request->name)).".".$icon->getClientOriginalExtension();
 
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|unique:users,email',
+            'password'=>'required,min:8'
+        ],[
+            'email.unique' => "Data Sudah Ada !"
+        ]);
+
         try {
             User::create([
                 'name' => $request->name,

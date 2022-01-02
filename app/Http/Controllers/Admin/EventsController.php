@@ -40,11 +40,29 @@ class EventsController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'event_name'=>'required',
+            'aliases'=>'required',
+            'register_year'=>'required',
+            'icon_url'=>'required',
+            'background_url'=>'required',
+            'audience'=>'required',
+            'max_slot'=>'required',
+            'registration_fee'=>'required',
+            'register_time'=>'required',
+            'register_close'=>'required',
+            'quotes'=>'required',
+            'desc'=>'required',
+            'blog'=>'required'
+        ]);
+
+
         $icon = $request->file('icon_url');
         $cover = $request->file('background_url');
 
         $icon_name = strtolower($request->aliases)."-" . $request->register_year ."-icon.".$icon->getClientOriginalExtension();
         $cover_name = strtolower($request->aliases)."-" . $request->register_year ."-cover.".$cover->getClientOriginalExtension();
+
 
         try {
             Event::create([
@@ -106,49 +124,62 @@ class EventsController extends Controller
      */
     public function update(Request $request, Event $event)
     {
+        $request->validate([
+            'event_name'=>'required',
+            'aliases'=>'required',
+            'register_year'=>'required',
+            'audience'=>'required',
+            'max_slot'=>'required',
+            'registration_fee'=>'required',
+            'register_time'=>'required',
+            'register_close'=>'required',
+            'quotes'=>'required',
+            'desc'=>'required',
+            'blog'=>'required'
+        ]);
 
-            try {
+        try {
+            $update = [
+                'event_name' => $request->event_name ,
+                'aliases' => $request->aliases,
+                'year' => $request->register_year,
+                'audience' => $request->audience,
+                'max_slot' => $request->max_slot,
+                'registration_fee' => $request->registration_fee,
+                'register_time' => $request->register_time,
+                'register_close' => $request->register_close,
+                'quotes' => $request->quotes,
+                'desc' => $request->desc,
+                'blog' => $request->blog,
+                'status' => 'open',
+            ];
+
+
+            if($request->file('icon_url') !== NULL){
+                $icon = $request->file('icon_url');
+                $icon_name = strtolower($request->aliases)."-" . $request->register_year ."-icon.".$icon->getClientOriginalExtension();
                 $update = [
-                    'event_name' => $request->event_name ,
-                    'aliases' => $request->aliases,
-                    'year' => $request->register_year,
-                    'audience' => $request->audience,
-                    'max_slot' => $request->max_slot,
-                    'registration_fee' => $request->registration_fee,
-                    'register_time' => $request->register_time,
-                    'register_close' => $request->register_close,
-                    'quotes' => $request->quotes,
-                    'desc' => $request->desc,
-                    'blog' => $request->blog,
-                    'status' => 'open',
+                    'icon_url' => 'img/events/icons/'.$icon_name,
                 ];
+                $icon->move('img/events/icons',$icon_name);
+            };
 
-
-                if($request->file('icon_url') !== NULL){
-                    $icon = $request->file('icon_url');
-                    $icon_name = strtolower($request->aliases)."-" . $request->register_year ."-icon.".$icon->getClientOriginalExtension();
-                    $update = [
-                        'icon_url' => 'img/events/icons/'.$icon_name,
-                    ];
-                    $icon->move('img/events/icons',$icon_name);
-                };
-
-                if($request->file('background_url') !== NULL){
-                    $cover = $request->file('background_url');
-                    $cover_name = strtolower($request->aliases)."-" . $request->register_year ."-cover.".$cover->getClientOriginalExtension();
-                    $update = [
-                        'background_url' => 'img/events/covers/'.$cover_name,
-                    ];
-                    $cover->move('img/events/covers',$cover_name);
-                }
-
-            $event->update($update);
-
-                // Moves Files
-                return redirect()->route('events.index');
-            } catch (\Throwable $th) {
-                throw $th;
+            if($request->file('background_url') !== NULL){
+                $cover = $request->file('background_url');
+                $cover_name = strtolower($request->aliases)."-" . $request->register_year ."-cover.".$cover->getClientOriginalExtension();
+                $update = [
+                    'background_url' => 'img/events/covers/'.$cover_name,
+                ];
+                $cover->move('img/events/covers',$cover_name);
             }
+
+        $event->update($update);
+
+            // Moves Files
+        return redirect()->route('events.index');
+        } catch (\Throwable $th) {
+            throw $th;
+        }
 
     }
 
