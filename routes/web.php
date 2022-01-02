@@ -38,27 +38,7 @@ Route::get('/blog', function () {
     return view('user.setting.edit');
 });
 
-Route::get('/school', function () {
-    return view('user.validation');
-});
 
-Route::get('/regschool', function () {
-    return view('register.academy.school');
-});
-
-Route::get('/reguniversity', function () {
-    return view('register.academy.university');
-});
-
-Route::get('/dashboard', function () {
-    return view('admin.index');
-});
-
-Route::get('/dashboard-user', function () {
-    return view('user.index');
-});
-
-Route::resource('pendamping',ViewMentorController::class);
 
 Route::get('/time', [ViewTimeScheduleController::class, 'indexTimeSchedule']);
 
@@ -123,5 +103,4 @@ route::prefix('admin')->group(function(){
     route::resource('contestants',ContestantController::class);
 
     // ACC
-    Route::get('/acc/{id}',[ValidationController::class,'validateAcc'])->name('validation.acc');
-});
+ ACC
