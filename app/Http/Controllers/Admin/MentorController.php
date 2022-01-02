@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Mentor;
 use Illuminate\Http\Request;
 
 class MentorController extends Controller
@@ -14,7 +15,8 @@ class MentorController extends Controller
      */
     public function index()
     {
-        //
+        $data = Mentor::paginate(10);
+        return view('admin.mentor.index',compact('data'));
     }
 
     /**

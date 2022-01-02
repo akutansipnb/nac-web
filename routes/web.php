@@ -12,6 +12,7 @@ use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\User\ValidationController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViewTimeScheduleController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
 use Illuminate\Support\Facades\Auth;
@@ -55,9 +56,11 @@ Route::get('/dashboard-user', function () {
     return view('user.index');
 });
 
-Route::get('/time', function () {
-    return view('user.time');
-});
+Route::get('/time', [ViewTimeScheduleController::class, 'indexTimeSchedule']);
+
+// Route::get('/time', function () {
+//     return view('user.time');
+// });
 
 Route::get('/pendamping', function () {
     return view('user.pendamping');
@@ -114,6 +117,6 @@ route::prefix('admin')->group(function(){
     // Contestant
     route::resource('contestants',ContestantController::class);
 
-    // ACC 
+    // ACC
     Route::get('/acc/{id}',[ValidationController::class,'validateAcc'])->name('validation.acc');
 });
