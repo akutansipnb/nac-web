@@ -9,8 +9,19 @@ class Mentor extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'academy_id',
+        'event_id',
         'name',
         'phone',
-        'identity_code',
+        'identity_code'
     ];
+
+    public function academy(){
+        return $this->belongsTo(Academy::class,'academy_id');
+    }
+
+    public function events(){
+        return $this->belongsTo(Event::class,'event_id');
+    }
+
 }

@@ -7,7 +7,7 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-12 col-12 text-right">
-                    <a href="{{route('register.create')}}" class="btn btn-sm btn-neutral">Tambah Admin</a>
+                    <a href="{{route('mentors.create')}}" class="btn btn-sm btn-neutral">Tambah Pendamping</a>
                 </div>
             </div>
         </div>
@@ -20,16 +20,16 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Cabang Lomba</h3>
+                    <h3 class="mb-0">Pendamping </h3>
                 </div>
                 <!-- Light table -->
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush" style="height: 200px">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col" class="sort" data-sort="name">Nama Admin</th>
-                                <th scope="col" class="sort" data-sort="date">Email</th>
-                                <th scope="col" class="sort" data-sort="date">Tanggal Registrasi</th>
+                                <th scope="col" class="sort" data-sort="name">Nama Pendamping</th>
+                                <th scope="col" class="sort" data-sort="date">NIP</th>
+                                <th scope="col" class="sort" data-sort="date">Instansi</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -52,12 +52,12 @@
                                 </th>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <span class="completion mr-2">{{$item->email}}</span>
+                                        <span class="completion mr-2">{{$item->identity_code}}</span>
                                     </div>
                                 </td>
                                 <td>
                                   <div class="d-flex align-items-center">
-                                      <span class="completion mr-2">{{$item->created_at}}</span>
+                                      <span class="completion mr-2">{{$item->academy->academy_name}}</span>
                                   </div>
                               </td>
                                 <td class="text-right">
@@ -67,8 +67,8 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="#">Edit Data</a>
-                                            <form action="{{route('register.destroy',['register' => $item->id])}}"
+                                            <a class="dropdown-item" href="{{ route('mentors.edit',['mentor' => $item->id]) }}">Edit Data</a>
+                                            <form action="{{route('mentors.destroy',['mentor' => $item->id])}}"
                                                 method="post">
                                                 @csrf
                                                 @method('delete')
