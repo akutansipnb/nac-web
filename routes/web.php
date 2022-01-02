@@ -38,7 +38,7 @@ Route::get('/blog', function () {
     return view('user.setting.edit');
 });
 
-
+Route::resource('pendamping', ViewMentorController::class);
 
 Route::get('/time', [ViewTimeScheduleController::class, 'indexTimeSchedule']);
 
@@ -102,5 +102,6 @@ route::prefix('admin')->group(function(){
     // Contestant
     route::resource('contestants',ContestantController::class);
 
-    // ACC
- ACC
+   // ACC
+    Route::get('/acc/{id}',[ValidationController::class,'validateAcc'])->name('validation.acc');
+});
