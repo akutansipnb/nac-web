@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Academy;
 use App\Models\Event;
 use App\Models\Mentor;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ViewMentorController extends Controller
 {
@@ -16,7 +18,10 @@ class ViewMentorController extends Controller
      */
     public function index()
     {
-        $data = Mentor::paginate(10);
+        $data = Mentor::where([
+            ['event_id','=',strval(Auth::user()->details->events["id"])],
+            ['academy_id','=',strval(Auth::user()->details->academy["id"])],
+        ])->paginate(10);
         return view('user.mentor.index',compact('data'));
     }
 
@@ -40,20 +45,20 @@ class ViewMentorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'academy_id'=> 'required',
-            'event_id' => 'required',
-            'name' => 'required',
-            'phone' => 'required',
-            'identity_code' => 'required|unique:mentors,identity_code'
-        ],[
-            'identity_code.unique' => "Data Sudah Ada !"
-        ]);
+        // $request->validate([
+        //     'academy_id'=> 'required',
+        //     'event_id' => 'required',
+        //     'name' => 'required',
+        //     'phone' => 'required',
+        //     'identity_code' => 'required|unique:mentors,identity_code'
+        // ],[
+        //     'identity_code.unique' => "Data Sudah Ada !"
+        // ]);
 
         try {
             Mentor::create([
-                'academy_id' => $request->academy_id,
-                'event_id' => $request->event_id,
+                'academy_id' => Auth::user()->details->academy["id"],
+                'event_id' => Auth::user()->details->events["id"],
                 'name' => $request->name,
                 'phone' => $request->phone,
                 'identity_code' => $request->identity_code

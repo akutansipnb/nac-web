@@ -21,7 +21,7 @@
               @csrf
               @method('PUT')
               <input type="hidden" name="id" value="">
-              <h6 class="heading-small text-muted mb-4">Tambahkan Lintas Waktu</h6>
+              <h6 class="heading-small text-muted mb-4">Edit Lintas Waktu</h6>
               <div class="pl-lg-4">
               <hr class="my-4" />
               <div class="pl-lg-4">

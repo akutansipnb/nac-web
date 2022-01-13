@@ -5,8 +5,10 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContestantController;
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\MentorController;
+use App\Http\Controllers\Admin\SchoolController;
 use App\Http\Controllers\Admin\TimeScheduleController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
+use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EventRegisterController;
@@ -99,6 +101,8 @@ route::prefix('admin')->group(function(){
     route::resource('events',EventsController::class);
     route::resource('blogs',BlogController::class);
     route::resource('tm',TechnicalMeetingController::class);
+    route::resource('school',SchoolController::class);
+    route::resource('university',UniversityController::class);
     // Contestant
     route::resource('contestants',ContestantController::class);
 

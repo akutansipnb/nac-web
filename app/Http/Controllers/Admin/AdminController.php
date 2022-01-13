@@ -15,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = User::role('Administrator')->get();
+        $data = User::role('Administrator')->paginate(10);
         return view('admin.register.index',compact('data'));
     }
 

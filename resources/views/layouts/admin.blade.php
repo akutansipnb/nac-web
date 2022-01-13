@@ -41,9 +41,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/map.html">
+              <a class="nav-link" href={{route('university.index')}}>
                 <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Institusi</span>
+                <span class="nav-link-text">Perguruan Tinggi</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href={{route('school.index')}}>
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Sekolah</span>
               </a>
             </li>
             <li class="nav-item">

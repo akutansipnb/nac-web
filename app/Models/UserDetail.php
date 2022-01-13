@@ -23,7 +23,7 @@ class UserDetail extends Model
     ];
 
     public function events(){
-        return $this->belongsTo(Event::class,'id');
+        return $this->belongsTo(Event::class,'id_events');
     }
 
     public function users(){
