@@ -72,7 +72,7 @@
 </div>
 
 {{-- Daftar Lomba --}}
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 mx-5 md:mx-20 mt-10 mb-20">
 
     @foreach ($event as $item)
     <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
