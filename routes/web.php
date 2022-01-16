@@ -4,14 +4,19 @@ use App\Http\Controllers\AcademiesController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContestantController;
 use App\Http\Controllers\Admin\EventsController;
+use App\Http\Controllers\Admin\MentorController;
+use App\Http\Controllers\Admin\SchoolController;
 use App\Http\Controllers\Admin\TimeScheduleController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
+use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\User\ValidationController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViewMentorController;
+use App\Http\Controllers\ViewTimeScheduleController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
 use Illuminate\Support\Facades\Auth;
@@ -35,11 +40,17 @@ Route::get('/blog', function () {
     return view('user.setting.edit');
 });
 
+Route::resource('pendamping', ViewMentorController::class);
 
+Route::get('/time', [ViewTimeScheduleController::class, 'indexTimeSchedule']);
 
-Route::get('/pendamping', function () {
-    return view('user.pendamping');
-});
+// Route::get('/time', function () {
+//     return view('user.time');
+// });
+
+// Route::get('/pendamping', function () {
+//     return view('user.pendamping');
+// });
 
 Route::get('/detaillomba', function () {
     return view('competition-detail');
@@ -85,13 +96,16 @@ route::prefix('admin')->group(function(){
         return view('admin.index');
     })->name('admin.dashboard');
     route::resource('member',AdminController::class);
+    route::resource('mentors',MentorController::class);
     route::resource('schedules',TimeScheduleController::class);
     route::resource('events',EventsController::class);
     route::resource('blogs',BlogController::class);
     route::resource('tm',TechnicalMeetingController::class);
+    route::resource('school',SchoolController::class);
+    route::resource('university',UniversityController::class);
     // Contestant
     route::resource('contestants',ContestantController::class);
 
-    // ACC 
+   // ACC
     Route::get('/acc/{id}',[ValidationController::class,'validateAcc'])->name('validation.acc');
 });

@@ -1,7 +1,7 @@
 @extends('layouts.dash-user')
 @section('content')
 <div class="header bg-primary pb-7">
-    
+
 </div>
 <div class="container-fluid mt--6">
     <div class="header-body">
@@ -16,6 +16,12 @@
                       @if (Auth::user()->details->validation_status == 'unactive')
                         <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
                       @endif
+                      @if ()
+
+                      @endif
+                      <div class="alert alert-success" role="alert">
+                        A simple success alert—check it out!
+                      </div>
                     </div>
                 </div>
             </div>
@@ -91,10 +97,10 @@
               </a href="#">
 
             </div>
-           
+
           </div>
            @endif
-            
+
         </div>
     </div>
 </div>

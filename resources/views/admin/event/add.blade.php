@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-4">
-          
+
         </div>
       </div>
     </div>
@@ -33,13 +33,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-name">Nama Lomba *</label>
-                      <input type="text" id="input-name" class="form-control" name="event_name" placeholder="Nama Cabang Lomba">
+                      <input type="text" id="input-name" class="form-control" name="event_name" placeholder="Nama Cabang Lomba" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-initial">Inisial Lomba *</label>
-                      <input type="text" id="input-initial" class="form-control" name="aliases" placeholder="OAK">
+                      <input type="text" id="input-initial" class="form-control" name="aliases" placeholder="OAK" required>
                     </div>
                   </div>
                 </div>
@@ -49,13 +49,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-open">Pendaftaran Dibuka *</label>
-                      <input type="date" id="input-date-open" class="form-control" name="register_time" placeholder="20/01/2001">
+                      <input type="date" id="input-date-open" class="form-control" name="register_time" placeholder="20/01/2001" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-close">Pendaftaran Ditutup *</label>
-                      <input type="date" id="input-date-close" class="form-control" name="register_close" placeholder="20/20/20">
+                      <input type="date" id="input-date-close" class="form-control" name="register_close" placeholder="20/20/20" required>
                     </div>
                   </div>
                 </div>
@@ -63,16 +63,16 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-open">Tahun Lomba *</label>
-                      <input type="number" id="input-date-open" class="form-control" name="register_year" placeholder="2020">
+                      <input type="number" id="input-date-open" class="form-control" name="register_year" placeholder="2020" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-open">Biaya Pendaftaran *</label>
-                      <input type="number" id="input-date-open" class="form-control" name="registration_fee" placeholder="50.000">
+                      <input type="number" id="input-date-open" class="form-control" name="registration_fee" placeholder="50.000" required>
                     </div>
                   </div>
-                  
+
                 </div>
 
                 {{-- Target --}}
@@ -80,13 +80,13 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-targe">Target Peserta *</label>
-                        <input type="number" id="input-target" class="form-control" name="max_slot" placeholder="1000 Orang">
+                        <input type="number" id="input-target" class="form-control" name="max_slot" placeholder="1000 Orang" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-cabang">Tingkatan *</label>
-                        <select class="form-control" name="audience" id="input-cabang" >
+                        <select class="form-control" name="audience" id="input-cabang" required>
                             <option selected disabled>Tingkatan Lomba</option>
                             <option value="school">Siswa/Sederajat</option>
                             <option value="university">Mahasiswa/Sederajat</option>
@@ -96,7 +96,7 @@
                   </div>
               </div>
 
-              
+
               <hr class="my-4" />
 
               <!-- Icons -->
@@ -153,28 +153,28 @@
               <hr class="my-4" />
               <!-- Description -->
 
-              
+
               <h6 class="heading-small text-muted mb-4">Keterangan Lomba</h6>
 
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Deskripsi</label>
-                  <textarea rows="1" class="form-control" name="desc" placeholder="Deskripsi Lomba ..."></textarea>
-                </div>
-              </div>
-              
-              <div class="pl-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label">Motivasi</label>
-                  <textarea rows="1" class="form-control" name="quotes" placeholder="Motivasi ..."></textarea>
+                  <textarea rows="1" class="form-control" name="desc" placeholder="Deskripsi Lomba ..." required></textarea>
                 </div>
               </div>
 
-              
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label">Motivasi</label>
+                  <textarea rows="1" class="form-control" name="quotes" placeholder="Motivasi ..." required></textarea>
+                </div>
+              </div>
+
+
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Tentang Lomba</label>
-                  <textarea rows="4" class="form-control" name="blog" placeholder="Tentang lomba ..."></textarea>
+                  <textarea rows="4" class="form-control" name="blog" placeholder="Tentang lomba ..." required></textarea>
                 </div>
               </div>
 

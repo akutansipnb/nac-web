@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Academy;
+use App\Models\Event;
+use App\Models\Mentor;
 use Illuminate\Http\Request;
 
 class MentorController extends Controller
@@ -14,7 +17,8 @@ class MentorController extends Controller
      */
     public function index()
     {
-        //
+        $data = Mentor::paginate(10);
+        return view('admin.mentor.index',compact('data'));
     }
 
     /**
@@ -24,7 +28,9 @@ class MentorController extends Controller
      */
     public function create()
     {
-        //
+        $academy = Academy::all();
+        $event = Event::all();
+        return view('admin.mentor.add')->with(compact('academy','event'));
     }
 
     /**
@@ -35,7 +41,27 @@ class MentorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'academy_id'=> 'required',
+            'event_id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'identity_code' => 'required'
+        ]);
+
+        try {
+            Mentor::create([
+                'academy_id' => $request->academy_id,
+                'event_id' => $request->event_id,
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'identity_code' => $request->identity_code
+            ]);
+            return redirect()->route('mentors.index');
+
+        } catch (\Throwable $th) {
+            return $th;
+        }
     }
 
     /**
@@ -57,7 +83,10 @@ class MentorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mentor = Mentor::find($id);
+        $academy = Academy::all();
+        $event = Event::all();
+        return view('admin.mentor.edit')->with(compact('mentor','academy','event'));
     }
 
     /**
@@ -69,7 +98,27 @@ class MentorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'academy_id'=> 'required',
+            'event_id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'identity_code' => 'required'
+        ]);
+
+        try {
+            Mentor::find($id)->update([
+                'academy_id' => $request->academy_id,
+                'event_id' => $request->event_id,
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'identity_code' => $request->identity_code
+            ]);
+            return redirect()->route('mentors.index');
+
+        } catch (\Throwable $th) {
+            return $th;
+        }
     }
 
     /**
@@ -80,6 +129,11 @@ class MentorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            Mentor::find($id)->delete();
+            return redirect()->route('mentors.index');
+        } catch (\Throwable $th) {
+            echo 'gagal';
+        }
     }
 }

@@ -34,25 +34,25 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-name">Nama Admin *</label>
                                         <input type="text" id="input-name" class="form-control" name="name"
-                                            placeholder="Nama Cabang Lomba">
+                                            placeholder="Nama Admin" required>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
-                                
+
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-initial">Email *</label>
                                         <input type="email" id="input-initial" class="form-control" name="email"
-                                            placeholder="OAK">
+                                            placeholder="Email Anda" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-name">password *</label>
                                         <input type="password" id="input-name" class="form-control" name="password"
-                                            placeholder="">
+                                            placeholder="password" required>
                                     </div>
                                 </div>
                             </div>

@@ -35,7 +35,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="{{ url('dashboard-user') }}">
+              <a class="nav-link active" href="{{ route('dashboard.index') }}">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
@@ -47,12 +47,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('pendamping') }}">
+              <a class="nav-link" href="{{ route('pendamping.index') }}">
                 <i class="ni ni-badge text-orange"></i>
                 <span class="nav-link-text">Pendamping</span>
               </a>
             </li>
-            
+
           </ul>
           <!-- Divider -->
           </ul>
@@ -97,7 +97,7 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            
+
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
             <li class="nav-item dropdown">
@@ -105,7 +105,7 @@
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
                     <img alt="Image placeholder" src="{{asset('img/icons/users.png')}}">
-                  </span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                  </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
                   </div>
@@ -119,7 +119,7 @@
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>
-                <a href="#!" class="dropdown-item">
+                {{-- <a href="#!" class="dropdown-item">
                   <i class="ni ni-settings-gear-65"></i>
                   <span>Settings</span>
                 </a>
@@ -130,7 +130,7 @@
                 <a href="#!" class="dropdown-item">
                   <i class="ni ni-support-16"></i>
                   <span>Support</span>
-                </a>
+                </a> --}}
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
