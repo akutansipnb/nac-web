@@ -127,17 +127,18 @@
     </div>
     @endforeach
 </div>
-<div class="bg-gray-100 flex flex-col">
+<div class="bg-gray-100 flex flex-col items-center">
     <div class="grid grid-cols-1 mx-5 mt-16">
         <div class="text-center">
             <h2 class="font-bold text-5xl gradient-text">Daftar Berita</h2>
+            <p class="text-lg my-4">Kumpulan Berita Terbaru</p>
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-12">
 
         @foreach ($blogs as $blog)
-        <div class="block overflow-hidden bg-white shadow-xl rounded-2xl">
+        <div class="block overflow-hidden bg-white shadow-xl rounded-2xl mx-3">
             <img class="object-cover w-full h-56" src="{{ asset($blog->background_url) }}" alt="" />
             <div class="m-10">
                 <h5 class="mt-4 text-xl font-bold text-gray-900">{{ $blog->title }}</h5>
@@ -155,9 +156,21 @@
                 </a>
             </div>
         </div>
+        
         @endforeach
         
     </div>
+    @if ($bcount >= 3)
+        <div class="grid grid-cols-1 text-center mb-16">
+            <a href=""
+                class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                <span
+                    class="text-center block text-sm px-10 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                    Selanjutnya 
+                </span>
+            </a>
+        </div>
+    @endif
 
 </div>
     
