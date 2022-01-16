@@ -49,14 +49,6 @@
 
                     
                 </div>
-                <div class="my-5">
-                    <a href=""
-                        class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-                        <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                            Detail Berita
-                        </span>
-                    </a>
-                </div>
             </div>
 
             <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-auto">
