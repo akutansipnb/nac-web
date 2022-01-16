@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Academy;
+use App\Models\Event;
+use App\Models\UserDetail;
 use Illuminate\Http\Request;
 
 class UniversityController extends Controller
@@ -15,8 +17,20 @@ class UniversityController extends Controller
      */
     public function index()
     {
-        $data = Academy::where('academy_type',"university")->paginate(10);
-        return view('admin.university.index',compact('data'));
+        // $d = Academy::whereHas('users',function($e){
+        //     $e->where('id',2);
+        // })->get();
+
+        $d = Event::all();
+
+        // $d = Academy::where('id',2)->get();
+        // $data = Academy::where('academy_type',"university")->paginate(10);
+        foreach($d as $e){
+            foreach($e->users as $a){
+                dd($a->users->name);
+            };
+        }
+        // return view('admin.university.index',compact('data',));
     }
 
     /**

@@ -19,4 +19,10 @@ class Academy extends Model
     public function mentors(){
         return $this->hasMany(Mentor::class);
     }
+
+    public function users(){
+        return $this->hasMany(UserDetail::class,'id_academy');
+    }
+
+
 }

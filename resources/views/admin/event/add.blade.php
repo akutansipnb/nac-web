@@ -117,6 +117,13 @@
                         <input class="form-control" type="file" name="background_url" id="input-event-cover">
                       </div>
                     </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-event-cover">Sampul Buku</label>
+                        <input class="form-control" type="file" name="background_url" id="input-event-cover">
+                      </div>
+                    </div>
                   </div>
               </div>
 
