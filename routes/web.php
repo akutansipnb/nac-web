@@ -84,14 +84,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // User
 
-route::prefix('user')->group(function(){
+route::middleware(['auth', 'user'])->prefix('user')->group(function(){
     route::resource('dashboard',UserController::class);
     route::get('/validation',[ValidationController::class,'index'])->name('user.validation');
     route::post('/validation',[ValidationController::class,'updateValidation'])->name('user.validate');
 });
 
 // Admin
-route::prefix('admin')->group(function(){
+route::middleware(['auth', 'admin'])->prefix('admin')->group(function(){
     Route::get('/', function () {
         return view('admin.index');
     })->name('admin.dashboard');

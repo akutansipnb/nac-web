@@ -20,6 +20,7 @@ class AdminSeeder extends Seeder
             'name' => 'NAC Master Admin',
             'password' => bcrypt('NaCPasswordH4rd3r'),
             'email' => 'nationalaccountingcompetition@pnb.ac.id',
+            'isAdmin' => true,
             'img_url' => NULL
         ])->assignRole('Administrator');
     }
