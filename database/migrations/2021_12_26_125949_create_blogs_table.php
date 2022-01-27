@@ -18,6 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('title',150);
             $table->text('desc');
             $table->string('background_url')->nullable(false);
+            $table->string('file_pdf')->nullable(false);
             $table->timestamps();
         });
     }
