@@ -11,6 +11,7 @@ class Blog extends Model
     protected $fillable = [
         'title',
         'desc',
-        'background_url'
+        'background_url',
+        'file_pdf'
     ];
 }
