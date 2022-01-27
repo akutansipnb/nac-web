@@ -28,24 +28,24 @@ class ValidationController extends Controller
         $event_name = $event->aliases.$event->year;
 
         $url = 'img/participant/'.$event_name.'/'. strtolower(str_replace(' ','_',Auth::user()->name));
- 
+
         $validation_1 = $request->file('validation_1');
         $validation_1_name =  $user->identity_code . "-" . str_replace(' ','_',Auth::user()->name) . "-" . $user->events->aliases . $user->events->year. "." . $validation_1->getClientOriginalExtension();
-        
+
 
         $validation_2 = $request->file('validation_2');
         $validation_2_name = $user->identity_code . "-" . str_replace(' ','_',Auth::user()->name) . "-" . $user->events->aliases . $user->events->year. "." . $validation_2->getClientOriginalExtension();
 
         $validation_3 = $request->file('validation_3');
         $validation_3_name = $user->identity_code . "-" . str_replace(' ','_',Auth::user()->name) . "-" . $user->events->aliases . $user->events->year. "." . $validation_3->getClientOriginalExtension();
-        
+
         $update = [
             'validation_1' => $url.'/ktm-'.$validation_1_name,
             'validation_2' => $url.'/pernyataan-'.$validation_2_name,
             'validation_3' => $url.'/kuitansi-'.$validation_3_name,
             'validation_status' => 'pending'
         ];
-        
+
         if(Auth::user()->details->events->audience === 'school'){
             $validation_4 = $request->file('validation_4');
             $validation_4_name = $user->identity_code . "-" . str_replace(' ','_',Auth::user()->name) . "-" . $user->events->aliases . $user->events->year. "." . $validation_4->getClientOriginalExtension();
@@ -78,6 +78,8 @@ class ValidationController extends Controller
         } catch (\Throwable $th) {
             throw $th;
         }
+
+        return redirect()->route('dashboard.index')->with(['success'=>'Berhasil Melakukan Validasi']);
         // dd($request);
     }
 

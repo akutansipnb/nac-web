@@ -17,7 +17,7 @@ class ContestantController extends Controller
     public function index()
     {
         //
-        $data = UserDetail::paginate();
+        $data = UserDetail::paginate(10);
         return view('admin.contestants.index',compact('data'));
     }
 
@@ -49,7 +49,7 @@ class ContestantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
+    {
         $data = UserDetail::find($id);
         return view('admin.contestants.details',compact('data'));
     }

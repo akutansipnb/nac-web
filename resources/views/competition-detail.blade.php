@@ -16,12 +16,22 @@
         </div>
         <dl class="flex flex-row items-center justify-center px-6 py-4 mt-3 sm:flex-row sm:items-start sm:px-12">
             <div class="flex items-center">
-                <a href=""
-                    class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
-                    <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                        Daftar Sekarang
-                    </span>
-                </a>
+                @if ($data['status'] == 'open')
+                    <a href={{route('event.form',['id' => $data['id']])}}
+                        class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                        <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                            Daftar Sekarang
+                        </span>
+                    </a>
+                @else
+                    <a href="#"
+                        class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                        <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                            Pendaftaran Ditutup
+                        </span>
+                    </a>
+                @endif
+                
             </div>
             
             <div class="flex items-center content-center sm:ml-3 sm:mt-0">
@@ -48,14 +58,6 @@
                     </p>
 
                     
-                </div>
-                <div class="my-5">
-                    <a href=""
-                        class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-                        <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                            Detail Berita
-                        </span>
-                    </a>
                 </div>
             </div>
 

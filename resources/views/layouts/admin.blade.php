@@ -41,9 +41,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/map.html">
+              <a class="nav-link" href={{route('university.index')}}>
                 <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Institusi</span>
+                <span class="nav-link-text">Perguruan Tinggi</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href={{route('school.index')}}>
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Sekolah</span>
               </a>
             </li>
             <li class="nav-item">
@@ -53,9 +59,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/profile.html">
+              <a class="nav-link" href="{{ route('mentors.index') }}">
                 <i class="ni ni-briefcase-24 text-info"></i>
-                <span class="nav-link-text">Pendaping</span>
+                <span class="nav-link-text">Pendamping</span>
               </a>
             </li>
             {{-- <li class="nav-item">
@@ -112,20 +118,20 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
+              <a class="nav-link" href="{{ route('schedules.index') }}">
                 <i class="ni ni-calendar-grid-58 text-info"></i>
                 <span class="nav-link-text">Lintas Waktu</span>
               </a>
             </li>
 
-            
+
             <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
                 <i class="ni ni-settings-gear-65 text-danger"></i>
                 <span class="nav-link-text">Landing Page Setting</span>
               </a>
             </li>
-            
+
           </ul>
         </div>
       </div>
@@ -168,7 +174,7 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            
+
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
             <li class="nav-item dropdown">

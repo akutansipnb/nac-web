@@ -34,13 +34,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-name">Nama Lomba *</label>
-                      <input type="text" id="input-name" class="form-control" name="event_name" value="{{ $event->event_name }}">
+                      <input type="text" id="input-name" class="form-control" name="event_name" value="{{ $event->event_name }}" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-initial">Inisial Lomba *</label>
-                      <input type="text" id="input-initial" class="form-control" name="aliases" value="{{ $event->aliases }}">
+                      <input type="text" id="input-initial" class="form-control" name="aliases" value="{{ $event->aliases }}" required>
                     </div>
                   </div>
                 </div>
@@ -50,13 +50,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-open">Pendaftaran Dibuka *</label>
-                      <input type="date" id="input-date-open" class="form-control" name="register_time" value="{{ $event->register_time }}">
+                      <input type="date" id="input-date-open" class="form-control" name="register_time" value="{{ $event->register_time }}" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-close">Pendaftaran Ditutup *</label>
-                      <input type="date" id="input-date-close" class="form-control" name="register_close" value="{{ $event->register_close }}">
+                      <input type="date" id="input-date-close" class="form-control" name="register_close" value="{{ $event->register_close }}" required>
                     </div>
                   </div>
                 </div>
@@ -64,13 +64,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-open">Tahun Lomba *</label>
-                      <input type="number" id="input-date-open" class="form-control" name="register_year" value="{{ $event->year }}">
+                      <input type="number" id="input-date-open" class="form-control" name="register_year" value="{{ $event->year }}" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-open">Biaya Pendaftaran *</label>
-                      <input type="number" id="input-date-open" class="form-control" name="registration_fee" value="{{ $event->registration_fee }}">
+                      <input type="number" id="input-date-open" class="form-control" name="registration_fee" value="{{ $event->registration_fee }}" required>
                     </div>
                   </div>
 
@@ -81,13 +81,13 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-targe">Target Peserta *</label>
-                        <input type="number" id="input-target" class="form-control" name="max_slot" value="{{ $event->max_slot }}">
+                        <input type="number" id="input-target" class="form-control" name="max_slot" value="{{ $event->max_slot }}" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-cabang">Tingkatan *</label>
-                        <select class="form-control" name="audience" id="input-cabang" >
+                        <select class="form-control" name="audience" id="input-cabang" required>
                             <option value="{{ $event->audience }}">
                                 {{ $event->audience }}
                             </option>
@@ -162,14 +162,14 @@
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Deskripsi</label>
-                  <textarea rows="1" class="form-control" name="desc" >{{ $event->desc }}</textarea>
+                  <textarea rows="1" class="form-control" name="desc" required>{{ $event->desc }}</textarea>
                 </div>
               </div>
 
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Motivasi</label>
-                  <textarea rows="1" class="form-control" name="quotes" >{{ $event->quotes }}</textarea>
+                  <textarea rows="1" class="form-control" name="quotes" required>{{ $event->quotes }}</textarea>
                 </div>
               </div>
 
@@ -177,7 +177,7 @@
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Tentang Lomba</label>
-                  <textarea rows="4" class="form-control" name="blog">{{ $event->blog }}</textarea>
+                  <textarea rows="4" class="form-control" name="blog" required>{{ $event->blog }}</textarea>
                 </div>
               </div>
 

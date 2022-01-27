@@ -12,12 +12,24 @@ class LandingController extends Controller
 
     public function index(){
         $blogs = Blog::orderBy('id','desc')->paginate(3);
+        $bcount = count(Blog::all());
         $event = Event::all();
-        return view("landing",compact('event','blogs'));
+        return view("landing",compact('event','blogs','bcount'));
     }
 
     public function detail($id){
         $blog = Blog::find($id);
         return view("blog",compact('blog'));
+    }
+
+    public function viewPdf($id){
+        $data = Blog::find($id);
+        $filename = $data['file_pdf'];
+        $path = public_path('files/posts/'.$filename);
+
+        return response()->make(file_get_contents($path), 500, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="'.$filename.'"'
+        ]);
     }
 }

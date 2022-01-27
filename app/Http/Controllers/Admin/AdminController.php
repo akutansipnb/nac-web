@@ -15,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = User::role('Administrator')->get();
+        $data = User::role('Administrator')->paginate(10);
         return view('admin.register.index',compact('data'));
     }
 
@@ -39,6 +39,14 @@ class AdminController extends Controller
     {
         $icon = $request->file('img_url');
         $icon_name = strtolower(str_replace(' ', '', $request->name)).".".$icon->getClientOriginalExtension();
+
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|unique:users,email',
+            'password'=>'required,min:8'
+        ],[
+            'email.unique' => "Data Sudah Ada !"
+        ]);
 
         try {
             User::create([
