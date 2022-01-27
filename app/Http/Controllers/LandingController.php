@@ -21,4 +21,15 @@ class LandingController extends Controller
         $blog = Blog::find($id);
         return view("blog",compact('blog'));
     }
+
+    public function viewPdf($id){
+        $data = Blog::find($id);
+        $filename = $data['file_pdf'];
+        $path = public_path('files/posts/'.$filename);
+
+        return response()->make(file_get_contents($path), 500, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="'.$filename.'"'
+        ]);
+    }
 }

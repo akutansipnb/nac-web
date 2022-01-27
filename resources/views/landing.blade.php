@@ -107,7 +107,7 @@
                 <div class="flex items-center">
                     @if ($item['status'] == 'open')
                         <a href={{route('event.form',['id' => $item->id])}}
-                            class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                            class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-block hover:scale-110 hover:shadow-xl">
                             <span
                                 class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                                 Daftar
