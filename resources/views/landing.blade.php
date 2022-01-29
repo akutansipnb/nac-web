@@ -1,8 +1,8 @@
 @extends('layouts.users')
 
 @section('content')
-   {{-- Hero Section --}}
-   <section class="hero-section">
+{{-- Hero Section --}}
+<section class="hero-section">
     <div class="banner-logo">
         <h1>National</h1>
         <h1 class="gradient-text">Accounting</h1>
@@ -22,6 +22,7 @@
         </a>
         <a onclick="toggleModal('modal-id2')" class="inline-block cursor-pointer px-5 md:my-0 my-3 text-gray-400 hover:text-gray-600 transition-100 delay-50 font-bold">
             Vidio Pembukaan
+
         </a>
     </div>
 </section>
@@ -47,8 +48,7 @@
 
                 <a href=""
                     class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 my-5">
-                    <span
-                        class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                    <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                         Unduh Panduan
                     </span>
                 </a>
@@ -75,68 +75,163 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 mx-5 md:mx-20 mt-10 mb-20">
 
     @foreach ($event as $item)
-    <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
-        <img class="object-cover w-full h-56" src="{{asset($item->background_url)}}" alt="" />
+
+    <a class="block overflow-hidden bg-white shadow-xl rounded-2xl" href={{route('event.detail',['id' => $item->id])}}>
+        <img class="object-cover w-full h-56" src={{asset($item->background_url)}} alt="" />
 
         <div class="relative pt-20 text-center">
-            <div
-                class="absolute w-24 h-24 bg-white rounded-xl shadow-xl transform -translate-x-1/2 -top-10 left-1/2">
-                <img src="{{asset($item->icon_url)}}" alt="" class="p-3">
+            <div class="
+              absolute
+              w-24
+              h-24
+              bg-white
+              rounded-lg
+              shadow-xl
+              transform
+              -translate-x-1/2
+              -top-10
+              left-1/2
+            ">
+            <img src="{{asset($item->icon_url)}}" alt="" class="p-3">
             </div>
 
             <div class="px-6 sm:px-12">
-                <h5 class="text-xl font-bold text-gray-900">{{$item->event_name}}</h5>
-                <h5 class="text-xl font-extrabold text-gray-400">{{$item->year}}</h5>
+                <h5 class="text-xl font-bold text-gray-900">
+                    {{$item->event_name}} ({{$item->year}})
+                </h5>
 
                 <p class="mt-2 text-sm text-gray-500">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi eligendi officiis
-                    laboriosam autem
-                    eveniet.
+                    {{$item->desc}}
                 </p>
-                
-                <dl class=" px-6 py-1 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-1">
-                    <p class="text-gray-400 text-base font-semibold mt-5"> Biaya Pendaftaran </p>
-                <strong class="inline-block px-16 py-2 text-xl font-semibold text-white uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full mt-1">
-                   Rp {{number_format($item->registration_fee,0,',','.')}}
-                </strong>
-                </dl>
             </div>
 
-            <dl
-                class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12">
+            <dl class="
+              flex flex-col
+              items-center
+              justify-center
+              px-6
+              py-4
+              mt-6
+              border-t border-gray-100
+              sm:flex-row sm:items-start sm:px-12
+            ">
                 <div class="flex items-center">
-                    @if ($item['status'] == 'open')
-                        <a href={{route('event.form',['id' => $item->id])}}
-                            class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-block hover:scale-110 hover:shadow-xl">
-                            <span
-                                class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                                Daftar
-                            </span>
-                        </a>
-                    @else
-                    <a href="#"
-                        class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
-                        <span
-                            class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                            Pendaftaran Ditutup
-                        </span>
-                    </a>
-                    @endif
-                    
+                    <span class="flex-shrink-0 p-1 text-white bg-green-500 rounded-full">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path
+                                        d="M21.5,21.5c-3.956,0 -7.16667,3.21067 -7.16667,7.16667v71.66667c0,3.956 3.21067,7.16667 7.16667,7.16667h129c3.956,0 7.16667,-3.21067 7.16667,-7.16667v-71.66667c0,-3.956 -3.21067,-7.16667 -7.16667,-7.16667zM35.20345,35.83333h101.5931c1.08296,3.05239 3.48439,5.45383 6.53678,6.53678v44.25977c-3.05239,1.08296 -5.45382,3.48439 -6.53678,6.53678h-101.5931c-1.08296,-3.05239 -3.4844,-5.45382 -6.53678,-6.53678v-44.25977c3.05239,-1.08296 5.45383,-3.4844 6.53678,-6.53678zM86,43c-11.87412,0 -21.5,9.62588 -21.5,21.5c0,11.87412 9.62588,21.5 21.5,21.5c11.87412,0 21.5,-9.62588 21.5,-21.5c0,-11.87412 -9.62588,-21.5 -21.5,-21.5zM50.16667,57.33333c-3.956,0 -7.16667,3.2035 -7.16667,7.16667c0,3.96317 3.21067,7.16667 7.16667,7.16667c3.956,0 7.16667,-3.2035 7.16667,-7.16667c0,-3.96317 -3.21067,-7.16667 -7.16667,-7.16667zM121.83333,57.33333c-3.956,0 -7.16667,3.2035 -7.16667,7.16667c0,3.96317 3.21067,7.16667 7.16667,7.16667c3.956,0 7.16667,-3.2035 7.16667,-7.16667c0,-3.96317 -3.21067,-7.16667 -7.16667,-7.16667zM28.59668,121.83333l109.20768,28.44271c3.83417,0.99617 7.73821,-1.31005 8.73438,-5.13705l6.07487,-23.30566h-14.80924l-1.69368,6.4528c-3.21784,0.2795 -6.12336,1.99513 -7.93652,4.66113l-42.69206,-11.11393z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
 
+                    <span class="
+                  flex
+                  ml-3
+                  text-sm
+                  font-medium
+                  text-gray-600
+                  space-x-1 space-x-reverse
+                ">
+                        <dd class="order-first">Rp {{number_format($item->registration_fee,0,',','.')}}</dd>
+                    </span>
                 </div>
 
-                <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
-                    <a href={{route('event.detail',['id' => $item->id])}}
-                        class="px-8 py-2 text-sm font-medium text-gray-500 rounded-lg transition transform inline-bloc hover:text-gray-800">
-                        Detail Lomba
-                    </a>
+                <div class="flex items-center mt-3 sm:ml-6 sm:mt-0">
+                    <span class="flex-shrink-0 p-1 text-white bg-yellow-500 rounded-full">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z">
+                            </path>
+                        </svg>
+                    </span>
 
+                    <span class="
+                  flex
+                  ml-3
+                  text-sm
+                  font-medium
+                  text-gray-600
+                  space-x-1 space-x-reverse
+                ">
+                        <dt>Peserta</dt>
+                        <dd class="order-first">1,520,404</dd>
+                    </span>
                 </div>
             </dl>
         </div>
+    </a>
+
+    {{-- <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
+        <img class="object-cover w-full h-56" src="{{asset($item->background_url)}}" alt="" />
+
+    <div class="relative pt-20 text-center">
+        <div class="absolute w-24 h-24 bg-white rounded-xl shadow-xl transform -translate-x-1/2 -top-10 left-1/2">
+            <img src="{{asset($item->icon_url)}}" alt="" class="p-3">
+        </div>
+
+        <div class="px-6 sm:px-12">
+            <h5 class="text-xl font-bold text-gray-900">{{$item->event_name}}</h5>
+            <h5 class="text-xl font-extrabold text-gray-400">{{$item->year}}</h5>
+
+            <p class="mt-2 text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi eligendi officiis
+                laboriosam autem
+                eveniet.
+            </p>
+
+            <dl class=" px-6 py-1 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-1">
+                <p class="text-gray-400 text-base font-semibold mt-5"> Biaya Pendaftaran </p>
+                <strong
+                    class="inline-block px-16 py-2 text-xl font-semibold text-white uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full mt-1">
+                    Rp {{number_format($item->registration_fee,0,',','.')}}
+                </strong>
+            </dl>
+        </div>
+
+        <dl
+            class="flex flex-col items-center justify-center px-6 py-4 mt-6 border-t border-gray-100 sm:flex-row sm:items-start sm:px-12">
+            <div class="flex items-center">
+                @if ($item['status'] == 'open')
+                <a href={{route('event.form',['id' => $item->id])}}
+                    class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-block hover:scale-110 hover:shadow-xl">
+                    <span
+                        class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                        Daftar
+                    </span>
+                </a>
+                @else
+                <a href="#"
+                    class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+                    <span
+                        class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                        Pendaftaran Ditutup
+                    </span>
+                </a>
+                @endif
+
+
+            </div>
+
+            <div class="flex items-center mt-3 sm:ml-3 sm:mt-0">
+                <a href={{route('event.detail',['id' => $item->id])}}
+                    class="px-8 py-2 text-sm font-medium text-gray-500 rounded-lg transition transform inline-bloc hover:text-gray-800">
+                    Detail Lomba
+                </a>
+
+            </div>
+        </dl>
     </div>
-    @endforeach
+</div> --}}
+@endforeach
 </div>
 <div class="bg-gray-100 flex flex-col items-center">
     <div class="grid grid-cols-1 mx-5 mt-16">
@@ -167,20 +262,20 @@
                 </a>
             </div>
         </div>
-        
+
         @endforeach
-        
+
     </div>
     @if ($bcount >= 3)
-        <div class="grid grid-cols-1 text-center mb-16">
-            <a href=""
-                class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
-                <span
-                    class="text-center block text-sm px-10 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                    Selanjutnya 
-                </span>
-            </a>
-        </div>
+    <div class="grid grid-cols-1 text-center mb-16">
+        <a href=""
+            class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
+            <span
+                class="text-center block text-sm px-10 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                Selanjutnya
+            </span>
+        </a>
+    </div>
     @endif
 
     <!--MODAL2-->
@@ -227,6 +322,7 @@
 
 </div>
 
+
 <script type="text/javascript">
     function toggleModal(modalID2){
     document.getElementById(modalID2).classList.toggle("hidden");
@@ -237,3 +333,4 @@
   </script>
     
 @endsection
+
