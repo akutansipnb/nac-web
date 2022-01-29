@@ -109,6 +109,7 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
     route::resource('tm',TechnicalMeetingController::class);
     route::resource('school',SchoolController::class);
     route::resource('university',UniversityController::class);
+    Route::get('/cetak_pdf/{id}', [EventsController::class,'cetak_pdf'])->name('cetak_pdf');
     // Contestant
     route::resource('contestants',ContestantController::class);
 

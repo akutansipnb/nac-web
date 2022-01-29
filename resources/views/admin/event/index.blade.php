@@ -96,6 +96,7 @@
                         @else
                           <a class="dropdown-item" href="#">Edit Biaya Pendaftaran</a>
                         @endif
+                        <a class="dropdown-item" href="{{ route('cetak_pdf',$item->id) }}">Unduh Peserta Lomba</a>
                         <a class="dropdown-item" href="{{ route('events.edit',$item->id) }}">Edit Lomba</a>
                         <a class="dropdown-item" href="#">Tutup Pendaftaran</a>
                           <form action="{{route('events.destroy',['event' => $item->id])}}" method="post">
