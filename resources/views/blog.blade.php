@@ -14,14 +14,7 @@
               
                     <div class="inline-block pb-8 border-b-2 border-blue-500">
                         <p class="font-light text-gray-600">{{ date_format($blog->created_at,"Y/m/d H:i:s") }}</p>
-                      <p class="font-medium text-gray-600 mb-5">By Admin</p>
-                      <a href={{ url('lihat-pdf',['blog'=>$blog->id]) }}
-                          class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-block hover:scale-110 hover:shadow-xl">
-                          <span
-                              class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                              Lihat PDF
-                          </span>
-                      </a>
+                      <p class="font-medium text-gray-600">By Admin</p>
                     </div>
     
                     <img src="{{asset($blog->background_url)}}" alt="" class="bg-blog" srcset="">
@@ -31,6 +24,16 @@
                         <?= $blog->desc ?>
                       </p>
                     </div>
+                    @if ($blog->file_pdf != NULL)
+                      <a href={{ url('lihat-pdf',['blog'=>$blog->id]) }}
+                        class="p-0.5 w-26 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-block hover:scale-110 hover:shadow-xl">
+                        <span
+                            class="block text-sm px-8 py-2 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                            Lihat Dokumen
+                        </span>
+                    </a>
+                    @endif
+                    
                   </div>
                 </div>
               </article>

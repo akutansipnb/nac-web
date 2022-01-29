@@ -40,33 +40,50 @@ class BlogController extends Controller
         $request->validate([
             'title'=>'required',
             'desc'=>'required',
-            'background_url'=>'required',
-            'file_pdf' => 'required'
+            'background_url'=>'required'
         ]);
         $cover = $request->file('background_url');
-
-        $pdf = $request->file('file_pdf');
-
-        $pdf_name = strtolower($request->title)."-file-blog.".$pdf->getClientOriginalExtension();
-
         $cover_name = strtolower($request->title)."-cover.".$cover->getClientOriginalExtension();
 
-        try {
-            Blog::create([
-                'title' => $request->title ,
-                'desc' => $request->desc,
-                'background_url' => 'img/posts/'.$cover_name,
-                'file_pdf' => $pdf_name,
-            ]);
+        if($request->file('file_pdf') != NULL){
+            $pdf = $request->file('file_pdf');
 
-            // Moves Files
-            $cover->move('img/posts/',$cover_name);
-            $pdf->move('files/posts/',$pdf_name);
-
-            return redirect()->route('blogs.index');
-        } catch (\Throwable $th) {
-            throw $th;
+            $pdf_name = strtolower($request->title)."-file-blog.".$pdf->getClientOriginalExtension();
+            try {
+                Blog::create([
+                    'title' => $request->title ,
+                    'desc' => $request->desc,
+                    'background_url' => 'img/posts/'.$cover_name,
+                    'file_pdf' => $pdf_name,
+                ]);
+    
+                // Moves Files
+                $cover->move('img/posts/',$cover_name);
+                $pdf->move('files/posts/',$pdf_name);
+    
+                return redirect()->route('blogs.index');
+            } catch (\Throwable $th) {
+                throw $th;
+            }
         }
+        else{
+            try {
+                Blog::create([
+                    'title' => $request->title ,
+                    'desc' => $request->desc,
+                    'background_url' => 'img/posts/'.$cover_name,
+                    'file_pdf' => NULL,
+                ]);
+    
+                // Moves Files
+                $cover->move('img/posts/',$cover_name);
+    
+                return redirect()->route('blogs.index');
+            } catch (\Throwable $th) {
+                throw $th;
+            }
+        }
+        
     }
 
     /**

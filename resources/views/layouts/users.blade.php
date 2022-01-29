@@ -14,6 +14,7 @@
     {{-- Custom CSS --}}
 
     <link rel="stylesheet" href={{asset('css/style.css')}}>
+    <link rel="stylesheet" href={{asset('css/animate.min.css')}}>
 
     {{-- Other --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
