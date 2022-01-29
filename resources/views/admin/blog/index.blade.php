@@ -56,8 +56,9 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-
-                        <a class="dropdown-item" href="{{ route('blogs.show',['blog' => $item->id]) }}">Lihat PDF</a>
+                        @if ($item->file_pdf != NULL)
+                          <a class="dropdown-item" href="{{ route('blogs.show',['blog' => $item->id]) }}">Lihat Dokumen</a>
+                        @endif
                         <a class="dropdown-item" href="{{ route('blogs.edit',['blog' => $item->id]) }}">Edit Berita</a>
                         
                           <form action="{{route('blogs.destroy',['blog' => $item->id])}}" method="post">

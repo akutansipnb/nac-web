@@ -41,7 +41,7 @@
                         <textarea rows="4" name="desc" class="ckeditor" id="wysiwyg" placeholder="Masukkan Isi berita ..."></textarea>
                       </div>
                   <div class="form-group">
-                    <label class="form-control-label" for="input-name">File PDF *</label>
+                    <label class="form-control-label" for="input-name">File PDF</label>
                     <input type="file" id="input-name" class="form-control" name="file_pdf" placeholder="Masukkan File PDF">
                   </div>
                 </div>

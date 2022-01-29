@@ -93,7 +93,7 @@ route::group(['middleware' => ['role:Users'],'prefix' => 'users'],function(){
 });
 
 // Admin
-route::group(['middleware' => ['role:Admin'],'prefix' => 'admin'],function(){
+route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],function(){
     Route::get('/', function () {
         return view('admin.index');
     })->name('admin.dashboard');
