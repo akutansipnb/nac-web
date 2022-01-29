@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\User\ValidationController;
@@ -96,6 +97,9 @@ route::prefix('admin')->group(function(){
     Route::get('/', function () {
         return view('admin.index');
     })->name('admin.dashboard');
+
+    route::get('download/{id}/{validation_no}',[DownloadController::class,'download'])->name('download');
+
     route::resource('member',AdminController::class);
     route::resource('mentors',MentorController::class);
     route::resource('schedules',TimeScheduleController::class);

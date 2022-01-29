@@ -18,13 +18,6 @@ class UniversityController extends Controller
     public function index()
     {
         $data = Academy::where('academy_type',"university")->paginate(10);
-        // $d = Event::all();
-        // foreach($d as $e){
-        //     foreach($e->users as $datas){
-        //         $datas->users->name;
-        //         return view('admin.university.userlist', compact('datas'));
-        //     }
-        // }
         return view('admin.university.index',compact('data'));
     }
 
@@ -47,7 +40,7 @@ class UniversityController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'academy_type'=>'required',
+            'academy_name'=>'required',
             'phone'=>'required',
             'address'=>'required'
         ]);
@@ -58,7 +51,7 @@ class UniversityController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-            return redirect()->route('university.index');
+            return redirect()->route('university.index')->with('success', 'Data Berhasil Ditambah');
 
 
         } catch (\Throwable $th) {
@@ -105,7 +98,7 @@ class UniversityController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-            return redirect()->route('university.index');
+            return redirect()->route('university.index')->with('success', 'Data Berhasil Diubah');
 
         } catch (\Throwable $th) {
             return $th;

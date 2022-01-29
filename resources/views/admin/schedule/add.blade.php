@@ -28,20 +28,20 @@
                     <div class="form-group">
                         <div class="form-group">
                           <label class="form-control-label">Nama Acara</label>
-                          <input type="text" id="input-date-open" class="form-control" name="schedule" placeholder="Pembukaan">
+                          <input type="text" id="input-date-open" class="form-control" name="schedule" placeholder="Pembukaan" required>
                         </div>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-tm">Tanggal Mulai </label>
-                      <input type="date" id="input-date-tm" name="date_start" class="form-control" placeholder="01/01/2021">
+                      <input type="date" id="input-date-tm" name="date_start" class="form-control" placeholder="01/01/2021" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-tm-link">Tanggal Selesai </label>
-                      <input type="date" id="input-date-tm" name="date_end" class="form-control" placeholder="01/01/2021">
+                      <input type="date" id="input-date-tm" name="date_end" class="form-control" placeholder="01/01/2021" required>
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-tm-method">Deskripsi Lintas Waktu</label>
                         <div class="form-group">
-                          <textarea rows="1" class="form-control" name="desc" placeholder="Deskripsi Lintas Waktu ..."></textarea>
+                          <textarea rows="1" class="form-control" name="desc" placeholder="Deskripsi Lintas Waktu ..." required></textarea>
                         </div>
                     </div>
                   </div>

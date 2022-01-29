@@ -30,11 +30,14 @@
 
               <h6 class="heading-small text-muted mb-4">Informasi Pribadi</h6>
               <div class="pl-lg-4">
+
+                {{-- success --}}
                 @if(session('success'))
                 <div class="alert alert-success" role="alert">
                     {{session('success')}}
                 </div>
                 @endif
+
                 {{-- Nama --}}
                 <div class="row">
                   <div class="col-lg-6">

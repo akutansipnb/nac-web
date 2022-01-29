@@ -58,7 +58,7 @@ class AdminController extends Controller
 
             // Moves Files
             $icon->move('img/profile/admin',$icon_name);
-            return redirect()->route('register.index');
+            return redirect()->route('register.index')->with('success', 'Data Berhasil Ditambah');
         } catch (\Throwable $th) {
             throw $th;
         }

@@ -22,14 +22,17 @@
                 <div class="card-header border-0">
                     <h3 class="mb-0">Pendamping </h3>
                 </div>
-                <!-- Light table -->
-                <div class="table-responsive">
-                    <table class="table align-items-center table-flush" style="height: 200px">
-                        @if(session('success'))
-                <div class="alert alert-success" role="alert">
+
+                {{-- success --}}
+                @if(session('success'))
+                <div class="alert alert-success mb-3 mx-4" role="alert">
                     {{session('success')}}
                 </div>
                 @endif
+
+                <!-- Light table -->
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush" style="height: 200px">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">Nama Pendamping</th>
