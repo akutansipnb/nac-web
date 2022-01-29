@@ -19,6 +19,7 @@ class Event extends Model
         'tm_time',
         'tm_method',
         'tm_url',
+        'group_url',
         'max_slot',
         'register_time',
         'register_close',

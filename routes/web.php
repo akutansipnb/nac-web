@@ -32,6 +32,10 @@ use Illuminate\Support\Facades\Auth;
 //
 */
 
+Route::get('/test',function(){
+    return view('testing');
+});
+
 Route::get('/', [LandingController::class,'index']);
 
 Route::get('detail-berita/{id}', [LandingController::class,'detail']);
