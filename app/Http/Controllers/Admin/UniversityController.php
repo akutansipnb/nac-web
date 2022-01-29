@@ -11,26 +11,21 @@ use Illuminate\Http\Request;
 class UniversityController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.a
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // $d = Academy::whereHas('users',function($e){
-        //     $e->where('id',2);
-        // })->get();
-
-        $d = Event::all();
-
-        // $d = Academy::where('id',2)->get();
-        // $data = Academy::where('academy_type',"university")->paginate(10);
-        foreach($d as $e){
-            foreach($e->users as $a){
-                dd($a->users->name);
-            };
-        }
-        // return view('admin.university.index',compact('data',));
+        $data = Academy::where('academy_type',"university")->paginate(10);
+        // $d = Event::all();
+        // foreach($d as $e){
+        //     foreach($e->users as $datas){
+        //         $datas->users->name;
+        //         return view('admin.university.userlist', compact('datas'));
+        //     }
+        // }
+        return view('admin.university.index',compact('data'));
     }
 
     /**
@@ -51,6 +46,11 @@ class UniversityController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'academy_type'=>'required',
+            'phone'=>'required',
+            'address'=>'required'
+        ]);
         try {
             Academy::create([
                 'academy_type' => $request->academy_type="university",

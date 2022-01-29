@@ -51,6 +51,7 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a class="dropdown-item" href="{{ route('userlist.index',['id' => $item->id]) }}">User List</a>
                         <a class="dropdown-item" href="{{ route('school.edit',$item->id) }}">Edit Sekolah</a>
                           <form action="{{route('school.destroy', ['school' => $item->id])}}" method="post">
                             @csrf

@@ -25,6 +25,11 @@
                 <!-- Light table -->
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush" style="height: 200px">
+                        @if(session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{session('success')}}
+                </div>
+                @endif
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">Nama Pendamping</th>

@@ -7,7 +7,7 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-12 col-12 text-right">
-            <a href="{{route('university.create')}}" class="btn btn-sm btn-neutral">Tambah Sekolah</a>
+            <a href="{{route('university.create')}}" class="btn btn-sm btn-neutral">Tambah Perguruan Tinggi</a>
           </div>
         </div>
       </div>
@@ -51,6 +51,7 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a class="dropdown-item" href="{{ route('userlist.index',['id' => $item->id]) }}">List Peserta</a>
                         <a class="dropdown-item" href="{{ route('university.edit',$item->id) }}">Edit Perguruan Tinggi</a>
                           <form action="{{route('university.destroy', ['university' => $item->id])}}" method="post">
                             @csrf

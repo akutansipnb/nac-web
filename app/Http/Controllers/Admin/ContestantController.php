@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Academy;
 use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
@@ -62,7 +63,10 @@ class ContestantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $userdetail = UserDetail::find($id);
+        $user = User::all();
+        $academy = Academy::where('academy_type',$userdetail['id_academy'])->get();
+        return view('admin.contestants.edit')->with(compact('id','userdetail','user','academy'));//
     }
 
     /**
@@ -74,7 +78,40 @@ class ContestantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'id_academy'=>'required',
+            'identity_code'=>'required',
+            'edu_stage'=>'required',
+            'birth_date'=>'required',
+            'phone'=>'required',
+            'department'=>'required',
+            'adress'=>'required'
+        ]);
+        try {
+            $data = UserDetail::find($id);
+
+            $data->update([
+                'id_academy' => $request->id_academy,
+                'identity_code' => $request->identity_code,
+                'edu_stage' => $request->edu_stage,
+                'birth_date' => $request->birth_date,
+                'phone' => $request->phone,
+                'department' => $request->department,
+                'adress' => $request->adress,
+            ]);
+
+            User::where('id',$data->id_users)->update([
+                'name' => $request->name
+            ]);
+
+            if ($data) {
+                return redirect()->back()->with('success', 'Data Berhasil Diperbarui');
+            }
+
+        } catch (\Throwable $th) {
+            return $th;
+        }
     }
 
     /**
@@ -85,6 +122,11 @@ class ContestantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            UserDetail::find($id)->delete();
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            echo 'gagal';
+        }
     }
 }
