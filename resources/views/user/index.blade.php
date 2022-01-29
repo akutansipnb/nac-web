@@ -17,11 +17,11 @@
                         <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
                       @endif
                       {{-- @if ()
-
-                      @endif --}}
                       <div class="alert alert-success" role="alert">
                         A simple success alert—check it out!
                       </div>
+                      @endif --}}
+
                     </div>
                 </div>
             </div>

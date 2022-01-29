@@ -36,6 +36,11 @@ class AcademiesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+                'academy_name' => 'required',
+                'phone' => 'required',
+                'address' => 'required'
+            ]);
         try {
             Academy::create([
                 'academy_type' => $request->academy_type,
@@ -43,7 +48,7 @@ class AcademiesController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-            
+            return redirect()->back();
 
         } catch (\Throwable $th) {
             throw $th;

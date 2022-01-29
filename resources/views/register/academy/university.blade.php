@@ -26,6 +26,7 @@
                           name="academy_name"
                           placeholder="Masukkan Nama Universitas/Instansi Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          required
                         />
                     </div>
 
@@ -38,6 +39,7 @@
                             name="phone"
                             placeholder="Masukkan Telepon Universitas/Instansi anda"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                            required
                           />
                     </div>
 
@@ -50,6 +52,7 @@
                         name="address"
                         placeholder="Masukkan Alamat Universitas/Instansi Anda"
                         class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        required
                       ></textarea>
                     </div>
 

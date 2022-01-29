@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\SchoolController;
 use App\Http\Controllers\Admin\TimeScheduleController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\Admin\UniversityController;
+use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EventRegisterController;
@@ -103,6 +104,11 @@ route::prefix('admin')->group(function(){
     route::resource('tm',TechnicalMeetingController::class);
     route::resource('school',SchoolController::class);
     route::resource('university',UniversityController::class);
+
+    //userlist
+    route::get('/userlist/{id}',[UserListController::class,'index'])->name('userlist.index');
+
+
     // Contestant
     route::resource('contestants',ContestantController::class);
 
