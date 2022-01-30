@@ -82,7 +82,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-control-label" for="input-logo">Photo Profile</label>
+                                            <label class="form-control-label" for="input-logo">Cabang Lomba</label>
                                             <select name="event_id" class="form-control " aria-label="Default select example" required>
                                                 @foreach ($event as $value)
                                                     <option value="{{ $value->id }}" {{ ( $value->id == $mentor['event_id']) ? 'selected' : '' }}>

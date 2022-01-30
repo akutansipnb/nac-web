@@ -18,10 +18,19 @@
     <div class="row">
       <div class="col">
         <div class="card">
+
           <!-- Card header -->
           <div class="card-header border-0">
             <h3 class="mb-0">Sekolah</h3>
           </div>
+
+          {{-- success --}}
+          @if(session('success'))
+            <div class="alert alert-success mb-3 mx-4" role="alert">
+                {{session('success')}}
+            </div>
+          @endif
+
           <!-- Light table -->
           <div class="table-responsive">
             <table class="table align-items-center table-flush">
@@ -51,6 +60,7 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a class="dropdown-item" href="{{ route('userlist.index',['id' => $item->id]) }}">User List</a>
                         <a class="dropdown-item" href="{{ route('school.edit',$item->id) }}">Edit Sekolah</a>
                           <form action="{{route('school.destroy', ['school' => $item->id])}}" method="post">
                             @csrf

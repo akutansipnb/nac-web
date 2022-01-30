@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-4">
-          
+
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
                       <input type="text" id="input-date-open" class="form-control" value= "Semester {{$data['edu_stage']}}" disabled>
                     </div>
                   </div>
-                  
+
                 </div>
 
                 {{-- Target --}}
@@ -89,88 +89,88 @@
                           <input type="text" id="input-target" class="form-control" value={{$data['adress']}} disabled>
                         </div>
                       </div>
-                    
+
                   </div>
               </div>
 
-              
+
               <hr class="my-4" />
               <h6 class="heading-small text-muted mb-4">Dokumen</h6>
               <div class="row justify-content-center">
                   @if ($data->events['audience'] == 'school')
-                  <div class="col-12 col-md-6"><div class="card" >
+                  <div class="col-12 col-md-6"><div class="card {{ ($data['validation_1'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_1'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 1 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
-                  <div class="col-12 col-md-6"><div class="card" >
-                    <img class="card-img-top" src="../../assets/img/theme/img-1-1000x600.jpg" alt="Card image cap">
+                  <div class="col-12 col-md-6"><div class="card {{ ($data['validation_2'] == NULL)? "d-none" : " " }}" >
+                    <img class="card-img-top" src={{asset($data['validation_2'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 2 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
-                  <div class="col-12 col-md-6"><div class="card" >
-                    <img class="card-img-top" src="../../assets/img/theme/img-1-1000x600.jpg" alt="Card image cap">
+                  <div class="col-12 col-md-6"><div class="card {{ ($data['validation_3'] == NULL)? "d-none" : " " }}" >
+                    <img class="card-img-top" src={{asset($data['validation_3'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 3 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
 
-                  <div class="col-12 col-md-6"><div class="card" >
-                    <img class="card-img-top" src="../../assets/img/theme/img-1-1000x600.jpg" alt="Card image cap">
+                  <div class="col-12 col-md-6"><div class="card {{ ($data['validation_4'] == NULL)? "d-none" : " " }}" >
+                    <img class="card-img-top" src={{asset($data['validation_4'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 4 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
-                  <div class="col-12 col-md-6"><div class="card" >
-                    <img class="card-img-top" src="../../assets/img/theme/img-1-1000x600.jpg" alt="Card image cap">
+                  <div class="col-12 col-md-6"><div class="card card {{ ($data['validation_5'] == NULL)? "d-none" : " " }}" >
+                    <img class="card-img-top" src={{asset($data['validation_5'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 5 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
-                      
+
                   @else
-                       <div class="col-12 col-md-6"><div class="card" >
+                       <div class="col-12 col-md-6"><div class="card {{ ($data['validation_1'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_1'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Kartu Tanda Mahasiswa </h5>
                       <p class="card-text">Periksa Kartu Tanda Mahasiswa Peserta Ini</p>
-                      <a href="#" class="btn btn-primary">Periksa</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 1 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
-                  <div class="col-12 col-md-6"><div class="card" >
+                  <div class="col-12 col-md-6"><div class="card {{ ($data['validation_2'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_2'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Pernyataan Aktiv</h5>
                       <p class="card-text">Periksa Surat Pernyataan Mahasiswa aktiv dari Peserta Ini</p>
-                      <a href="#" class="btn btn-primary">Periksa</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 2 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
-                  <div class="col-12 col-md-6"><div class="card" >
+                  <div class="col-12 col-md-6"><div class="card {{ ($data['validation_3'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_3'])}} alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">Kuitansi</h5>
                       <p class="card-text">Periksa bukti pembayaran dari peserta ini</p>
-                      <a href="#" class="btn btn-primary">Periksa</a>
+                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 3 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
                     </div>
                   </div></div>
                   @endif
-                  
+
               </div>
               <div class="pl-lg-4">
-              
-              @if ($data->validation_status == 'pending') 
+
+              @if ($data->validation_status == 'pending')
               <a href="{{route('validation.acc',['id' => $data['id']])}}" class="btn btn-warning w-100">Validasi Peserta</a>
               @else
               <a href="#" class="btn btn-secondary w-100" disabled>Peserta Tervalidasi</a>

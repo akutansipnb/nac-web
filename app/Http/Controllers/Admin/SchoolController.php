@@ -37,6 +37,11 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'academy_name'=>'required',
+            'phone'=>'required',
+            'address'=>'required'
+        ]);
 
         try {
             Academy::create([
@@ -45,7 +50,7 @@ class SchoolController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-            return redirect()->route('school.index');
+            return redirect()->route('school.index')->with('success', 'Data Berhasil Ditambah');
 
 
         } catch (\Throwable $th) {
@@ -93,7 +98,7 @@ class SchoolController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-            return redirect()->route('school.index');
+            return redirect()->route('school.index')->with('success', 'Data Berhasil Diubah');
 
         } catch (\Throwable $th) {
             return $th;

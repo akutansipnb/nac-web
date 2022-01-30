@@ -27,7 +27,7 @@
                         <table class="table align-items-center table-flush" style="height: 200px">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col" class="sort" data-sort="name">Nama Admin</th>
+                                    <th scope="col" class="sort" data-sort="name">Nama Peserta</th>
                                     <th scope="col" class="sort" data-sort="date">Asal Sekolah</th>
                                     <th scope="col" class="sort" data-sort="date">Cabang Lomba</th>
                                     <th scope="col"></th>
@@ -68,8 +68,8 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                 <a class="dropdown-item" href={{route('contestants.show',$item->id)}}>Details</a>
-                                                <a class="dropdown-item" href="#">Edit Data</a>
-                                                <form action="{{route('register.destroy',['register' => $item->id])}}"
+                                                <a class="dropdown-item" href={{ route('contestants.edit',$item->id) }}>Edit Data</a>
+                                                <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
                                                     method="post">
                                                     @csrf
                                                     @method('delete')

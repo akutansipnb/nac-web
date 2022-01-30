@@ -16,12 +16,18 @@
                       @if (Auth::user()->details->validation_status == 'unactive')
                         <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
                       @endif
-                      {{-- @if ()
 
-                      @endif --}}
-                      <div class="alert alert-success" role="alert">
-                        A simple success alert—check it out!
-                      </div>
+                      {{-- success --}}
+                      @if(Auth::user()->details->validation_status=='pending')
+                        <div class="alert alert-warning mb-3 " role="alert">
+                            Data Sedang Proses Validasi
+                        </div>
+                      @elseif (Auth::user()->details->validation_status=='active')
+                        <div class="alert alert-success mb-3 " role="alert">
+                            Data Berhasil Divalidasi
+                        </div>
+                      @endif
+
                     </div>
                 </div>
             </div>
@@ -47,6 +53,7 @@
 
             <div class="card card-stats">
               <!-- Card body -->
+              <a href={{ route('pendamping.index') }} class="card-body px-5">
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
@@ -59,6 +66,7 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
 
             </div>
@@ -83,7 +91,8 @@
 
             <div class="card card-stats ">
               <!-- Card body -->
-              <a href="#" class="card-body px-5">
+              <a href={{ route('logout') }} class="card-body px-5" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
                 <div class="row">
                   <div class="col"><h5 class="card-title text-uppercase text-muted mb-0">Keluar Dari WEB  </h5>
                     <span class="h2 font-weight-bold mb-0">Logout</span>
@@ -94,7 +103,10 @@
                     </div>
                   </div>
                 </div>
-              </a href="#">
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
 
             </div>
 

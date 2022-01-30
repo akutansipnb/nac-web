@@ -38,14 +38,12 @@ class TimeScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'schedule' => 'required|unique:time_schedules,schedule,id',
-        //     'date_start' => 'required',
-        //     'date_end' => 'required',
-        //     'desc' => 'required'
-        // ],[
-        //     'schedule.unique' => "Data Sudah Ada !"
-        // ]);
+        $request->validate([
+            'schedule' => 'required',
+            'date_start' => 'required',
+            'date_end' => 'required',
+            'desc' => 'required'
+        ]);
 
         try {
             TimeSchedule::create([
@@ -54,7 +52,7 @@ class TimeScheduleController extends Controller
                 'date_end' => $request->date_end,
                 'desc' => $request->desc
             ]);
-            return redirect()->route('schedules.index');
+            return redirect()->route('schedules.index')->with('success', 'Data Berhasil Ditambah');
 
         } catch (\Throwable $th) {
             return $th;
@@ -93,14 +91,12 @@ class TimeScheduleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'schedule' => 'required',
-        //     'date_start' => 'required',
-        //     'date_end' => 'required',
-        //     'desc' => 'required'
-        // ],[
-        //     'schedule.unique' => "Data Sudah Ada !"
-        // ]);
+        $request->validate([
+            'schedule' => 'required',
+            'date_start' => 'required',
+            'date_end' => 'required',
+            'desc' => 'required'
+        ]);
 
         try {
             TimeSchedule::find($id)->update([
@@ -109,7 +105,7 @@ class TimeScheduleController extends Controller
                 'date_end' => $request->date_end,
                 'desc' => $request->desc
             ]);
-            return redirect()->route('schedules.index');
+            return redirect()->route('schedules.index')->with('success', 'Data Berhasil Diubah');
 
         } catch (\Throwable $th) {
             return $th;

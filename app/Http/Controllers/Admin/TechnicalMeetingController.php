@@ -15,7 +15,7 @@ class TechnicalMeetingController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -25,7 +25,7 @@ class TechnicalMeetingController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -47,7 +47,7 @@ class TechnicalMeetingController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -85,11 +85,11 @@ class TechnicalMeetingController extends Controller
                 'tm_method' => $request->tm_method,
                 'tm_url' => $request->tm_url,
             ]);
-            echo "Success";
+            return redirect()->route('events.index')->with('success', 'Data Berhasil Ditambah');
         } catch (\Throwable $th) {
             throw $th;
         }
-        
+
     }
 
     /**

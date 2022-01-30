@@ -88,7 +88,7 @@ class EventsController extends Controller
             $icon->move('img/events/icons',$icon_name);
             $cover->move('img/events/covers',$cover_name);
 
-            return redirect()->route('events.index');
+            return redirect()->route('events.index')->with('success', 'Data Berhasil Ditambah');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -178,7 +178,7 @@ class EventsController extends Controller
         $event->update($update);
 
             // Moves Files
-        return redirect()->route('events.index');
+        return redirect()->route('events.index')->with('success', 'Data Berhasil Diubah');
         } catch (\Throwable $th) {
             throw $th;
         }

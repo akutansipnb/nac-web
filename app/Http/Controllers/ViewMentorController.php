@@ -45,15 +45,13 @@ class ViewMentorController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'academy_id'=> 'required',
-        //     'event_id' => 'required',
-        //     'name' => 'required',
-        //     'phone' => 'required',
-        //     'identity_code' => 'required|unique:mentors,identity_code'
-        // ],[
-        //     'identity_code.unique' => "Data Sudah Ada !"
-        // ]);
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'identity_code' => 'required|unique:mentors,identity_code'
+        ],[
+            'identity_code.unique' => "Data Sudah Ada !"
+        ]);
 
         try {
             Mentor::create([
@@ -63,7 +61,7 @@ class ViewMentorController extends Controller
                 'phone' => $request->phone,
                 'identity_code' => $request->identity_code
             ]);
-            return redirect()->route('pendamping.index');
+            return redirect()->route('pendamping.index')->with('success', 'Data Berhasil Ditambah');
 
         } catch (\Throwable $th) {
             return $th;
@@ -105,8 +103,6 @@ class ViewMentorController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'academy_id'=> 'required',
-            'event_id' => 'required',
             'name' => 'required',
             'phone' => 'required',
             'identity_code' => 'required'
@@ -114,13 +110,13 @@ class ViewMentorController extends Controller
 
         try {
             Mentor::find($id)->update([
-                'academy_id' => $request->academy_id,
-                'event_id' => $request->event_id,
+                'academy_id' => Auth::user()->details->academy["id"],
+                'event_id' => Auth::user()->details->events["id"],
                 'name' => $request->name,
                 'phone' => $request->phone,
                 'identity_code' => $request->identity_code
             ]);
-            return redirect()->route('pendamping.index');
+            return redirect()->route('pendamping.index')->with('success', 'Data Berhasil Diubah');
 
         } catch (\Throwable $th) {
             return $th;

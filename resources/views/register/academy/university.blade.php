@@ -10,6 +10,20 @@
         Pendaftaran cabang lomba Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, voluptas?
       </p>
 
+      {{-- success --}}
+      @if(session('success'))
+      <div class="flex p-4 text-white bg-green-600 rounded mt-4" role="alert">
+          <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div class="ml-3 -mt-0.25">
+            <h3 class="text-sm font-medium">
+              {{ session('success') }}
+            </h3>
+          </div>
+        </div>
+      @endif
+
       <div action="" class="p-8 mt-6 mb-5 space-y-4 rounded-lg shadow-2xl">
 
 
@@ -26,6 +40,7 @@
                           name="academy_name"
                           placeholder="Masukkan Nama Universitas/Instansi Anda"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                          required
                         />
                     </div>
 
@@ -38,6 +53,7 @@
                             name="phone"
                             placeholder="Masukkan Telepon Universitas/Instansi anda"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                            required
                           />
                     </div>
 
@@ -50,6 +66,7 @@
                         name="address"
                         placeholder="Masukkan Alamat Universitas/Instansi Anda"
                         class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
+                        required
                       ></textarea>
                     </div>
 

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Mail\VerificationEmail;
 use App\Models\Event;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ValidationController extends Controller
 {
@@ -73,12 +75,14 @@ class ValidationController extends Controller
             }else{
                 $validation_1->move($url,'/ktm-'.$validation_1_name);
                 $validation_2->move($url,'/pernyataan-'.$validation_2_name,);
-                $validation_3->move($url,'/kuitansi-'.$validation_3_name);
+                $validation_3->move($url,'/kuita    nsi-'.$validation_3_name);
             }
         } catch (\Throwable $th) {
             throw $th;
-        }
+        // }
 
+        $e = UserDetail::where('identity_code',$user->identity_code)->first(); 
+        Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
         return redirect()->route('dashboard.index')->with(['success'=>'Berhasil Melakukan Validasi']);
         // dd($request);
     }

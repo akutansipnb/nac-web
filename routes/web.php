@@ -9,8 +9,10 @@ use App\Http\Controllers\Admin\SchoolController;
 use App\Http\Controllers\Admin\TimeScheduleController;
 use App\Http\Controllers\Admin\TechnicalMeetingController;
 use App\Http\Controllers\Admin\UniversityController;
+use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EventRegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\User\ValidationController;
@@ -101,6 +103,9 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
     Route::get('/', function () {
         return view('admin.index');
     })->name('admin.dashboard');
+
+    route::get('download/{id}/{validation_no}',[DownloadController::class,'download'])->name('download');
+
     route::resource('member',AdminController::class);
     route::resource('mentors',MentorController::class);
     route::resource('schedules',TimeScheduleController::class);
@@ -109,7 +114,9 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
     route::resource('tm',TechnicalMeetingController::class);
     route::resource('school',SchoolController::class);
     route::resource('university',UniversityController::class);
+
     Route::get('/cetak_pdf/{id}', [EventsController::class,'cetak_pdf'])->name('cetak_pdf');
+    route::get('/userlist/{id}',[UserListController::class,'index'])->name('userlist.index');
     // Contestant
     route::resource('contestants',ContestantController::class);
 

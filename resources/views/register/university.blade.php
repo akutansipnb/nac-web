@@ -87,7 +87,7 @@
 
                             <select name="id_academy" id="university" placeholder="Masukkan universitas anda"
                                 class="w-full mt-2 mb-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm" required>
-                                <option value="" disabled>Masukan Sekolah Anda</option>
+                                <option value="" disabled>Masukan Universitas Anda</option>
                                 @foreach ($academies as $item)
                                 <option value="{{ $item->id }}">{{$item->academy_name}}</option>
                                 @endforeach
