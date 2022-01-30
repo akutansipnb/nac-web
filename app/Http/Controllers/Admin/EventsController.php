@@ -50,12 +50,13 @@ class EventsController extends Controller
             'background_url'=>'required',
             'audience'=>'required',
             'max_slot'=>'required',
+            'group_url'=>'required',
             'registration_fee'=>'required',
             'register_time'=>'required',
             'register_close'=>'required',
             'quotes'=>'required',
             'desc'=>'required',
-            'blog'=>'required'
+            'blog'=>'required',
         ]);
 
 
@@ -75,6 +76,7 @@ class EventsController extends Controller
                 'background_url' => 'img/events/covers/'.$cover_name,
                 'audience' => $request->audience,
                 'max_slot' => $request->max_slot,
+                'group_url' => $request->group_url,
                 'registration_fee' => $request->registration_fee,
                 'register_time' => $request->register_time,
                 'register_close' => $request->register_close,

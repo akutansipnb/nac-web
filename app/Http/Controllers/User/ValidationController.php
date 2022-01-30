@@ -79,7 +79,7 @@ class ValidationController extends Controller
             }
         } catch (\Throwable $th) {
             throw $th;
-        // }
+        }
 
         $e = UserDetail::where('identity_code',$user->identity_code)->first(); 
         Mail::to(Auth::user()->email)->send(new VerificationEmail($e));

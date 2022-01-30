@@ -185,6 +185,13 @@
                 </div>
               </div>
 
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-initial">Link Group *</label>
+                  <input type="text" id="input-initial" class="form-control" name="group_url" placeholder="Link Group" required>
+                </div>
+              </div>
+
               <button type="submit" class="btn btn-warning w-100">Simpan Data</button>
 
             </form>
