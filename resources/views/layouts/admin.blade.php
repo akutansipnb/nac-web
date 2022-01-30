@@ -126,7 +126,7 @@
 
 
             <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
+              <a class="nav-link" href="{{ route('landing.index') }}" >
                 <i class="ni ni-settings-gear-65 text-danger"></i>
                 <span class="nav-link-text">Landing Page Setting</span>
               </a>
