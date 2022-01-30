@@ -57,7 +57,7 @@ class MentorController extends Controller
                 'phone' => $request->phone,
                 'identity_code' => $request->identity_code
             ]);
-            return redirect()->route('mentors.index');
+            return redirect()->route('mentors.index')->with('success', 'Data Berhasil Ditambah');
 
         } catch (\Throwable $th) {
             return $th;
@@ -114,7 +114,7 @@ class MentorController extends Controller
                 'phone' => $request->phone,
                 'identity_code' => $request->identity_code
             ]);
-            return redirect()->route('mentors.index');
+            return redirect()->route('mentors.index')->with('success', 'Data Berhasil Diubah');
 
         } catch (\Throwable $th) {
             return $th;

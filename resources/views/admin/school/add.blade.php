@@ -28,14 +28,14 @@
                     <div class="form-group">
                         <div class="form-group">
                           <label class="form-control-label">Nama Sekolah</label>
-                          <input type="text" id="input-date-open" class="form-control" name="academy_name" placeholder="Sekolah">
+                          <input type="text" id="input-date-open" class="form-control" name="academy_name" placeholder="Sekolah" required>
                         </div>
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-tm">Telepon Sekolah </label>
-                      <input type="number" id="input-date-tm" name="phone" class="form-control" placeholder="(0361)895342425">
+                      <input type="number" id="input-date-tm" name="phone" class="form-control" placeholder="(0361)895342425" required>
                     </div>
                   </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-tm-method">Alamat Sekolah</label>
                         <div class="form-group">
-                          <textarea rows="4" class="form-control" name="address" placeholder="Alamat Sekolah ..."></textarea>
+                          <textarea rows="4" class="form-control" name="address" placeholder="Alamat Sekolah ..." required></textarea>
                         </div>
                     </div>
                   </div>

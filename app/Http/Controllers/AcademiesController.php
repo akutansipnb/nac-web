@@ -48,7 +48,8 @@ class AcademiesController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-            return redirect()->back();
+
+            return redirect()->back()->with('success', 'Data Berhasil Ditambah');
 
         } catch (\Throwable $th) {
             throw $th;

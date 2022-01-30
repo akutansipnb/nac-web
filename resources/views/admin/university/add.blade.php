@@ -28,14 +28,14 @@
                     <div class="form-group">
                         <div class="form-group">
                           <label class="form-control-label">Nama Perguruan Tinggi</label>
-                          <input type="text" id="input-date-open" class="form-control" name="academy_name" placeholder="Perguruan Tinggi">
+                          <input type="text" id="input-date-open" class="form-control" name="academy_name" placeholder="Perguruan Tinggi" required>
                         </div>
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label" for="input-date-tm">Telepon Perguruan Tinggi </label>
-                      <input type="number" id="input-date-tm" name="phone" class="form-control" placeholder="(0361)895342425">
+                      <input type="number" id="input-date-tm" name="phone" class="form-control" placeholder="(0361)895342425" required>
                     </div>
                   </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-tm-method">Alamat Perguruan Tinggi</label>
                         <div class="form-group">
-                          <textarea rows="4" class="form-control" name="address" placeholder="Alamat Perguruan Tinggi ..."></textarea>
+                          <textarea rows="4" class="form-control" name="address" placeholder="Alamat Perguruan Tinggi ..." required></textarea>
                         </div>
                     </div>
                   </div>
