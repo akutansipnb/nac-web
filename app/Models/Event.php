@@ -13,6 +13,7 @@ class Event extends Model
         'aliases',
         'year',
         'icon_url',
+        'booklet_url',
         'background_url',
         'audience',
         'registration_fee',

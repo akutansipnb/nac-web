@@ -94,6 +94,7 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a class="dropdown-item" href="{{ route('userlist.index2',['id' => $item->id]) }}">List Peserta</a>
                         @if ($item->tm_time == NULL)
                           <a class="dropdown-item" href={{route('tm.edit',['tm' => $item->id])}}>Atur Technical Meeting</a>
                         @else
