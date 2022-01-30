@@ -4,6 +4,7 @@ use App\Http\Controllers\AcademiesController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContestantController;
 use App\Http\Controllers\Admin\EventsController;
+use App\Http\Controllers\Admin\LandingPageSettingController;
 use App\Http\Controllers\Admin\MentorController;
 use App\Http\Controllers\Admin\SchoolController;
 use App\Http\Controllers\Admin\TimeScheduleController;
@@ -34,9 +35,6 @@ use Illuminate\Support\Facades\Auth;
 //
 */
 
-Route::get('/test',function(){
-    return view('testing');
-});
 
 Route::get('/', [LandingController::class,'index']);
 
@@ -122,4 +120,9 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
 
    // ACC
     Route::get('/acc/{id}',[ValidationController::class,'validateAcc'])->name('validation.acc');
+
+    // Landing Page Setting
+    Route::get('/landing',[LandingPageSettingController::class,'getLandingSet'])->name('landing.index');
+    Route::post('/post',[LandingPageSettingController::class,'updateLandingSet'])->name('landing.update');
+
 });

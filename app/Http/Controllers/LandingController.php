@@ -5,16 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LandingController extends Controller
 {
     //
 
     public function index(){
+
+        // GetConfig
+        $path = Storage::disk('local')->get('public/landing_page_config.json');
+        $data = json_decode($path,true);
+
+        $theme = $data['theme'];
+        $quotes = $data['quotes'];
+        $desc_quotes = $data['desc_quotes'];
+        $url_video = $data['url_video'];
+
         $blogs = Blog::orderBy('id','desc')->paginate(3);
         $bcount = count(Blog::all());
         $event = Event::all();
-        return view("landing",compact('event','blogs','bcount'));
+        return view("landing",compact('event','blogs','bcount','theme','quotes','desc_quotes','url_video'));
     }
 
     public function detail($id){

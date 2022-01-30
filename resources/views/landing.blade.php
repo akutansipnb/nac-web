@@ -9,8 +9,7 @@
         <h1>Competition</h1>
     </div>
     <div class="px-10 md:px-52 text-center my-10">
-        <p class="championship-theme">"Melalui Kompetisi Wujudkan Sumber Daya Manusia di bidang Akuntansi dan
-            Perpajakan yang Berkualitas, Kompetitif dan Berintegritas di Era Digital"</p>
+        <p class="championship-theme">"{{ $theme }}"</p>
     </div>
     <div class="flex-col text-center">
 
@@ -36,14 +35,11 @@
                 </p>
 
                 <p class="mt-2 text-2xl font-bold text-white sm:text-3xl">
-                    Semangat Baru untuk edukasi pada akutansi
+                    {{ $quotes }}
                 </p>
 
                 <p class="hidden lg:mt-4 lg:block">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed.
-                    Quam a scelerisque
-                    amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum
-                    tincidunt duis.
+                    {{ $desc_quotes }}
                 </p>
 
                 <a href=""
@@ -299,7 +295,7 @@
                     <iframe width="100%" height="500" src="https://www.youtube.com/embed/079rAyl63Bw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
               </div>
-              
+
             </div>
             <!--footer-->
             <div class="flex items-center justify-end px-6 border-t border-solid border-blueGray-200 rounded-b">
@@ -331,6 +327,6 @@
     document.getElementById(modalID2 + "-backdrop").classList.toggle("flex");
     }
   </script>
-    
+
 @endsection
 
