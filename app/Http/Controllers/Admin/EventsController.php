@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\EventController;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Models\UserDetail;
+use PDF;
 use Illuminate\Support\Facades\Storage;
 
 class EventsController extends Controller
@@ -201,5 +203,16 @@ class EventsController extends Controller
 
         return redirect()->back();
 
+    }
+
+    public function cetak_pdf($id)
+    {
+        $e = Event::where('id',$id)->first();
+    	$datas = UserDetail::where('id_events',$id)->get();
+
+        $comp = $e['event_name'];
+ 
+    	$pdf = PDF::loadview('pesertalomba_pdf',compact('datas','comp'));
+    	return $pdf->download(date('dmyhm').'-'.strtoupper(str_replace(' ','_',$e['event_name'])).'.pdf');
     }
 }
