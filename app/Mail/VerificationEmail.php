@@ -33,7 +33,7 @@ class VerificationEmail extends Mailable
         $e = UserDetail::where('id',$this->data['id'])->first();
         $event = Event::where('id',$e->id_events)->first();
         return $this->from('nac@pnb.ac.id', 'Panitia National Account Competition PNB')->markdown('email.verification-email')->with([
-            'group_url' => $event->group_url,
+            'group_url' => $event['group_url'],
             'name' => $e->users['name'],
             'email' => $e->users['email'],
             'event' => $event['event_name'],

@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('aliases',15);
             $table->string('year');
             $table->string('icon_url')->nullable(false);
+            $table->string('booklet_url')->nullable(false);
             $table->string('background_url')->nullable(false);
             $table->enum('audience',['university','school']);
             $table->date('tm_time')->nullable(true);

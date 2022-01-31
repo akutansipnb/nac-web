@@ -5,12 +5,12 @@
 
 Terima Kasih sudah bergabung menjadi peserta NAC 2021 cabang lomba <strong> {{$event}} {{$year}}</strong>  , Segera selesaikan pembayaranmu yaa
 
-@component('mail::button', ['url' => 'https://chat.whatsapp.com/Exs4LYQJmc3GUMT6yuf23U'])
+@component('mail::button', ['url' => '/dashboard'])
 Masuk ke Dashboard
 @endcomponent
 
 Salam Hangat,<br>
 <br>
-Panitia National Accouting Competition 
+Panitia National Accouting Competition
 {{ config('app.name') }}
 @endcomponent

@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data" action="{{route('register.store')}}">
+                    <form method="POST" enctype="multipart/form-data" action="{{route('member.store')}}">
                         @csrf
                             <h6 class="heading-small text-muted mb-4">Informasi Admin</h6>
                             <div class="pl-lg-4">

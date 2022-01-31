@@ -35,8 +35,5 @@ class DownloadController extends Controller
 
     $path = public_path($url);
     return response()->download($path);
-
-
-
     }
 }
