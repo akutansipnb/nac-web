@@ -99,14 +99,14 @@
                         @else
                           <a class="dropdown-item" href={{route('tm.edit',['tm' => $item->id])}}>Edit Technical Meeting</a>
                         @endif
-                        @if ($item->registration_fee == NULL)
+                        {{-- @if ($item->registration_fee == NULL)
                           <a class="dropdown-item" href="#">Atur Biaya Pendaftaran</a>
                         @else
                           <a class="dropdown-item" href="#">Edit Biaya Pendaftaran</a>
-                        @endif
+                        @endif --}}
                         <a class="dropdown-item" href="{{ route('cetak_pdf',$item->id) }}">Unduh Peserta Lomba</a>
                         <a class="dropdown-item" href="{{ route('events.edit',$item->id) }}">Edit Lomba</a>
-                        <a class="dropdown-item" href="#">Tutup Pendaftaran</a>
+                        {{-- <a class="dropdown-item" href="#">Tutup Pendaftaran</a> --}}
                           <form action="{{route('events.destroy',['event' => $item->id])}}" method="post">
                             @csrf
                             @method('delete')

@@ -13,7 +13,7 @@
     </div>
     <div class="flex-col text-center">
 
-        <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+        {{-- <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
 
             <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                 Daftar Sekarang
@@ -22,11 +22,12 @@
         <a onclick="toggleModal('modal-id2')" class="inline-block cursor-pointer px-5 md:my-0 my-3 text-gray-400 hover:text-gray-600 transition-100 delay-50 font-bold">
             Vidio Pembukaan
 
-        </a>
+        </a> --}}
     </div>
 </section>
+
 {{-- CTA Intro --}}
-<section class="mx-5">
+{{-- <section class="mx-5">
     <aside class="relative overflow-hidden text-gray-300 bg-gray-900 rounded-xl lg:flex shadow shadow-lg">
         <div class="w-full p-12 text-center lg:w-1/2 sm:p-16 lg:p-24 lg:text-left">
             <div class="max-w-xl mx-auto lg:ml-0">
@@ -58,17 +59,17 @@
         </div>
     </aside>
 
-</section>
+</section> --}}
 
 {{-- Text Lomba --}}
-<div class="grid grid-cols-1 mx-5 mt-20" id="lomba">
+{{-- <div class="grid grid-cols-1 mx-5 mt-20" id="lomba">
     <div class="text-center">
         <h2 class="font-bold text-5xl gradient-text">Daftar Lomba</h2>
     </div>
-</div>
+</div> --}}
 
 {{-- Daftar Lomba --}}
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 mx-5 md:mx-20 mt-10 mb-20">
+{{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 mx-5 md:mx-20 mt-10 mb-20">
 
     @foreach ($event as $item)
 
@@ -164,8 +165,10 @@
                 </div>
             </dl>
         </div>
-    </a>
+    </a> --}}
 
+
+    {{-- Kill This Script --}}
     {{-- <div class="block overflow-hidden bg-white shadow-xl rounded-2xl" href="">
         <img class="object-cover w-full h-56" src="{{asset($item->background_url)}}" alt="" />
 
@@ -228,7 +231,7 @@
     </div>
 </div> --}}
 @endforeach
-</div>
+{{-- </div>
 <div class="bg-gray-100 flex flex-col items-center">
     <div class="grid grid-cols-1 mx-5 mt-16">
         <div class="text-center">
@@ -316,7 +319,7 @@
       <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id2-backdrop"></div>
       <!--/MODAL2-->
 
-</div>
+</div> --}}
 
 
 <script type="text/javascript">
