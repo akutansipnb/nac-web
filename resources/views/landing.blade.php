@@ -230,7 +230,7 @@
         </dl>
     </div>
 </div> --}}
-@endforeach
+{{-- @endforeach --}}
 {{-- </div>
 <div class="bg-gray-100 flex flex-col items-center">
     <div class="grid grid-cols-1 mx-5 mt-16">
