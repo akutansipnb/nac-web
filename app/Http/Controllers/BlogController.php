@@ -56,11 +56,11 @@ class BlogController extends Controller
                     'background_url' => 'img/posts/'.$cover_name,
                     'file_pdf' => $pdf_name,
                 ]);
-    
+
                 // Moves Files
                 $cover->move('img/posts/',$cover_name);
                 $pdf->move('files/posts/',$pdf_name);
-    
+
                 return redirect()->route('blogs.index');
             } catch (\Throwable $th) {
                 throw $th;
@@ -74,16 +74,16 @@ class BlogController extends Controller
                     'background_url' => 'img/posts/'.$cover_name,
                     'file_pdf' => NULL,
                 ]);
-    
+
                 // Moves Files
                 $cover->move('img/posts/',$cover_name);
-    
+
                 return redirect()->route('blogs.index');
             } catch (\Throwable $th) {
                 throw $th;
             }
         }
-        
+
     }
 
     /**
@@ -136,7 +136,7 @@ class BlogController extends Controller
                     'title' => $request->title ,
                     'desc' => $request->desc,
                 ]);
-    
+
                 return redirect()->route('blogs.index');
             } catch (\Throwable $th) {
                 throw $th;
@@ -152,7 +152,7 @@ class BlogController extends Controller
                     'desc' => $request->desc,
                     'background_url' => 'img/posts/'.$cover_name,
                 ]);
-    
+
                 // Moves Files
                 unlink($data['background_url']);
                 $cover->move('img/posts/',$cover_name);
@@ -165,7 +165,7 @@ class BlogController extends Controller
         else if($request->file('background_url') == NULL && $request->file('file_pdf') != NULL){
             $data = Blog::find($id);
             $pdf = $request->file('file_pdf');
-            
+
             $pdf_name = strtolower($request->title)."-file-blog.".$pdf->getClientOriginalExtension();
             try {
                 Blog::where('id', $id)->update([
@@ -173,7 +173,7 @@ class BlogController extends Controller
                     'desc' => $request->desc,
                     'file_pdf' => $pdf_name,
                 ]);
-    
+
                 // Moves Files
                 unlink('files/posts/'.$data['file_pdf']);
                 $pdf->move('files/posts/',$pdf_name);
@@ -195,7 +195,7 @@ class BlogController extends Controller
                     'background_url' => 'img/posts/'.$cover_name,
                     'file_pdf' => $pdf_name,
                 ]);
-    
+
                 // Moves Files
                 unlink('files/posts/'.$data['file_pdf']);
                 unlink($data['background_url']);
@@ -206,7 +206,7 @@ class BlogController extends Controller
                 throw $th;
             }
         }
-        
+
     }
 
     /**

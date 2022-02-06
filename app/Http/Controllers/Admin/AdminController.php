@@ -43,7 +43,7 @@ class AdminController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|unique:users,email',
-            'password'=>'required,min:8'
+            'password'=>'required|min:8'
         ],[
             'email.unique' => "Data Sudah Ada !"
         ]);
@@ -58,7 +58,7 @@ class AdminController extends Controller
 
             // Moves Files
             $icon->move('img/profile/admin',$icon_name);
-            return redirect()->route('register.index')->with('success', 'Data Berhasil Ditambah');
+            return redirect()->route('member.index')->with('success', 'Data Berhasil Ditambah');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -107,7 +107,8 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-        $data = User::find($id);
-        echo $data;
+        $data = User::find($id)->delete();
+        // echo $data;
+        return redirect()->route('member.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

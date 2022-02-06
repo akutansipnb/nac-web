@@ -115,6 +115,7 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
 
     Route::get('/cetak_pdf/{id}', [EventsController::class,'cetak_pdf'])->name('cetak_pdf');
     route::get('/userlist/{id}',[UserListController::class,'index'])->name('userlist.index');
+    route::get('/userlist/{id}',[UserListController::class,'index2'])->name('userlist.index2');
     // Contestant
     route::resource('contestants',ContestantController::class);
 

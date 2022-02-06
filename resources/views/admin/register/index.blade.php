@@ -7,7 +7,7 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-12 col-12 text-right">
-                    <a href="{{route('register.create')}}" class="btn btn-sm btn-neutral">Tambah Admin</a>
+                    <a href="{{route('member.create')}}" class="btn btn-sm btn-neutral">Tambah Admin</a>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item" href="#">Edit Data</a>
-                                            <form action="{{route('register.destroy',['register' => $item->id])}}"
+                                            <form action="{{route('member.destroy',['member' => $item->id])}}"
                                                 method="post">
                                                 @csrf
                                                 @method('delete')

@@ -17,6 +17,12 @@ class UserListController extends Controller
         return view('admin.userlist.index',compact('data'));
     }
 
+    public function index2($id)
+    {
+        $data = UserDetail::where('id_events',$id)->get();
+        return view('admin.userlist.index',compact('data'));
+    }
+
     public function edit($id)
     {
         $userdetail = UserDetail::find($id);

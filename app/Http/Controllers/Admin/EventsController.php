@@ -61,9 +61,11 @@ class EventsController extends Controller
 
 
         $icon = $request->file('icon_url');
+        $booklet = $request->file('booklet_url');
         $cover = $request->file('background_url');
 
         $icon_name = strtolower($request->aliases)."-" . $request->register_year ."-icon.".$icon->getClientOriginalExtension();
+        $booklet_name = strtolower($request->aliases)."-" . $request->register_year ."-booklet.".$booklet->getClientOriginalExtension();
         $cover_name = strtolower($request->aliases)."-" . $request->register_year ."-cover.".$cover->getClientOriginalExtension();
 
 
@@ -73,6 +75,7 @@ class EventsController extends Controller
                 'aliases' => $request->aliases,
                 'year' => $request->register_year,
                 'icon_url' => 'img/events/icons/'.$icon_name,
+                'booklet_url' => 'img/events/booklet/'.$booklet_name,
                 'background_url' => 'img/events/covers/'.$cover_name,
                 'audience' => $request->audience,
                 'max_slot' => $request->max_slot,
@@ -88,6 +91,7 @@ class EventsController extends Controller
 
             // Moves Files
             $icon->move('img/events/icons',$icon_name);
+            $booklet->move('img/events/booklet',$booklet_name);
             $cover->move('img/events/covers',$cover_name);
 
             return redirect()->route('events.index')->with('success', 'Data Berhasil Ditambah');
@@ -177,6 +181,15 @@ class EventsController extends Controller
                 $cover->move('img/events/covers',$cover_name);
             }
 
+            if($request->file('booklet_url') !== NULL){
+                $booklet = $request->file('booklet_url');
+                $booklet_name = strtolower($request->aliases)."-" . $request->register_year ."-booklet.".$booklet->getClientOriginalExtension();
+                $update = [
+                    'background_url' => 'img/events/covers/'.$booklet_name,
+                ];
+                $booklet->move('img/events/booklet',$booklet_name);
+            }
+
         $event->update($update);
 
             // Moves Files
@@ -213,7 +226,7 @@ class EventsController extends Controller
     	$datas = UserDetail::where('id_events',$id)->get();
 
         $comp = $e['event_name'];
- 
+
     	$pdf = PDF::loadview('pesertalomba_pdf',compact('datas','comp'));
     	return $pdf->download(date('dmyhm').'-'.strtoupper(str_replace(' ','_',$e['event_name'])).'.pdf');
     }

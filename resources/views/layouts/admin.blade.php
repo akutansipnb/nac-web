@@ -42,13 +42,13 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href={{route('university.index')}}>
-                <i class="ni ni-pin-3 text-primary"></i>
+                <i class="ni ni-spaceship text-warning"></i>
                 <span class="nav-link-text">Perguruan Tinggi</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href={{route('school.index')}}>
-                <i class="ni ni-pin-3 text-primary"></i>
+                <i class="ni ni-tie-bow text-danger"></i>
                 <span class="nav-link-text">Sekolah</span>
               </a>
             </li>
@@ -196,7 +196,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
+                {{-- <a href="#!" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>
@@ -211,7 +211,7 @@
                 <a href="#!" class="dropdown-item">
                   <i class="ni ni-support-16"></i>
                   <span>Support</span>
-                </a>
+                </a> --}}
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
