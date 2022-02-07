@@ -230,4 +230,12 @@ class EventsController extends Controller
     	$pdf = PDF::loadview('pesertalomba_pdf',compact('datas','comp'));
     	return $pdf->download(date('dmyhm').'-'.strtoupper(str_replace(' ','_',$e['event_name'])).'.pdf');
     }
+
+    public function lihat_peserta($id)
+    {
+        $e = Event::where('id',$id)->first();
+        $datas = UserDetail::where('id_events',$id)->orderBy('created_at','desc')->paginate(10);
+        $comp = $e['event_name'];
+        return view('admin.event.peserta.index',compact('datas','comp'));
+    }
 }

@@ -21,6 +21,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewMentorController;
 use App\Http\Controllers\ViewTimeScheduleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController;
 use PhpParser\Builder\Class_;
 use Illuminate\Support\Facades\Auth;
 
@@ -98,9 +99,7 @@ route::group(['middleware' => ['role:Users'],'prefix' => 'users'],function(){
 
 // Admin
 route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],function(){
-    Route::get('/', function () {
-        return view('admin.index');
-    })->name('admin.dashboard');
+    Route::get('/', [DashboardController::class,'index'])->name('admin.dashboard');
 
     route::get('download/{id}/{validation_no}',[DownloadController::class,'download'])->name('download');
 
@@ -114,6 +113,7 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
     route::resource('university',UniversityController::class);
 
     Route::get('/cetak_pdf/{id}', [EventsController::class,'cetak_pdf'])->name('cetak_pdf');
+    Route::get('/lihat_peserta/{id}', [EventsController::class,'lihat_peserta'])->name('lihat_peserta');
     route::get('/userlist/{id}',[UserListController::class,'index'])->name('userlist.index');
     route::get('/userlist/{id}',[UserListController::class,'index2'])->name('userlist.index2');
     // Contestant
