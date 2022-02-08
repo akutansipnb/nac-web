@@ -121,22 +121,19 @@
               <tr>
                 <th scope="col">Nama Peserta</th>
                 <th scope="col">Cabang Lomba</th>
-                <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
+              @foreach ($datas as $data)
               <tr>
                 <th scope="row">
-                  /argon/
+                  {{ $data->users->name }}
                 </th>
                 <td>
-                  4,569
-                </td>
-                <td>
-                  340
+                  {{ $data->events->event_name }}
                 </td>
               </tr>
-              
+              @endforeach
             </tbody>
           </table>
         </div>
@@ -165,96 +162,29 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($events as $event)
               <tr>
                 <th scope="row">
-                  OAK
+                  {{ $event->event_name }}
                 </th>
                 <td>
-                  1,480
+                  {{ $event->max_slot }}
                 </td>
                 <td>
                   <div class="d-flex align-items-center">
-                    <span class="mr-2">60%</span>
+                    <?php $per = (count($event->users)/$event->max_slot)*100 ?>
+                    <span class="mr-2">{{ count($event->users) }}/{{ $event->max_slot }} ({{ $per }}%)</span>
                     <div>
                       <div class="progress">
-                        <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                        <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow={{1}} aria-valuemin="0" aria-valuemax="100" style="width: {{$per}}%;"></div>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">
-                  Facebook
-                </th>
-                <td>
-                  5,480
-                </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <span class="mr-2">70%</span>
-                    <div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Google
-                </th>
-                <td>
-                  4,807
-                </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <span class="mr-2">80%</span>
-                    <div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Instagram
-                </th>
-                <td>
-                  3,678
-                </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <span class="mr-2">75%</span>
-                    <div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  twitter
-                </th>
-                <td>
-                  2,645
-                </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <span class="mr-2">30%</span>
-                    <div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+              @endforeach
+              
+              
             </tbody>
           </table>
         </div>
