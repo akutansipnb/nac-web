@@ -20,6 +20,7 @@ use App\Http\Controllers\User\ValidationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewMentorController;
 use App\Http\Controllers\ViewTimeScheduleController;
+use App\Http\Controllers\ViewUserListController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Class_;
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +50,7 @@ Route::get('/blog', function () {
 Route::resource('pendamping', ViewMentorController::class);
 
 Route::get('/time', [ViewTimeScheduleController::class, 'indexTimeSchedule']);
+
 
 // Route::get('/time', function () {
 //     return view('user.time');
@@ -92,6 +94,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 route::group(['middleware' => ['role:Users'],'prefix' => 'users'],function(){
     route::resource('dashboard',UserController::class);
+    route::get('/list-peserta',[ViewUserListController::class,'index'])->name('listpeserta.index');
+    route::get('/download/{id}/{booklet_url}',[DownloadController::class,'downloadbooklet'])->name('downloadbooklet');
+
     route::get('/validation',[ValidationController::class,'index'])->name('user.validation');
     route::post('/validation',[ValidationController::class,'updateValidation'])->name('user.validate');
 });
@@ -104,6 +109,7 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
 
     route::get('download/{id}/{validation_no}',[DownloadController::class,'download'])->name('download');
 
+
     route::resource('member',AdminController::class);
     route::resource('mentors',MentorController::class);
     route::resource('schedules',TimeScheduleController::class);
@@ -115,7 +121,7 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],functi
 
     Route::get('/cetak_pdf/{id}', [EventsController::class,'cetak_pdf'])->name('cetak_pdf');
     route::get('/userlist/{id}',[UserListController::class,'index'])->name('userlist.index');
-    route::get('/userlist/{id}',[UserListController::class,'index2'])->name('userlist.index2');
+    // route::get('/userlist/{id}',[UserListController::class,'index2'])->name('userlist.index2');
     // Contestant
     route::resource('contestants',ContestantController::class);
 

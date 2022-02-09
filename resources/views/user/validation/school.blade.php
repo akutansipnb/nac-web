@@ -27,7 +27,7 @@
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-logo">Kartu Tanda Siswa</label>
-                        <input class="form-control" type="file" name="validation_1" id="input-logo">
+                        <input class="form-control" type="file" name="validation_1" id="input-logo" required>
                       </div>
                     </div>
 

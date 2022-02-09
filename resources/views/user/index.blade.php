@@ -33,8 +33,10 @@
             </div>
            @if (Auth::user()->details->validation_status === 'active')
            <div class="col-xl-6 col-md-6">
+
             <div class="card card-stats ">
               <!-- Card body -->
+              <a href={{ route('listpeserta.index') }} class="card-body px-5">
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
@@ -48,7 +50,7 @@
                   </div>
                 </div>
               </div>
-
+              </a>
             </div>
 
             <div class="card card-stats">
@@ -73,6 +75,7 @@
 
             <div class="card card-stats">
               <!-- Card body -->
+              {{-- <a href="{{ route('downloadbooklet',['id' => Auth::user()->details->events->id, 'booklet_url' => 1 ]) }}"> --}}
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
@@ -85,6 +88,7 @@
                     </div>
                   </div>
                 </div>
+              </a>
               </div>
 
             </div>
