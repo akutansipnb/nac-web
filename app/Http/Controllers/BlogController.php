@@ -219,8 +219,16 @@ class BlogController extends Controller
     {
         $data = Blog::find($id);
         unlink($data['background_url']);
-        unlink('files/posts/'.$data['file_pdf']);
-        $data = Blog::destroy($id);
+
+        if($data->file_pdf == NULL){
+            $data = Blog::destroy($id);
+        }
+        else{
+            unlink('files/posts/'.$data['file_pdf']);
+            $data = Blog::destroy($id);
+        }
+        
+        
 
         return redirect()->back();
     }
