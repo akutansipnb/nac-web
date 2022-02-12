@@ -24,6 +24,13 @@ class ValidationController extends Controller
     }
 
     public function updateValidation(Request $request){
+        $request->validate([
+            'validation_1' => 'image|mimes:jpeg,jpg,png|max:5000',
+            'validation_2' => 'image|mimes:jpeg,jpg,png|max:5000',
+            'validation_3' => 'image|mimes:jpeg,jpg,png|max:5000',
+            'validation_4' => 'image|mimes:jpeg,jpg,png|max:5000',
+            'validation_5' => 'image|mimes:jpeg,jpg,png|max:5000'
+        ]);
         $user = Auth::user()->details;
 
         $event = Auth::user()->details->events;
@@ -81,7 +88,7 @@ class ValidationController extends Controller
             throw $th;
         }
 
-        $e = UserDetail::where('identity_code',$user->identity_code)->first(); 
+        $e = UserDetail::where('identity_code',$user->identity_code)->first();
         Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
         return redirect()->route('dashboard.index')->with(['success'=>'Berhasil Melakukan Validasi']);
         // dd($request);

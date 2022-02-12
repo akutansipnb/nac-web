@@ -13,15 +13,14 @@ class UserListController extends Controller
 {
     public function index($id)
     {
-        $data = UserDetail::where('id_academy',$id)->get();
-        return view('admin.userlist.index',compact('data'));
-    }
-
-    public function index2($id)
-    {
+        if (Academy::where('id',$id)->get()){
+            $data = UserDetail::where('id_academy',$id)->get();
+            return view('admin.userlist.index',compact('data'));
+        }
         $data = UserDetail::where('id_events',$id)->get();
         return view('admin.userlist.index',compact('data'));
     }
+
 
     public function edit($id)
     {

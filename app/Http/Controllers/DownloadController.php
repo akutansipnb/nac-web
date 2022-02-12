@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DownloadController extends Controller
 {
@@ -36,4 +37,19 @@ class DownloadController extends Controller
     $path = public_path($url);
     return response()->download($path);
     }
+
+    // public function downloadbooklet($id,$booklet_url){
+    //     $datas = UserDetail::where('id_events', $id);
+    //     switch ($booklet_url){
+    //         case '1':
+    //             $url =  $datas->events->booklet_url;
+    //             break;
+    //         default:
+    //         $url ="";
+    //         break;
+    //     }
+
+    //     $path = public_path($url);
+    // return response()->download($path);
+    // }
 }
