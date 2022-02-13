@@ -44,8 +44,13 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-initial">Email *</label>
-                                        <input type="email" id="input-initial" class="form-control" name="email"
+                                        <input type="email" id="input-initial" class="form-control @error('email') is-invalid @enderror" name="email"
                                             placeholder="Email Anda" required>
+                                            @error('email')
+                                            <div class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </div>
+                                            @enderror
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -66,7 +71,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-logo">Photo Profile</label>
-                                            <input class="form-control" type="file" name="img_url" id="input-logo">
+                                            <input class="form-control" type="file" name="img_url" id="input-logo" required>
                                         </div>
                                     </div>
                                 </div>
