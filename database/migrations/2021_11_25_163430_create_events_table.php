@@ -33,6 +33,8 @@ class CreateEventsTable extends Migration
             $table->text('quotes')->nullable();
             $table->text('desc')->nullable();
             $table->text('blog')->nullable();
+            $table->string('cs_1',20)->nullable(false);
+            $table->string('cs_2',20)->nullable(false);
             $table->enum('status',['open','close']);
             $table->timestamps();
         });

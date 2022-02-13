@@ -57,6 +57,8 @@ class EventsController extends Controller
             'quotes'=>'required',
             'desc'=>'required',
             'blog'=>'required',
+            'cs_1'=>'required',
+            'cs_2'=>'required',
         ]);
 
 
@@ -86,6 +88,8 @@ class EventsController extends Controller
                 'quotes' => $request->quotes,
                 'desc' => $request->desc,
                 'blog' => $request->blog,
+                'cs_1' => $request->cs_1,
+                'cs_2' => $request->cs_2,
                 'status' => 'open',
             ]);
 
@@ -143,7 +147,8 @@ class EventsController extends Controller
             'register_close'=>'required',
             'quotes'=>'required',
             'desc'=>'required',
-            'blog'=>'required'
+            'cs_1'=>'required',
+            'cs_2'=>'required',
         ]);
 
         try {
@@ -159,6 +164,8 @@ class EventsController extends Controller
                 'quotes' => $request->quotes,
                 'desc' => $request->desc,
                 'blog' => $request->blog,
+                'cs_1' => $request->cs_1,
+                'cs_2' => $request->cs_2,
                 'status' => 'open',
             ];
 
