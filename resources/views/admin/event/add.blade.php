@@ -192,6 +192,20 @@
                 </div>
               </div>
 
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-initial">CS 1</label>
+                  <input type="number" id="input-initial" class="form-control" name="cs_1" placeholder="Kontak CS 1" required>
+                </div>
+              </div>
+
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-initial">CS 2</label>
+                  <input type="number" id="input-initial" class="form-control" name="cs_2" placeholder="Kontak CS 2" required>
+                </div>
+              </div>
+
               <button type="submit" class="btn btn-warning w-100">Simpan Data</button>
 
             </form>

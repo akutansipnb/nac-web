@@ -27,6 +27,8 @@ class Event extends Model
         'quotes',
         'desc',
         'blog',
+        'cs_1',
+        'cs_2',
         'status'
     ];
 

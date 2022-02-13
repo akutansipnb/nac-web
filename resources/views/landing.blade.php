@@ -243,25 +243,15 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mx-5 md:mx-20 mt-10 mb-12">
 
         @foreach ($blogs as $blog)
-        <div class="block overflow-hidden bg-white shadow-xl rounded-2xl mx-3">
+        <a href={{ url('detail-berita',['blog'=>$blog->id]) }}>
+        <div class="block overflow-hidden bg-white shadow-xl rounded-xl mx-3 h-full">
             <img class="object-cover w-full h-56" src="{{ asset($blog->background_url) }}" alt="" />
-            <div class="m-10">
-                <h5 class="mt-4 text-xl font-bold text-gray-900">{{ $blog->title }}</h5>
-                <p class="max-w-sm mt-2 text-gray-700"><?= substr(strip_tags($blog->desc),0,100) ?>....</p>
-            </div>
-
-
-            <div class="flex items-center m-10">
-                <a href={{ url('detail-berita',['blog'=>$blog->id]) }}
-                    class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
-                    <span
-                        class="text-center block text-sm px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                        Baca Selengkapnya
-                    </span>
-                </a>
+            <div class="mx-5 my-7">
+                <h5 class="mt-4 text-xl font-bold text-gray-900 leading-relaxed">{{ $blog->title }}</h5>
+                <p class="max-w-sm mt-2 text-gray-400 leading-relaxed"><?= substr(strip_tags($blog->desc),0,70) ?>....</p>
             </div>
         </div>
-
+        </a>
         @endforeach
 
     </div>
