@@ -24,7 +24,7 @@
           </div>
 
           {{-- success --}}
-          @if(('success'))
+          @if(session('success'))
             <div class="alert alert-success mb-3 mx-4" role="alert">
                 {{session('success')}}
             </div>

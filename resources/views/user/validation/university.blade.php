@@ -27,21 +27,21 @@
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-logo">Kartu Tanda Mahasiswa</label>
-                        <input class="form-control" type="file" name="validation_1" id="input-logo">
+                        <input class="form-control" type="file" name="validation_1" id="input-logo" required>
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Surat Pernyataan Mahasiswa Aktiv</label>
-                        <input class="form-control" type="file" name="validation_2" id="input-event-cover">
+                        <input class="form-control" type="file" name="validation_2" id="input-event-cover" required>
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Bukti Pembayaran</label>
-                        <input class="form-control" type="file" name="validation_3" id="input-event-cover">
+                        <input class="form-control" type="file" name="validation_3" id="input-event-cover" required>
                       </div>
                     </div>
                   </div>

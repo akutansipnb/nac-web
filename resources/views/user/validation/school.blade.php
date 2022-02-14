@@ -34,28 +34,28 @@
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Surat Delegasi Sekolah</label>
-                        <input class="form-control" type="file" name="validation_2" id="input-event-cover">
+                        <input class="form-control" type="file" name="validation_2" id="input-event-cover" required>
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Bukti Pembayaran</label>
-                        <input class="form-control" type="file" name="validation_3" id="input-event-cover">
+                        <input class="form-control" type="file" name="validation_3" id="input-event-cover" required>
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Foto Diri</label>
-                        <input class="form-control" type="file" name="validation_4" id="input-event-cover">
+                        <input class="form-control" type="file" name="validation_4" id="input-event-cover" required>
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Fakta Integritas</label>
-                        <input class="form-control" type="file" name="validation_5" id="input-event-cover">
+                        <input class="form-control" type="file" name="validation_5" id="input-event-cover" required>
                       </div>
                     </div>
                   </div>
