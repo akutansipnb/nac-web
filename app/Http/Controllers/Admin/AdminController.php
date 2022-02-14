@@ -43,7 +43,8 @@ class AdminController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|unique:users,email',
-            'password'=>'required|min:8'
+            'password'=>'required|min:8',
+            'img_url' => 'image|mimes:jpeg,jpg,png|max:5000',
         ],[
             'email.unique' => "Data Sudah Ada !"
         ]);

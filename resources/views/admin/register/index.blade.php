@@ -49,7 +49,7 @@
                                             @if ($item->img_url == NULL)
                                             <img alt="Image placeholder" src="{{asset('img/icons/users.png')}}">
                                             @else
-                                            <img alt="Image placeholder" src="{{asset(Auth::user()->img_url)}}">
+                                            <img alt="Image placeholder" src="{{asset($item->img_url)}}">
                                             @endif
                                         </a>
                                         <div class="media-body">
