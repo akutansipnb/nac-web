@@ -7,11 +7,11 @@
       <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">Daftarkan Sekolahmu !</h1>
 
       <p class="max-w-md mx-auto mt-4 text-center text-gray-500">
-        Pendaftaran cabang lomba Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, voluptas?
+        Sekolahmu belum terdaftar ? Daftarkan sekarang
       </p>
 
       {{-- success --}}
-      @if(session('success'))
+      {{-- @if(session('success'))
       <div class="flex p-4 text-white bg-green-600 rounded mt-4" role="alert">
           <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -22,7 +22,7 @@
             </h3>
           </div>
         </div>
-      @endif
+      @endif --}}
 
       <div action="" class="p-8 mt-6 mb-5 space-y-4 rounded-lg shadow-2xl">
 
