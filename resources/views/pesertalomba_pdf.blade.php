@@ -53,7 +53,7 @@
         <div class="header">
             <img src="{{public_path('img/kop.jpeg')}}" alt="KOP">
         </div>
-        
+
         <center>        <hr>
             <h2>DATA PESERTA LOMBA
         <br> {{$comp}}
@@ -72,6 +72,8 @@
                     <th>NAMA PESERTA</th>
                     <th>NIM</th>
                     <th>EMAIL</th>
+                    <th>SEKOLAH</th>
+                    <th>TELP</th>
                     <th>ALAMAT</th>
                 </tr>
                 @foreach ($datas as $item)
@@ -80,6 +82,8 @@
                     <td>{{$item->users->name}}</td>
                     <td>{{$item->identity_code}}</td>
                     <td>{{$item->users->email}}</td>
+                    <td>{{$item->academy->academy_name}}</td>
+                    <td>{{$item->phone}}</td>
                     <td>{{$item->adress}}</td>
                 </tr>
                 @endforeach

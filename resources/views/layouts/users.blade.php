@@ -42,24 +42,24 @@
             <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Kontak</a>
             <a href="route('login')"><button class="uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold px-16 py-3 text-white text-sm focus:outline-none">Masuk</button></a>
         </div>
-        
+
     </div>
 
-    <header class="text-gray-800 bg-white shadow shadow-lg">
+    <header class="text-gray-800 bg-white shadow shadow-lg" id="beranda">
         <div class="px-4 mx-auto sm:pr-0 max-w-screen-2xl">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center space-x-10">
-                    <span class="w-16 md:w-30 md:h-10 bg-white rounded-lg flex justify-center"> 
+                    <span class="w-16 md:w-30 md:h-10 bg-white rounded-lg flex justify-center">
                         <img src="{{asset('img/brand/logo.png')}}" alt="" srcset="" class="w-50 p-2">
                     </span>
 
                     <nav class="hidden text-sm font-medium space-x-8 lg:flex">
                         <a href="{{ url('/') }}">Beranda</a>
-                        <a href="">Tentang</a>
-                        <a href="">Daftar</a>
+                        <a href="{{ url('/') }}#tentang">Tentang</a>
+                        <a href="{{ url('/') }}#lomba">Daftar</a>
                         {{-- <a href="">Galeri</a> --}}
-                        <a href="">Blogs</a>
-                        <a href="">Kontak</a>
+                        <a href="{{ url('/') }}#berita">Blogs</a>
+                        <a href="#kontak">Kontak</a>
                     </nav>
                 </div>
 
@@ -87,20 +87,20 @@
 
     @yield('content')
 
-    <footer class="text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+    <footer class="text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500" id="kontak">
         <div class="max-w-screen-xl px-4 pb-8 mx-auto pt-16 sm:px-6 lg:px-8">
           <div class="max-w-4xl mx-auto text-center">
             <p class="text-4xl font-extrabold sm:text-5xl">
               National Accounting Competition
             </p>
             <p class="text-base mt-12 font-thin">Himpunan Mahasiswa Jurusan Akutansi </p>
-      
+
             {{-- <a
               href=""
               class="inline-flex items-center px-5 py-3 mt-8 font-medium border border-white border-opacity-25 rounded-full hover:bg-white hover:text-red-500"
             >
               Get started
-      
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="flex-shrink-0 w-4 h-4 ml-3"
@@ -112,7 +112,7 @@
               </svg>
             </a> --}}
           </div>
-      
+
           <div
             class="pt-8 border-t border-white border-opacity-25 sm:items-center sm:justify-between mt-5 sm:flex"
           >
@@ -121,7 +121,7 @@
               <a href="" class="hover:opacity-75">FAQs</a>
               <a href="" class="hover:opacity-75">Returns Policy</a>
             </nav>
-      
+
             <div class="flex justify-center mt-6 space-x-6 sm:justify-end sm:mt-0">
               <a
                 href=""
@@ -138,7 +138,7 @@
                   />
                 </svg>
               </a>
-      
+
               <a
                 href=""
                 target="_blank"
@@ -154,7 +154,7 @@
                   />
                 </svg>
               </a>
-      
+
               <a
                 href=""
                 target="_blank"
@@ -168,7 +168,7 @@
                   />
                 </svg>
               </a>
-      
+
               <a
                 href=""
                 target="_blank"
@@ -184,7 +184,7 @@
                   />
                 </svg>
               </a>
-      
+
               <a
                 href=""
                 target="_blank"

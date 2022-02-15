@@ -15,7 +15,7 @@ class AcademiesController extends Controller
      */
     public function index()
     {
-
+        return view('register.academy.success');
     }
 
     /**
@@ -48,8 +48,8 @@ class AcademiesController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address
             ]);
-
-            return redirect()->back()->with('success', 'Data Berhasil Ditambah');
+            $academy_name = $request->academy_name;
+            return view('register.academy.success',compact('academy_name'))->with('success', 'Data Berhasil Ditambah');
 
         } catch (\Throwable $th) {
             throw $th;

@@ -36,7 +36,7 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="name">Nama</th>
                   <th scope="col" class="sort" data-sort="date">Instansi</th>
-                  <th scope="col" class="sort" data-sort="budget">NIM/NIS</th>
+                  <th scope="col" class="sort" data-sort="budget">Email</th>
                   <th scope="col" class="sort" data-sort="status">No Telp</th>
                   <th scope="col" class="sort" data-sort="completion">Jurusan</th>
                   <th scope="col" class="sort" data-sort="completion">Semester</th>
@@ -56,7 +56,7 @@
                     {{ $item->academy->academy_name }}
                   </td>
                   <td class="budget">
-                    {{ $item->identity_code }}
+                    {{ $item->users->email }}
                   </td>
                   <td>
                     {{ $item->phone }}
@@ -71,7 +71,25 @@
                   <td>
                     {{ $item->adress}}
                   </td>
-                 
+                </td>
+                <td class="text-right">
+                    <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                            <a class="dropdown-item" href={{route('contestants.show',$item->id)}}>Details</a>
+                            <a class="dropdown-item" href={{ route('contestants.edit',$item->id) }}>Edit Data</a>
+                            <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
+                                method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="dropdown-item">Hapus Data</button>
+                            </form>
+                        </div>
+                    </div>
+                </td>
                 </tr>
                 @endforeach
 
