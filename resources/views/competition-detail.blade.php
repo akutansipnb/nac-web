@@ -67,13 +67,13 @@
             </div>
         </aside> --}}
         <section class="text-white bg-gray-900">
-            <div class="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
+            <div class="max-w-screen-2xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
               <div class="max-w-3xl mx-auto text-center">
                 <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl gradient-text">
                     {{ $data['quotes']}}
                 </h1>
           
-                <p class="max-w-xl mx-auto mt-4 sm:leading-relaxed sm:text-xl">
+                <p class="mx-auto mt-4 sm:leading-relaxed sm:text-xl">
                     {{$data['blog']}}
                 </p>
                 <div class="flex flex-wrap justify-center gap-4 mt-8">
