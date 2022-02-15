@@ -13,7 +13,7 @@
     </div>
     <div class="flex-col text-center">
 
-        {{-- <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+        <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
 
             <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                 Daftar Sekarang
@@ -22,7 +22,7 @@
         <a onclick="toggleModal('modal-id2')" class="inline-block cursor-pointer px-5 md:my-0 my-3 text-gray-400 hover:text-gray-600 transition-100 delay-50 font-bold">
             Vidio Pembukaan
 
-        </a> --}}
+        </a>
     </div>
 </section>
 
@@ -269,23 +269,23 @@
 
     <!--MODAL2-->
     <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center animate__animated animate__fadeIn" id="modal-id2">
-        <div class="relative w-auto my-6 mx-5 w-screen">
+        <div class="relative w-auto my-3 mx-5 w-screen">
           <!--content-->
           <div class="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
             <!--header-->
-            <div class="flex items-start justify-between p-5 md:p-8 border-b border-solid border-blueGray-200 rounded-t">
-              <h3 class="text-3xl 2xl:text-4xl font-pbold leading-tight">
+            <div class="flex items-start justify-between p-2 md:p-8 border-b border-solid border-blueGray-200 rounded-t">
+              <h3 class="text-2xl font-pbold leading-tight">
                 Vidio Pembukaan NAC
               </h3>
               <button class="pl-7 2xl:pl-12 ml-auto bg-transparent border-0 text-red-500 hover:text-red-800 duration-500 ease-in-out float-right text-2xl 2xl:text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id2')">
-                <x-vaadin-close class="w-7 h-7 text-red-600"/>
+                <x-vaadin-close class="w-7 h-7 text-gray-900 hover:text-red-500"/>
               </button>
             </div>
             <!--body-->
             <div class="relative p-2 md:p-9 flex-auto">
               <div class="flex flex-col xl:flex-row items-center">
                 <div class="flex m-5 w-full">
-                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/079rAyl63Bw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="500" src={{ $url_video }} title="Video Coming Soon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
               </div>
 
@@ -295,13 +295,7 @@
               <button class="text-dark-green background-transparent font-bold uppercase px-7 py-3 text-sm outline-none focus:outline-none ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id2')">
                 Tutup
               </button>
-              <a href="#lomba"
-                class="p-0.5 w-26 my-5 font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl" onclick="toggleModal('modal-id2')">
-                <span
-                    class="text-center block text-sm px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                    Daftar Sekarang
-                </span>
-            </a>
+              
             </div>
           </div>
         </div>

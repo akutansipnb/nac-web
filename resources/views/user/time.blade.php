@@ -32,7 +32,7 @@
                       </div>
                     </th>
                     <td class="budget">
-                        {{$item->date_start}} - {{$item->date_end}}
+                        {{$item->date_start}}
                     </td>
                     <td>
                       <span class="badge badge-dot mr-4">

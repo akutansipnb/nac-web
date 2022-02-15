@@ -44,7 +44,7 @@
         </dl>
 
         {{-- CTA Intro --}}
-        <aside class="relative overflow-hidden text-gray-300 bg-gray-900 md:rounded-xl m-0 lg:flex md:m-5">
+        {{-- <aside class="relative overflow-hidden text-gray-300 bg-gray-900 md:rounded-xl m-0 lg:flex md:m-5">
             <div class="w-full p-12 text-center lg:w-1/2 sm:p-16 lg:p-24 lg:text-left">
                 <div class="max-w-xl mx-auto lg:ml-0">
                     <p class="text-sm font-medium">{{$data['event_name']}} <span class="text-gray-600"> ({{$data['aliases']}})</p>
@@ -65,7 +65,37 @@
                 <img src="{{asset($data['background_url'])}}" alt="Women smiling at college"
                     class="absolute inset-0 object-cover w-full h-full" />
             </div>
-        </aside>
+        </aside> --}}
+        <section class="text-white bg-gray-900">
+            <div class="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
+              <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl gradient-text">
+                    {{ $data['quotes']}}
+                </h1>
+          
+                <p class="max-w-xl mx-auto mt-4 sm:leading-relaxed sm:text-xl">
+                    {{$data['blog']}}
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+
+                        <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                            Contact Person 1
+                        </span>
+                    </a>
+            
+                    <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+
+                        <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
+                            Contact Person 2
+                        </span>
+                    </a>
+                  </div>
+          
+                
+              </div>
+            </div>
+          </section>
     </div>
 </div>
 
