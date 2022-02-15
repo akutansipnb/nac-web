@@ -35,7 +35,7 @@
             </div>
             
             <div class="flex items-center content-center sm:ml-3 sm:mt-0">
-                <a href=""
+                <a href="{{ route('downloadbooklet',['id' => $data['id'] ]) }}"
                     class="px-6 py-3 my-auto font-medium text-gray-400 rounded-lg transition transform inline-block hover:text-gray-800 ">
                     Pedoman Lomba
                 </a>

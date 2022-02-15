@@ -39,7 +39,7 @@
 
             <div class="card card-stats ">
               <!-- Card body -->
-              <a href={{ route('listpeserta.index') }} class="card-body px-5">
+              <a href={{ route('listpeserta.index') }}>
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
@@ -58,7 +58,7 @@
 
             <div class="card card-stats">
               <!-- Card body -->
-              <a href={{ route('pendamping.index') }} class="card-body px-5">
+              <a href={{ route('pendamping.index') }}>
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
@@ -71,12 +71,13 @@
                     </div>
                   </div>
                 </div>
-                </a>
+                
               </div>
-
+            </a>
             </div>
-
+            
             <div class="card card-stats">
+              <a href="{{ route('downloadbooklet',['id' => Auth::user()->details->events->id ]) }}">
               <!-- Card body -->
               {{-- <a href="{{ route('downloadbooklet',['id' => Auth::user()->details->events->id, 'booklet_url' => 1 ]) }}"> --}}
               <div class="card-body p-5">
@@ -91,11 +92,10 @@
                     </div>
                   </div>
                 </div>
-              </a>
               </div>
-
+            </a>
             </div>
-
+          
             <div class="card card-stats ">
               <!-- Card body -->
               <a href={{ route('logout') }} class="card-body px-5" onclick="event.preventDefault();
