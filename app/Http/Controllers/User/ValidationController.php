@@ -30,6 +30,7 @@ class ValidationController extends Controller
             'validation_3' => 'image|mimes:jpeg,jpg,png|max:5000',
             'validation_4' => 'image|mimes:jpeg,jpg,png|max:5000',
             'validation_5' => 'image|mimes:jpeg,jpg,png|max:5000'
+
         ]);
         $user = Auth::user()->details;
 
@@ -82,7 +83,7 @@ class ValidationController extends Controller
             }else{
                 $validation_1->move($url,'/ktm-'.$validation_1_name);
                 $validation_2->move($url,'/pernyataan-'.$validation_2_name,);
-                $validation_3->move($url,'/kuita    nsi-'.$validation_3_name);
+                $validation_3->move($url,'/kuitansi-'.$validation_3_name);
             }
         } catch (\Throwable $th) {
             throw $th;
