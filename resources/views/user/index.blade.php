@@ -12,17 +12,20 @@
                     <img class="card-img-top img-fluid" style="max-height: 500px;" src="{{asset('img/theme/user-cover.jpg')}}" alt="Card cover">
                     <div class="card-body">
                       <h3 class="card-title" style="font-weight: 700">Halo , {{Auth::user()->name}}</h3>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
                       @if (Auth::user()->details->validation_status == 'unactive')
+                      <p class="card-text">Segera lengkapi persyaratan untuk menyelesaikan pendaftaranmu!</p>
                         <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
                       @endif
 
                       {{-- success --}}
                       @if(Auth::user()->details->validation_status=='pending')
+                      <p class="card-text">Data sedang dalam proses validasi. Harap ditunggu!</p>
                         <div class="alert alert-warning mb-3 " role="alert">
                             Data Sedang Proses Validasi
                         </div>
                       @elseif (Auth::user()->details->validation_status=='active')
+                      <p class="card-text">Selamat! datamu berhasil divalidasi, silahkan cek email untuk bergabung kedalam grup peserta Lomba <span style="font-weight: 700">{{ Auth::user()->details->events->event_name }} ({{ Auth::user()->details->events->aliases }}) {{ Auth::user()->details->events->year }}</span></p>
                         <div class="alert alert-success mb-3 " role="alert">
                             Data Berhasil Divalidasi
                         </div>
