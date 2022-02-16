@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ViewTimeScheduleController extends Controller
 {
     public function indexTimeSchedule(Request $request){
-        $data = TimeSchedule::orderBy('id','desc')->paginate(10);
+        $data = TimeSchedule::orderBy('id','asc')->paginate(10);
         return view('user.time',compact('data'));
     }
 }

@@ -12,17 +12,20 @@
                     <img class="card-img-top img-fluid" style="max-height: 500px;" src="{{asset('img/theme/user-cover.jpg')}}" alt="Card cover">
                     <div class="card-body">
                       <h3 class="card-title" style="font-weight: 700">Halo , {{Auth::user()->name}}</h3>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
                       @if (Auth::user()->details->validation_status == 'unactive')
+                      <p class="card-text">Segera lengkapi persyaratan untuk menyelesaikan pendaftaranmu!</p>
                         <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
                       @endif
 
                       {{-- success --}}
                       @if(Auth::user()->details->validation_status=='pending')
+                      <p class="card-text">Data sedang dalam proses validasi. Harap ditunggu!</p>
                         <div class="alert alert-warning mb-3 " role="alert">
                             Data Sedang Proses Validasi
                         </div>
                       @elseif (Auth::user()->details->validation_status=='active')
+                      <p class="card-text">Selamat! datamu berhasil divalidasi, silahkan cek email untuk bergabung kedalam grup peserta Lomba <span style="font-weight: 700">{{ Auth::user()->details->events->event_name }} ({{ Auth::user()->details->events->aliases }}) {{ Auth::user()->details->events->year }}</span></p>
                         <div class="alert alert-success mb-3 " role="alert">
                             Data Berhasil Divalidasi
                         </div>
@@ -36,7 +39,7 @@
 
             <div class="card card-stats ">
               <!-- Card body -->
-              <a href={{ route('listpeserta.index') }} class="card-body px-5">
+              <a href={{ route('listpeserta.index') }}>
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
@@ -55,7 +58,7 @@
 
             <div class="card card-stats">
               <!-- Card body -->
-              <a href={{ route('pendamping.index') }} class="card-body px-5">
+              <a href={{ route('pendamping.index') }}>
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
@@ -68,12 +71,13 @@
                     </div>
                   </div>
                 </div>
-                </a>
+                
               </div>
-
+            </a>
             </div>
-
+            
             <div class="card card-stats">
+              <a href="{{ route('downloadbooklet',['id' => Auth::user()->details->events->id ]) }}">
               <!-- Card body -->
               {{-- <a href="{{ route('downloadbooklet',['id' => Auth::user()->details->events->id, 'booklet_url' => 1 ]) }}"> --}}
               <div class="card-body p-5">
@@ -88,11 +92,10 @@
                     </div>
                   </div>
                 </div>
-              </a>
               </div>
-
+            </a>
             </div>
-
+          
             <div class="card card-stats ">
               <!-- Card body -->
               <a href={{ route('logout') }} class="card-body px-5" onclick="event.preventDefault();

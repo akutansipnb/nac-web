@@ -93,11 +93,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // User
 
+route::get('/download/{id}',[DownloadController::class,'downloadbooklet'])->name('downloadbooklet');
+
 route::group(['middleware' => ['role:Users'],'prefix' => 'users'],function(){
     route::resource('dashboard',UserController::class);
     route::get('/list-peserta',[ViewUserListController::class,'index'])->name('listpeserta.index');
-    route::get('/download/{id}/{booklet_url}',[DownloadController::class,'downloadbooklet'])->name('downloadbooklet');
-
     route::get('/validation',[ValidationController::class,'index'])->name('user.validation');
     route::post('/validation',[ValidationController::class,'updateValidation'])->name('user.validate');
 });

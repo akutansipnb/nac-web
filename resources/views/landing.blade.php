@@ -27,7 +27,7 @@
 </section>
 
 {{-- CTA Intro --}}
-<section class="mx-5">
+<section class="mx-5" id="tentang">
     <aside class="relative overflow-hidden text-gray-300 bg-gray-900 rounded-xl lg:flex shadow shadow-lg">
         <div class="w-full p-12 text-center lg:w-1/2 sm:p-16 lg:p-24 lg:text-left">
             <div class="max-w-xl mx-auto lg:ml-0">
@@ -225,7 +225,7 @@
 </div> --}}
 @endforeach
 </div>
-<div class="bg-gray-100 flex flex-col items-center">
+<div class="bg-gray-100 flex flex-col items-center" id="berita">
     <div class="grid grid-cols-1 mx-5 mt-16">
         <div class="text-center">
             <h2 class="font-bold text-5xl gradient-text">Daftar Berita</h2>

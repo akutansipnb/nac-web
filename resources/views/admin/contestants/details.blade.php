@@ -103,7 +103,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 1 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_2'] == NULL)? "d-none" : " " }}" >
@@ -111,7 +111,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 2 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_3'] == NULL)? "d-none" : " " }}" >
@@ -119,7 +119,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 3 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
 
@@ -128,7 +128,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 4 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card card {{ ($data['validation_5'] == NULL)? "d-none" : " " }}" >
@@ -136,7 +136,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 5 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
 
@@ -146,7 +146,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Kartu Tanda Mahasiswa </h5>
                       <p class="card-text">Periksa Kartu Tanda Mahasiswa Peserta Ini</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 1 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_2'] == NULL)? "d-none" : " " }}" >
@@ -154,7 +154,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Pernyataan Aktiv</h5>
                       <p class="card-text">Periksa Surat Pernyataan Mahasiswa aktiv dari Peserta Ini</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 2 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_3'] == NULL)? "d-none" : " " }}" >
@@ -162,7 +162,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Kuitansi</h5>
                       <p class="card-text">Periksa bukti pembayaran dari peserta ini</p>
-                      <a href="{{ route('download',['id' => $data->id, 'validation_no' => 3 ]) }}" class="btn btn-primary">Unduh Dokumen</a>
+
                     </div>
                   </div></div>
                   @endif
