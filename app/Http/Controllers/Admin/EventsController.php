@@ -192,7 +192,7 @@ class EventsController extends Controller
                 $booklet = $request->file('booklet_url');
                 $booklet_name = strtolower($request->aliases)."-" . $request->register_year ."-booklet.".$booklet->getClientOriginalExtension();
                 $update = [
-                    'background_url' => 'img/events/covers/'.$booklet_name,
+                    'booklet_url' => 'img/events/booklet/'.$booklet_name,
                 ];
                 $booklet->move('img/events/booklet',$booklet_name);
             }
@@ -219,6 +219,7 @@ class EventsController extends Controller
         $data = Event::find($id);
         unlink($data['icon_url']);
         unlink($data['background_url']);
+        unlink($data['booklet_url']);
         $data = Event::destroy($id);
 
 
