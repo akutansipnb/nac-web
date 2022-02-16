@@ -65,6 +65,15 @@
                         </div>
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                          <label class="form-control-label" for="input-date-tm">Link Fakta Integritas</label>
+                          <input type="text" id="input-date-tm" name="url_document" class="form-control" value="{{ $url_document }}" required>
+                        </div>
+                    </div>
+                  </div>
               </div>
 
 

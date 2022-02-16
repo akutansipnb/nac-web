@@ -9,6 +9,7 @@ use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class ValidationController extends Controller
 {
@@ -16,10 +17,15 @@ class ValidationController extends Controller
 
     public function index(){
 
+        $path = Storage::disk('local')->get('public/landing_page_config.json');
+        $data = json_decode($path,true);
+
+        $url_document = $data['url_document'];
+
         if(Auth::user()->details->events->audience === "university"){
             return view('user.validation.university');
         }else{
-            return view('user.validation.school');
+            return view('user.validation.school')->with(compact('url_document'));
         }
     }
 
