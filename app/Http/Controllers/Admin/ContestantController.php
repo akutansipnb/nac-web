@@ -123,6 +123,9 @@ class ContestantController extends Controller
     public function destroy($id)
     {
         try {
+            
+            $data = UserDetail::where('id',$id)->first();
+            User::where('id',$data['id_users'])->delete();
             UserDetail::find($id)->delete();
             return redirect()->back();
         } catch (\Throwable $th) {
