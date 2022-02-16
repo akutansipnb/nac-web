@@ -56,6 +56,7 @@
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Fakta Integritas</label>
                         <input class="form-control" type="file" name="validation_5" id="input-event-cover" required>
+                        <p class="small"> Unduh Fakta Integritas <span><a href= {{ $url_document }} > Disini </a></span> </p>
                       </div>
                     </div>
                   </div>
