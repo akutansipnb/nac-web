@@ -95,7 +95,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 route::get('/download/{id}',[DownloadController::class,'downloadbooklet'])->name('downloadbooklet');
 
-route::group(['middleware' => ['role:Users'],'prefix' => 'users'],function(){
+route::group(['middleware' => ['role:Users','auth'],'prefix' => 'users'],function(){
     route::resource('dashboard',UserController::class);
     route::get('/list-peserta',[ViewUserListController::class,'index'])->name('listpeserta.index');
     route::get('/validation',[ValidationController::class,'index'])->name('user.validation');
@@ -103,7 +103,7 @@ route::group(['middleware' => ['role:Users'],'prefix' => 'users'],function(){
 });
 
 // Admin
-route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin'],function(){
+route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin',],function(){
     Route::get('/', [DashboardController::class,'index'])->name('admin.dashboard');
 
     route::get('download/{id}/{validation_no}',[DownloadController::class,'download'])->name('download');
