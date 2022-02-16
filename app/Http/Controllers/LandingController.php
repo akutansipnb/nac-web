@@ -21,6 +21,7 @@ class LandingController extends Controller
         $quotes = $data['quotes'];
         $desc_quotes = $data['desc_quotes'];
         $url_video = $data['url_video'];
+        $url_document = $data['url_document'];
 
         $blogs = Blog::orderBy('id','desc')->paginate(3);
         $bcount = count(Blog::all());
