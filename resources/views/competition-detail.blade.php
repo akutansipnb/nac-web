@@ -77,14 +77,14 @@
                     {{$data['blog']}}
                 </p>
                 <div class="flex flex-wrap justify-center gap-4 mt-8 mb-10">
-                    <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                    <a href="http://wa.me/{{$data['cs_1']}}" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
 
                         <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                             Contact Person 1
                         </span>
                     </a>
             
-                    <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                    <a href="http://wa.me/{{$data['cs_2']}}" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
 
                         <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
                             Contact Person 2
