@@ -33,7 +33,7 @@ class SendSuccessMail extends Mailable
     {
         $e = UserDetail::where('id',$this->data['id'])->first();
         $event = Event::where('id',$e->id_events)->first();
-        return $this->from('nac@pnb.ac.id', 'Admin Surje')->markdown('email.success')->with([
+        return $this->from('nac@pnb.ac.id', 'Panitia National Account Competition PNB')->markdown('email.success')->with([
             'name' => $e->users['name'],
             'email' => $e->users['email'],
             'event' => $event['event_name'],

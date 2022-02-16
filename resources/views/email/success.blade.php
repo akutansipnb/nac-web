@@ -3,9 +3,10 @@
 # Halo , <strong>{{$name}}</strong>
 
 
-Terima Kasih sudah bergabung menjadi peserta NAC 2021 cabang lomba <strong> {{$event}} {{$year}}</strong>  , Segera selesaikan pembayaranmu yaa
+Terimakasih telah bergabung menjadi peserta NAC {{$year}} cabang lomba <strong> {{$event}} {{$year}}</strong>  Segera selesaikan pembayaran dan masuk ke dashboard untuk menyelesaikan pendaftaran! 
 
-@component('mail::button', ['url' => '/dashboard'])
+
+@component('mail::button', ['url' => 'https://nationalaccountingcompetition.com/login'])
 Masuk ke Dashboard
 @endcomponent
 
