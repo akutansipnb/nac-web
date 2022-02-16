@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="items-center justify-end hidden space-x-8 sm:flex">
-                    @if (Auth::user()->name !== null)
+                    @if (Auth::check())
                     <a href={{route('login')}}
                     class="inline-flex items-center h-16 px-12 text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold">
                     {{Auth::user()->name}}
