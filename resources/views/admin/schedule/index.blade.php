@@ -37,7 +37,6 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="name">Nama Acara</th>
                   <th scope="col" class="sort" data-sort="date">Tanggal Mulai</th>
-                  <th scope="col" class="sort" data-sort="budget">Tanggal Selesai</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
@@ -49,9 +48,6 @@
                   </th>
                   <td class="date">
                     {{$item->date_start}}
-                  </td>
-                  <td class="date">
-                    {{$item->date_end}}
                   </td>
                   <td class="text-right">
                     <div class="dropdown">

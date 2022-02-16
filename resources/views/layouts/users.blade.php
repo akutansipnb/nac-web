@@ -35,12 +35,12 @@
             </a>
         </div>
         <div class="flex flex-col items-center space-y-4 text-gray-700">
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}">Beranda</a>
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Tentang</a>
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Daftar</a>
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Blogs</a>
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#">Kontak</a>
-            <a href="route('login')"><button class="uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold px-16 py-3 text-white text-sm focus:outline-none">Masuk</button></a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}" onclick="closeNav()">Beranda</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#tentang" onclick="closeNav()">Tentang</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#lomba" onclick="closeNav()">Daftar</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#berita" onclick="closeNav()">Blogs</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#kontak" onclick="closeNav()">Kontak</a>
+            <a href="{{ route('login') }}"><button class="uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold px-16 py-3 text-white text-sm focus:outline-none">Masuk</button></a>
         </div>
 
     </div>
