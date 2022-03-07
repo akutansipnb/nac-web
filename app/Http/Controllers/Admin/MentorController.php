@@ -46,7 +46,10 @@ class MentorController extends Controller
             'event_id' => 'required',
             'name' => 'required',
             'phone' => 'required',
-            'identity_code' => 'required'
+            'identity_code' => 'required|unique:mentors,identity_code'
+        ],[
+            // 'phone.unique' => "Data Sudah Ada !",
+            'identity_code.unique' => "Data Sudah Ada !"
         ]);
 
         try {
