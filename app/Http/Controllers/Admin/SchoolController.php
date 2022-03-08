@@ -41,6 +41,8 @@ class SchoolController extends Controller
             'academy_name'=>'required',
             'phone'=>'required',
             'address'=>'required'
+        // ],[
+        //     'phone.unique' => "Data Sudah Ada !",
         ]);
 
         try {

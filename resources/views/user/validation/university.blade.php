@@ -27,21 +27,36 @@
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-logo">Kartu Tanda Mahasiswa</label>
-                        <input class="form-control" type="file" name="validation_1" id="input-logo" required>
+                        <input class="form-control @error('validation_1') is-invalid @enderror" type="file" name="validation_1" id="input-logo" required>
+                            @error('validation_1')
+                                <div class="invalid-feedback" role="alert">
+                                    <strong> {{ $message }} </strong>
+                                </div>
+                            @enderror
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Surat Pernyataan Mahasiswa Aktiv</label>
-                        <input class="form-control" type="file" name="validation_2" id="input-event-cover" required>
+                        <input class="form-control @error('validation_2') is-invalid @enderror" type="file" name="validation_2" id="input-event-cover" required>
+                            @error('validation_2')
+                                <div class="invalid-feedback" role="alert">
+                                    <strong> {{ $message }} </strong>
+                                </div>
+                            @enderror
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-event-cover">Bukti Pembayaran</label>
-                        <input class="form-control" type="file" name="validation_3" id="input-event-cover" required>
+                        <input class="form-control @error('validation_3') is-invalid @enderror" type="file" name="validation_3" id="input-event-cover" required>
+                            @error('validation_3')
+                                <div class="invalid-feedback" role="alert">
+                                    <strong> {{ $message }} </strong>
+                                </div>
+                            @enderror
                       </div>
                     </div>
                   </div>
