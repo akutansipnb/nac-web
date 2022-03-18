@@ -13,5 +13,5 @@ Masuk ke Dashboard
 Salam Hangat,<br>
 <br>
 Panitia National Accouting Competition
-{{ config('app.name') }}
+
 @endcomponent
