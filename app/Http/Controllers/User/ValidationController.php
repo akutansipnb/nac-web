@@ -118,14 +118,14 @@ class ValidationController extends Controller
 
     public function validateAcc($id){
         try {
-            UserDetail::find($id)->update([
-                'validation_status' => 'active'
-            ]);
+            // UserDetail::find($id)->update([
+            //     'validation_status' => 'active'
+            // ]);
 
             $e = UserDetail::where('id',$id)->first();
-            Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
-
-            return redirect()->back();
+            dd($e);
+            // Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
+            // return redirect()->back();
         } catch (\Throwable $th) {
             //throw $th;
         }
