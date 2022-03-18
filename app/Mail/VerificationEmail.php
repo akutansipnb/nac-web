@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Models\Event;
+use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -32,6 +33,7 @@ class VerificationEmail extends Mailable
     {
         $e = UserDetail::where('id',$this->data['id'])->first();
         $event = Event::where('id',$e->id_events)->first();
+        // $users = User::where('id',$e->id_users)->first();
         return $this->from('nac@pnb.ac.id', 'Panitia National Account Competition PNB')->markdown('email.verification-email')->with([
             'group_url' => $event['group_url'],
             'name' => $e->users['name'],
