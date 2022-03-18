@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Mail\VerificationEmail;
 use App\Models\Event;
+use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -123,7 +124,8 @@ class ValidationController extends Controller
             // ]);
 
             $e = UserDetail::where('id',$id)->first();
-            dd($e);
+            $users = User::where('id',$e->id_users)->first();
+            dd($users);
             // Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
             // return redirect()->back();
         } catch (\Throwable $th) {
