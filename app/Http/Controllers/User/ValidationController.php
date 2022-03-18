@@ -128,7 +128,7 @@ class ValidationController extends Controller
             Mail::to(Auth::user()->email)->send(new VerificationEmail($users));
             return redirect()->back();
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
 }
