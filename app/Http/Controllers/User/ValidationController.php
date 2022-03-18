@@ -125,7 +125,7 @@ class ValidationController extends Controller
 
             $e = UserDetail::where('id',$id)->first();
             $users = User::where('id',$e->id_users)->first();
-            dd($users);
+            dd($users->email);
             // Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
             // return redirect()->back();
         } catch (\Throwable $th) {
