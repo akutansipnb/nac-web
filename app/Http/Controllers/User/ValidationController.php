@@ -110,8 +110,8 @@ class ValidationController extends Controller
             throw $th;
         }
 
-        $e = UserDetail::where('identity_code',$user->identity_code)->first();
-        Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
+        // $e = UserDetail::where('identity_code',$user->identity_code)->first();
+        // Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
         return redirect()->route('dashboard.index')->with(['success'=>'Berhasil Melakukan Validasi']);
         // dd($request);
     }
@@ -121,6 +121,10 @@ class ValidationController extends Controller
             UserDetail::find($id)->update([
                 'validation_status' => 'active'
             ]);
+
+            $e = UserDetail::where('id',$id)->first();
+            Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
+
             return redirect()->back();
         } catch (\Throwable $th) {
             //throw $th;
