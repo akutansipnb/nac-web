@@ -7,6 +7,6 @@ Pendaftaran mu berhasil di verifikasi , silahkan masuk ke group peserta melalui 
 Bergabung ke Group Lomba
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+Salam Hangat,<br>
+Panitia National Accounting Competition
 @endcomponent

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Mail\VerificationEmail;
 use App\Models\Event;
+use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,22 @@ class ValidationController extends Controller
             'validation_3' => 'image|mimes:jpeg,jpg,png|max:5000',
             'validation_4' => 'image|mimes:jpeg,jpg,png|max:5000',
             'validation_5' => 'image|mimes:jpeg,jpg,png|max:5000'
-
+        ],[
+            'validation_1.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_2.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_3.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_4.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_5.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_1.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_2.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_3.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_4.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_5.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
+            'validation_1.max' => "Format file maksimal 5 MB",
+            'validation_2.max' => "Format file maksimal 5 MB",
+            'validation_3.max' => "Format file maksimal 5 MB",
+            'validation_4.max' => "Format file maksimal 5 MB",
+            'validation_5.max' => "Format file maksimal 5 MB"
         ]);
         $user = Auth::user()->details;
 
@@ -95,8 +111,8 @@ class ValidationController extends Controller
             throw $th;
         }
 
-        $e = UserDetail::where('identity_code',$user->identity_code)->first();
-        Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
+        // $e = UserDetail::where('identity_code',$user->identity_code)->first();
+        // Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
         return redirect()->route('dashboard.index')->with(['success'=>'Berhasil Melakukan Validasi']);
         // dd($request);
     }
@@ -106,9 +122,11 @@ class ValidationController extends Controller
             UserDetail::find($id)->update([
                 'validation_status' => 'active'
             ]);
+            $e = UserDetail::where('id',$id)->first();
+            Mail::to($e->users['email'])->send(new VerificationEmail($e));
             return redirect()->back();
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
 }

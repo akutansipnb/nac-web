@@ -172,6 +172,8 @@
 
               @if ($data->validation_status == 'pending')
               <a href="{{route('validation.acc',['id' => $data['id']])}}" class="btn btn-warning w-100">Validasi Peserta</a>
+              @elseif($data->validation_status == 'unactive')
+              <a href="#" class="btn btn-secondary w-100" disabled>Peserta Belum Mengirim Data</a>
               @else
               <a href="#" class="btn btn-secondary w-100" disabled>Peserta Tervalidasi</a>
               @endif

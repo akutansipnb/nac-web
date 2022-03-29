@@ -43,6 +43,8 @@ class UniversityController extends Controller
             'academy_name'=>'required',
             'phone'=>'required',
             'address'=>'required'
+        // ],[
+        //     'phone.unique' => "Data Sudah Ada !",
         ]);
         try {
             Academy::create([

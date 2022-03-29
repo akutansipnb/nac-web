@@ -41,8 +41,13 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-initial">NIP</label>
-                                        <input type="text" id="input-initial" class="form-control" name="identity_code"
+                                        <input type="text" id="input-initial" class="form-control @error('identity_code') is-invalid @enderror" name="identity_code"
                                         placeholder="Masukkan NIP Pendamping Anda" required>
+                                        @error('identity_code')
+                                            <div class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
 
