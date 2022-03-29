@@ -1,3 +1,7 @@
+<?php
+    $today = date("Y-m-d H:i:s");
+?>
+
 @extends('layouts.users')
 @section('content')
 <div class="block overflow-hidden bg-white" href="">
@@ -16,7 +20,7 @@
         </div>
         <dl class="flex flex-row items-center justify-center px-6 py-4 mt-3 sm:flex-row sm:items-start sm:px-12">
             <div class="flex items-center">
-                @if ($data['status'] == 'open')
+                @if ($today>=$data['register_time'] && $today<=$data['register_close'] )
                     <a href={{route('event.form',['id' => $data['id']])}}
                         class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
@@ -31,9 +35,9 @@
                         </span>
                     </a>
                 @endif
-                
+
             </div>
-            
+
             <div class="flex items-center content-center sm:ml-3 sm:mt-0">
                 <a href="{{ route('downloadbooklet',['id' => $data['id'] ]) }}"
                     class="px-6 py-3 my-auto font-medium text-gray-400 rounded-lg transition transform inline-block hover:text-gray-800 ">
@@ -57,7 +61,7 @@
                         {{$data['blog']}}
                     </p>
 
-                    
+
                 </div>
             </div>
 
@@ -72,7 +76,7 @@
                 <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl gradient-text">
                     {{ $data['quotes']}}
                 </h1>
-          
+
                 <p class="mx-auto mt-4 sm:leading-relaxed sm:text-xl">
                     {{$data['blog']}}
                 </p>
@@ -83,7 +87,7 @@
                             Contact Person 1
                         </span>
                     </a>
-            
+
                     <a href="http://wa.me/{{$data['cs_2']}}" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
 
                         <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
@@ -91,7 +95,7 @@
                         </span>
                     </a>
 
-                    
+
                   </div>
 
                   {{-- <div class="flex flex-wrap justify-center mt-10 space-x-6 sm:mt-0">
@@ -110,7 +114,7 @@
                         />
                       </svg>
                     </a>
-            
+
                     <a
                       href=""
                       target="_blank"
@@ -126,7 +130,7 @@
                         />
                       </svg>
                     </a>
-            
+
                     <a
                       href=""
                       target="_blank"
@@ -140,7 +144,7 @@
                         />
                       </svg>
                     </a>
-            
+
                     <a
                       href=""
                       target="_blank"
@@ -156,7 +160,7 @@
                         />
                       </svg>
                     </a>
-            
+
                     <a
                       href=""
                       target="_blank"
@@ -174,9 +178,9 @@
                     </a>
                   </div> --}}
 
-                  
-          
-                
+
+
+
               </div>
             </div>
           </section>
