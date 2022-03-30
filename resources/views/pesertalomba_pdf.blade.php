@@ -51,7 +51,7 @@
     <div class="container">
         <!-- KOP report -->
         <div class="header">
-            <img src="{{public_path('img/kop.jpeg')}}" alt="KOP">
+            <img src="{{public_path('img/kop.jpeg')}}" alt="KOP" style="width: 100%">
         </div>
 
         <center>        <hr>

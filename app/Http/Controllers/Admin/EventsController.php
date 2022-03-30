@@ -235,7 +235,7 @@ class EventsController extends Controller
 
         $comp = $e['event_name'];
 
-    	$pdf = PDF::loadview('pesertalomba_pdf',compact('datas','comp'));
+    	$pdf = PDF::loadview('pesertalomba_pdf',compact('datas','comp'))->setPaper('a4', 'landscape');
     	return $pdf->download(date('dmyhm').'-'.strtoupper(str_replace(' ','_',$e['event_name'])).'.pdf');
     }
 
