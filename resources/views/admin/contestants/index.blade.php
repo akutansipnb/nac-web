@@ -22,6 +22,13 @@
                     <div class="card-header border-0">
                         <h3 class="mb-0">Peserta Lomba (Main Data) </h3>
                     </div>
+
+                    {{-- success --}}
+                    @if(session('success'))
+                    <div class="alert alert-success mb-3 mx-4" role="alert">
+                        {{session('success')}}
+                    </div>
+                    @endif
                     <!-- Light table -->
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush" style="height: 200px">
@@ -69,6 +76,13 @@
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                 <a class="dropdown-item" href={{route('contestants.show',$item->id)}}>Details</a>
                                                 <a class="dropdown-item" href={{ route('contestants.edit',$item->id) }}>Edit Data</a>
+                                                <a class="dropdown-item" href={{ route('reset_password.resetpsd',$item->id) }}>Reset Password</a>
+                                                {{-- <form action="{{route('reset_password.resetpsd',$item->id)}}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('put')
+                                                    <button class="dropdown-item">Reset Password</button>
+                                                </form> --}}
                                                 <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
                                                     method="post">
                                                     @csrf

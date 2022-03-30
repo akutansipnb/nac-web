@@ -23,6 +23,7 @@ use App\Http\Controllers\ViewTimeScheduleController;
 use App\Http\Controllers\ViewUserListController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ResetPasswordController;
 use PhpParser\Builder\Class_;
 use Illuminate\Support\Facades\Auth;
 
@@ -124,6 +125,7 @@ route::group(['middleware' => ['role:Administrator'],'prefix' => 'admin',],funct
     // route::get('/userlist/{id}',[UserListController::class,'index2'])->name('userlist.index2');
     // Contestant
     route::resource('contestants',ContestantController::class);
+    Route::get('/reset_password/{id}',[ResetPasswordController::class,'resetpsd'])->name('reset_password.resetpsd');
 
    // ACC
     Route::get('/acc/{id}',[ValidationController::class,'validateAcc'])->name('validation.acc');
