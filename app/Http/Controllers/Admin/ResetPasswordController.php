@@ -16,7 +16,7 @@ class ResetPasswordController extends Controller
             User::where('id',$data->id_users)->update([
                 'password' =>bcrypt('12345678')
             ]);
-            return redirect()->route('contestants.index')->with('success', 'Password Berhasil Direset');
+            return redirect()->back()->with('success', 'Password Berhasil Direset');
 
         } catch (\Throwable $th) {
             return $th;

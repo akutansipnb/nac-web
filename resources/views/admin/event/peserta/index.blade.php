@@ -81,6 +81,7 @@
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                             <a class="dropdown-item" href={{route('contestants.show',$item->id)}}>Details</a>
                             <a class="dropdown-item" href={{ route('contestants.edit',$item->id) }}>Edit Data</a>
+                            <a class="dropdown-item" href={{ route('reset_password.resetpsd',$item->id) }}>Reset Password</a>
                             <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
                                 method="post">
                                 @csrf
