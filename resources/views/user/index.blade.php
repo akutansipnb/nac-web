@@ -26,9 +26,17 @@
                         </div>
                       @elseif (Auth::user()->details->validation_status=='active')
                       <p class="card-text">Selamat! datamu berhasil divalidasi, silahkan cek email untuk bergabung kedalam grup peserta Lomba <span style="font-weight: 700">{{ Auth::user()->details->events->event_name }} ({{ Auth::user()->details->events->aliases }}) {{ Auth::user()->details->events->year }}</span></p>
-                        <div class="alert alert-success mb-3 " role="alert">
-                            Data Berhasil Divalidasi
-                        </div>
+                        @if (Auth::user()->details->events->tm_time != null)
+                            @if (Auth::user()->details->events->tm_method == 'zoom')
+                                <a href="{{ Auth::user()->details->events->tm_url }}" class="btn btn-primary w-100">Bergabung ke Virtual Meeting </a>
+                            @else
+                                <a href="{{ Auth::user()->details->events->tm_url }}" class="btn btn-danger w-100">Bergabung ke Tecnical Meeting (Youtube)</a>
+                            @endif
+                        @else
+                            <div class="alert alert-success mb-3 " role="alert">
+                                Data Berhasil Divalidasi
+                            </div>
+                        @endif
                       @endif
 
                     </div>
@@ -71,11 +79,11 @@
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </a>
             </div>
-            
+
             <div class="card card-stats">
               <a href="{{ route('downloadbooklet',['id' => Auth::user()->details->events->id ]) }}">
               <!-- Card body -->
@@ -95,7 +103,7 @@
               </div>
             </a>
             </div>
-          
+
             <div class="card card-stats ">
               <!-- Card body -->
               <a href={{ route('logout') }} class="card-body px-5" onclick="event.preventDefault();
