@@ -1,12 +1,16 @@
 @component('mail::message')
-# Halo , <strong>{{$name}}</strong>
+# Hello , <strong>{{$name}}</strong>
 
-Pendaftaran mu berhasil di verifikasi , silahkan masuk ke group peserta melalui link berikut
+Your registration has been successfully verified, please join  the participant group via the following link
 
 @component('mail::button', ['url' => $group_url])
-Bergabung ke Group Lomba
+Join the Competition Group
 @endcomponent
 
-Salam Hangat,<br>
-Panitia National Accounting Competition
+@component('mail::button', ['url' => $url_twibon])
+Link Twibon
+@endcomponent
+
+Best Regards,<br>
+Committee of National Accounting Competition
 @endcomponent

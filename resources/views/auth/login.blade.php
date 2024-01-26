@@ -119,8 +119,8 @@
     <div class="max-w-full mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
             <div class="flex flex-col justify-center content-center h-full">
-                <h1 class="text-3xl md:text-7xl font-bold text-center gradient-text mt-5">Lihat Dashboardmu</h1>
-                <p class="text-center font-medium text-gray-500 text-base my-5">Check Status dari pendaftaranmu , Lintas waktu serta hal penting lainnya perihal lomba di halaman dashboardmu !</p>
+                <h1 class="text-3xl md:text-7xl font-bold text-center gradient-text mt-5">Check your Dashboard Page</h1>
+                <p class="text-center font-medium text-gray-500 text-base my-5">Check the status of your registration, cross time and other important things about competition on your dashboard page!</p>
             </div>
             <div class="p-10 mt-6 mb-5 bg-gray-100 space-y-4 rounded-lg shadow-lg">
                 <div class="bg-input flex justify-center">
@@ -130,19 +130,19 @@
                             <label for="text" class="font-medium font-semibold">Email</label>
                             <div class="relative mb-5">
                                 @csrf
-                                <input type="text" id="username" name="email" placeholder="Masukkan Username Anda"
+                                <input type="text" id="username" name="email" placeholder="Input Your Username"
                                     class="w-full mt-2 p-4 pr-4 border-2 border-gray-200  rounded-lg sm:text-sm @error('email') border-red-500 @enderror"/>
                                     @error('email')
                                     <small class="text-red-500 font-bold">{{ $message }} </small>
                                     @enderror
-                                    
+
                             </div>
 
                             <label for="number" class="font-medium font-semibold mt-5">Password</label>
                             <div class="relative">
-                                <input type="password" id="password" name="password" placeholder="Masukkan Password Anda"
+                                <input type="password" id="password" name="password" placeholder="Input Your Password"
                                     class="w-full mt-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm @error('password') border-red-500 @enderror" />
-                                
+
                                 @error('password')
                                 <small class="text-red-500 font-bold">{{ $message }} </small>
                                 @enderror
@@ -159,7 +159,7 @@
                             </div>
 
                             <hr class="border-gray-300 my-5">
-                            <p>Belum punya akun? <span class="gradient-text font-semibold hover:font-bold"><a href="/">Daftar Sekarang</a></span></p>
+                            <p>Don't have an account? <span class="gradient-text font-semibold hover:font-bold"><a href="/">Register Now</a></span></p>
 
 
                         </form>

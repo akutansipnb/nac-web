@@ -61,7 +61,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $data = User::where('users.id',$id)->join('user_details', 'users.id', '=', 'user_details.id_users')->first();
-        echo $data;
+        return view('user.setting.edit')->with(compact('data'));
     }
 
     /**

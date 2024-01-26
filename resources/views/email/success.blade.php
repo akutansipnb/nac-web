@@ -1,17 +1,18 @@
 @component('mail::message')
 
-# Halo , <strong>{{$name}}</strong>
+# Hello , <strong>{{$name}}</strong>
 
 
-Terimakasih telah bergabung menjadi peserta NAC {{$year}} cabang lomba <strong> {{$event}} {{$year}}</strong>  Segera selesaikan pembayaran dan masuk ke dashboard untuk menyelesaikan pendaftaran! 
+Thank you for joining the NAC {{$year}} competition branches <strong> {{$event}} {{$year}}</strong>  Immediately complete the payment and log in to the dashboard to complete the registration!
 
 
-@component('mail::button', ['url' => 'https://nationalaccountingcompetition.com/login'])
-Masuk ke Dashboard
+@component('mail::button', ['url' => 'http://127.0.0.1:8000/login'])
+{{-- @component('mail::button', ['url' => 'https://nationalaccountingcompetition.com/login']) --}}
+Log in to Dashboard
 @endcomponent
 
-Salam Hangat,<br>
+Best Regards,<br>
 <br>
-Panitia National Accouting Competition
+National Accounting Competition Committee
 
 @endcomponent

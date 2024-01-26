@@ -74,6 +74,15 @@
                         </div>
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                          <label class="form-control-label" for="input-date-tm">Link Twibon</label>
+                          <input type="text" id="input-date-tm" name="url_twibon" class="form-control" value="{{ $url_twibon }}" required>
+                        </div>
+                    </div>
+                  </div>
               </div>
 
 

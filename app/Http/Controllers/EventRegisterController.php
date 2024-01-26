@@ -52,8 +52,8 @@ class EventRegisterController extends Controller
             'department'=>'required',
             'adress'=>'required'
         ],[
-            'email.unique' => "Data Sudah Ada !",
-            'identity_code.unique' => "Data Sudah Ada !"
+            'email.unique' => "Data already exists!",
+            'identity_code.unique' => "Data already exists!"
         ]);
 
         try {

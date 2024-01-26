@@ -45,9 +45,7 @@ Route::get('detail-berita/{id}', [LandingController::class,'detail']);
 
 Route::get('lihat-pdf/{id}', [LandingController::class,'viewPDF']);
 
-Route::get('/blog', function () {
-    return view('user.setting.edit');
-});
+Route::get('/blog',[LandingController::class,'listblog'])->name('blog');
 
 Route::resource('pendamping', ViewMentorController::class);
 

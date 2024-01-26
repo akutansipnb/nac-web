@@ -11,30 +11,30 @@
                   <!-- Card body -->
                     <img class="card-img-top img-fluid" style="max-height: 500px;" src="{{asset('img/theme/user-cover.jpg')}}" alt="Card cover">
                     <div class="card-body">
-                      <h3 class="card-title" style="font-weight: 700">Halo , {{Auth::user()->name}}</h3>
+                      <h3 class="card-title" style="font-weight: 700">Hello, {{Auth::user()->name}}</h3>
 
                       @if (Auth::user()->details->validation_status == 'unactive')
-                      <p class="card-text">Segera lengkapi persyaratan untuk menyelesaikan pendaftaranmu!</p>
-                        <a href={{route('user.validation')}} class="btn btn-primary">Selesaikan Pendaftaran</a>
+                      <p class="card-text">Please complete the requirements to finalize your registration!</p>
+                        <a href={{route('user.validation')}} class="btn btn-primary">Please Complete Registration</a>
                       @endif
 
                       {{-- success --}}
                       @if(Auth::user()->details->validation_status=='pending')
-                      <p class="card-text">Data sedang dalam proses validasi. Harap ditunggu!</p>
+                      <p class="card-text">Please wait, we are validating your data.</p>
                         <div class="alert alert-warning mb-3 " role="alert">
-                            Data Sedang Proses Validasi
+                            Data Validation Process
                         </div>
                       @elseif (Auth::user()->details->validation_status=='active')
-                      <p class="card-text">Selamat! datamu berhasil divalidasi, silahkan cek email untuk bergabung kedalam grup peserta Lomba <span style="font-weight: 700">{{ Auth::user()->details->events->event_name }} ({{ Auth::user()->details->events->aliases }}) {{ Auth::user()->details->events->year }}</span></p>
+                      <p class="card-text">Congratulations! Your data has been successfully validated, please check your email to join the competition participant group. <span style="font-weight: 700">{{ Auth::user()->details->events->event_name }} ({{ Auth::user()->details->events->aliases }}) {{ Auth::user()->details->events->year }}</span></p>
                         @if (Auth::user()->details->events->tm_time != null)
                             @if (Auth::user()->details->events->tm_method == 'zoom')
-                                <a href="{{ Auth::user()->details->events->tm_url }}" class="btn btn-primary w-100">Bergabung ke Virtual Meeting </a>
+                                <a href="{{ Auth::user()->details->events->tm_url }}" class="btn btn-primary w-100">Join Virtual Meeting </a>
                             @else
-                                <a href="{{ Auth::user()->details->events->tm_url }}" class="btn btn-danger w-100">Bergabung ke Tecnical Meeting (Youtube)</a>
+                                <a href="{{ Auth::user()->details->events->tm_url }}" class="btn btn-danger w-100">Join the Technical Meeting (Youtube)</a>
                             @endif
                         @else
                             <div class="alert alert-success mb-3 " role="alert">
-                                Data Berhasil Divalidasi
+                                Data Successfully Validated
                             </div>
                         @endif
                       @endif
@@ -51,8 +51,8 @@
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Sekolah</h5>
-                    <span class="h2 font-weight-bold mb-0">Lihat Peserta Lain</span>
+                    <h5 class="card-title text-uppercase text-muted mb-0">School</h5>
+                    <span class="h2 font-weight-bold mb-0">View Other Participants</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -70,8 +70,8 @@
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Pendamping</h5>
-                    <span class="h2 font-weight-bold mb-0"> Lihat Pendampingmu</span>
+                    <h5 class="card-title text-uppercase text-muted mb-0">Mentor Teacher</h5>
+                    <span class="h2 font-weight-bold mb-0"> View Mentor Teacher</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -91,8 +91,8 @@
               <div class="card-body p-5">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Dokumentasi</h5>
-                    <span class="h2 font-weight-bold mb-0"> Dokumen Pendukung</span>
+                    <h5 class="card-title text-uppercase text-muted mb-0">Documentation</h5>
+                    <span class="h2 font-weight-bold mb-0"> Supporting Documents</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -109,7 +109,7 @@
               <a href={{ route('logout') }} class="card-body px-5" onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
                 <div class="row">
-                  <div class="col"><h5 class="card-title text-uppercase text-muted mb-0">Keluar Dari WEB  </h5>
+                  <div class="col"><h5 class="card-title text-uppercase text-muted mb-0">Log Out</h5>
                     <span class="h2 font-weight-bold mb-0">Logout</span>
                   </div>
                   <div class="col-auto">

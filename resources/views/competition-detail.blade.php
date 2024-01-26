@@ -24,14 +24,14 @@
                     <a href={{route('event.form',['id' => $data['id']])}}
                         class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                            Daftar Sekarang
+                            Register Now
                         </span>
                     </a>
                 @else
                     <a href="#"
                         class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
                         <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                            Pendaftaran Ditutup
+                            Registration Closed
                         </span>
                     </a>
                 @endif
@@ -41,7 +41,7 @@
             <div class="flex items-center content-center sm:ml-3 sm:mt-0">
                 <a href="{{ route('downloadbooklet',['id' => $data['id'] ]) }}"
                     class="px-6 py-3 my-auto font-medium text-gray-400 rounded-lg transition transform inline-block hover:text-gray-800 ">
-                    Pedoman Lomba
+                    Competition Guidelines
                 </a>
 
             </div>

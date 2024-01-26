@@ -39,6 +39,6 @@ class SendSuccessMail extends Mailable
             'event' => $event['event_name'],
             'year' => $event['year'],
             'aliases' => $event['aliases']
-        ]);;
+        ]);
     }
 }

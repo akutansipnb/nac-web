@@ -18,7 +18,7 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-12">
-                            <h3 class="mb-0">Edit Pendamping </h3>
+                            <h3 class="mb-0">Edit Mentor Teacher </h3>
                         </div>
 
                     </div>
@@ -27,13 +27,13 @@
                     <form method="POST" enctype="multipart/form-data" action="{{route('pendamping.update',$mentor->id)}}">
                         @csrf
                         @method('PUT')
-                            <h6 class="heading-small text-muted mb-4">Informasi Pendamping</h6>
+                            <h6 class="heading-small text-muted mb-4">Mentor Teacher Information</h6>
                             <div class="pl-lg-4">
                             {{-- Nama --}}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-name">Nama Pendamping</label>
+                                        <label class="form-control-label" for="input-name">Mentor Teacher Name</label>
                                         <input type="text" id="input-name" class="form-control" name="name"
                                         value="{{ $mentor->name }}" required>
                                     </div>
@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-initial">No HP Pendamping</label>
+                                        <label class="form-control-label" for="input-initial">Mentor Teacher Phone Number</label>
                                         <input type="text" id="input-initial" class="form-control" name="phone"
                                         value="{{ $mentor->phone }}" required>
                                     </div>
@@ -98,7 +98,7 @@
                                     </div>
                                 </div>
                             </div> --}}
-                            <button type="submit" class="btn btn-warning w-100">Simpan Data</button>
+                            <button type="submit" class="btn btn-warning w-100">Save Data</button>
 
                     </form>
                 </div>

@@ -38,21 +38,21 @@ class ValidationController extends Controller
             'validation_4' => 'image|mimes:jpeg,jpg,png|max:5000',
             'validation_5' => 'image|mimes:jpeg,jpg,png|max:5000'
         ],[
-            'validation_1.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_2.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_3.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_4.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_5.image' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_1.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_2.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_3.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_4.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_5.mimes' => "Format file yang di dukung (JPG,jpeg,jpg,png)",
-            'validation_1.max' => "Format file maksimal 5 MB",
-            'validation_2.max' => "Format file maksimal 5 MB",
-            'validation_3.max' => "Format file maksimal 5 MB",
-            'validation_4.max' => "Format file maksimal 5 MB",
-            'validation_5.max' => "Format file maksimal 5 MB"
+            'validation_1.image' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_2.image' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_3.image' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_4.image' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_5.image' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_1.mimes' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_2.mimes' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_3.mimes' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_4.mimes' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_5.mimes' => "Supported file formats (JPG, jpeg, jpg, png)",
+            'validation_1.max' => "File format maximum 5 MB",
+            'validation_2.max' => "File format maximum 5 MB",
+            'validation_3.max' => "File format maximum 5 MB",
+            'validation_4.max' => "File format maximum 5 MB",
+            'validation_5.max' => "File format maximum 5 MB"
         ]);
         $user = Auth::user()->details;
 
@@ -73,8 +73,8 @@ class ValidationController extends Controller
 
         $update = [
             'validation_1' => $url.'/ktm-'.$validation_1_name,
-            'validation_2' => $url.'/pernyataan-'.$validation_2_name,
-            'validation_3' => $url.'/kuitansi-'.$validation_3_name,
+            'validation_2' => $url.'/statement-'.$validation_2_name,
+            'validation_3' => $url.'/receipts-'.$validation_3_name,
             'validation_status' => 'pending'
         ];
 
@@ -87,10 +87,10 @@ class ValidationController extends Controller
 
             $update = [
                 'validation_1' => $url.'/kts-'.$validation_1_name,
-                'validation_2' => $url.'/delegasi-'.$validation_2_name,
-                'validation_3' => $url.'/kuitansi-'.$validation_3_name,
-                'validation_4' => $url.'/foto-'.$validation_4_name,
-                'validation_5' => $url.'/integritas-'.$validation_5_name,
+                'validation_2' => $url.'/delegation-'.$validation_2_name,
+                'validation_3' => $url.'/receipts-'.$validation_3_name,
+                'validation_4' => $url.'/photo-'.$validation_4_name,
+                'validation_5' => $url.'/integrity-'.$validation_5_name,
                 'validation_status' => 'pending'
             ];
         }
@@ -98,14 +98,14 @@ class ValidationController extends Controller
             UserDetail::where('id',Auth::user()->details->id)->update($update);
             if(Auth::user()->details->events->audience === 'school'){
                 $validation_1->move($url,'/kts-'.$validation_1_name);
-                $validation_2->move($url,'/delegasi-'.$validation_2_name,);
-                $validation_3->move($url,'/kuitansi-'.$validation_3_name);
-                $validation_4->move($url,'/foto-'.$validation_4_name);
-                $validation_5->move($url,'/integritas-'.$validation_5_name);
+                $validation_2->move($url,'/delegation-'.$validation_2_name,);
+                $validation_3->move($url,'/receipts-'.$validation_3_name);
+                $validation_4->move($url,'/photo-'.$validation_4_name);
+                $validation_5->move($url,'/integrity-'.$validation_5_name);
             }else{
                 $validation_1->move($url,'/ktm-'.$validation_1_name);
-                $validation_2->move($url,'/pernyataan-'.$validation_2_name,);
-                $validation_3->move($url,'/kuitansi-'.$validation_3_name);
+                $validation_2->move($url,'/statement-'.$validation_2_name,);
+                $validation_3->move($url,'/receipts-'.$validation_3_name);
             }
         } catch (\Throwable $th) {
             throw $th;
@@ -113,7 +113,7 @@ class ValidationController extends Controller
 
         // $e = UserDetail::where('identity_code',$user->identity_code)->first();
         // Mail::to(Auth::user()->email)->send(new VerificationEmail($e));
-        return redirect()->route('dashboard.index')->with(['success'=>'Berhasil Melakukan Validasi']);
+        return redirect()->route('dashboard.index')->with(['success'=>'Successful Validation']);
         // dd($request);
     }
 

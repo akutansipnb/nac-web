@@ -16,11 +16,11 @@
         <a href="#lomba" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
 
             <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                Daftar Sekarang
+                Register Now
             </span>
         </a>
         <a onclick="toggleModal('modal-id2')" class="inline-block cursor-pointer px-5 md:my-0 my-3 text-gray-400 hover:text-gray-600 transition-100 delay-50 font-bold">
-            Vidio Pembukaan
+            Opening Video
 
         </a>
     </div>
@@ -32,7 +32,7 @@
         <div class="w-full p-12 text-center lg:w-1/2 sm:p-16 lg:p-24 lg:text-left">
             <div class="max-w-xl mx-auto lg:ml-0">
                 <p class="text-sm font-medium">
-                    National Accounting Competition 2021
+                    National Accounting Competition 2024
                 </p>
 
                 <p class="mt-2 text-2xl font-bold text-white sm:text-3xl">
@@ -57,7 +57,7 @@
 {{-- Text Lomba --}}
 <div class="grid grid-cols-1 mx-5 mt-20" id="lomba">
     <div class="text-center">
-        <h2 class="font-bold text-5xl gradient-text">Daftar Lomba</h2>
+        <h2 class="font-bold text-5xl gradient-text">List of Competitions</h2>
     </div>
 </div>
 
@@ -135,7 +135,7 @@
                     </span>
                 </div>
 
-                
+
             </dl>
         </div>
     </a>
@@ -208,8 +208,8 @@
 <div class="bg-gray-100 flex flex-col items-center" id="berita">
     <div class="grid grid-cols-1 mx-5 mt-16">
         <div class="text-center">
-            <h2 class="font-bold text-5xl gradient-text">Daftar Berita</h2>
-            <p class="text-lg my-4">Kumpulan Berita Terbaru</p>
+            <h2 class="font-bold text-5xl gradient-text">List of News</h2>
+            <p class="text-lg my-4">Latest News</p>
         </div>
     </div>
 
@@ -230,11 +230,11 @@
     </div>
     @if ($bcount >= 3)
     <div class="grid grid-cols-1 text-center mb-16">
-        <a href=""
+        <a href={{ route('blog') }}
             class="p-0.5 w-full font-medium text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full transition transform inline-bloc hover:scale-110 hover:shadow-xl">
             <span
                 class="text-center block text-sm px-10 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                Selanjutnya
+                Read More
             </span>
         </a>
     </div>
@@ -248,7 +248,7 @@
             <!--header-->
             <div class="flex items-start justify-between p-2 md:p-8 border-b border-solid border-blueGray-200 rounded-t">
               <h3 class="text-2xl font-pbold leading-tight">
-                Vidio Pembukaan NAC
+                NAC Opening Video
               </h3>
               <button class="pl-7 2xl:pl-12 ml-auto bg-transparent border-0 text-red-500 hover:text-red-800 duration-500 ease-in-out float-right text-2xl 2xl:text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id2')">
                 <x-vaadin-close class="w-7 h-7 text-gray-900 hover:text-red-500"/>
@@ -266,9 +266,9 @@
             <!--footer-->
             <div class="flex items-center justify-end px-6 border-t border-solid border-blueGray-200 rounded-b">
               <button class="text-dark-green background-transparent font-bold uppercase px-7 py-3 text-sm outline-none focus:outline-none ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id2')">
-                Tutup
+                Close
               </button>
-              
+
             </div>
           </div>
         </div>

@@ -21,8 +21,9 @@ class LandingPageSettingController extends Controller
         $desc_quotes = $data['desc_quotes'];
         $url_video = $data['url_video'];
         $url_document = $data['url_document'];
+        $url_twibon = $data['url_twibon'];
 
-        return view('admin.landingsetting',compact('theme','quotes','desc_quotes','url_video','url_document'));
+        return view('admin.landingsetting',compact('theme','quotes','desc_quotes','url_video','url_document','url_twibon'));
     }
 
     public function updateLandingset(Request $request){
@@ -36,6 +37,7 @@ class LandingPageSettingController extends Controller
         $data['desc_quotes'] = $request->desc_quotes;
         $data['url_video'] = $request->url_video;
         $data['url_document'] = $request->url_document;
+        $data['url_twibon'] = $request->url_twibon;
 
 
         try {

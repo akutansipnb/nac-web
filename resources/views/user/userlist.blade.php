@@ -9,15 +9,15 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">Lihat Peserta Lain</h3>
+              <h3 class="mb-0">View Other Participants</h3>
             </div>
             <!-- Light table -->
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" class="sort" data-sort="name">Nama Peserta</th>
-                    <th scope="col" class="sort" data-sort="budget">Nomor Induk Peserta</th>
+                    <th scope="col" class="sort" data-sort="name">Participant Name</th>
+                    <th scope="col" class="sort" data-sort="budget">Participant's Identification Number</th>
                   </tr>
                 </thead>
                 <tbody class="list">

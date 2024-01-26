@@ -7,7 +7,7 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-12 col-12 text-right">
-                    <a href="{{route('pendamping.create')}}" class="btn btn-sm btn-neutral">Tambah Pendamping</a>
+                    <a href="{{route('pendamping.create')}}" class="btn btn-sm btn-neutral">Add Mentor Teacher</a>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Pendamping </h3>
+                    <h3 class="mb-0">Mentor Teacher </h3>
                 </div>
 
                 {{-- success --}}
@@ -35,9 +35,9 @@
                     <table class="table align-items-center table-flush" style="height: 200px">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col" class="sort" data-sort="name">Nama Pendamping</th>
+                                <th scope="col" class="sort" data-sort="name">Mentor Teacher Name</th>
                                 <th scope="col" class="sort" data-sort="date">NIP</th>
-                                <th scope="col" class="sort" data-sort="date">Instansi</th>
+                                <th scope="col" class="sort" data-sort="date">Institution</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -73,7 +73,7 @@
                                                 method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <button class="dropdown-item">Hapus Data</button>
+                                                <button class="dropdown-item">Delete Data</button>
                                             </form>
                                         </div>
                                     </div>

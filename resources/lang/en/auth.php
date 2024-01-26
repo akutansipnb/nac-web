@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'failed' => 'Akun tidak terdaftar',
-    'password' => 'Password yang dimasukan salah.',
-    'throttle' => 'Percobaan login terlalu banyak, coba :seconds detik lagi.',
+    'failed' => 'Unregistered account',
+    'password' => 'Incorrect Password',
+    'throttle' => 'Too many login attempts, try :seconds seconds again.',
 
 ];

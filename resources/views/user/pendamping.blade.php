@@ -9,16 +9,16 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">Lintas Waktu</h3>
+              <h3 class="mb-0">Cross Time</h3>
             </div>
             <!-- Light table -->
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" class="sort" data-sort="name">Lintas Waktu</th>
-                    <th scope="col" class="sort" data-sort="budget">Tanggal</th>
-                    <th scope="col">Deskripsi</th>
+                    <th scope="col" class="sort" data-sort="name">Cross Time</th>
+                    <th scope="col" class="sort" data-sort="budget">Date</th>
+                    <th scope="col">Description</th>
                   </tr>
                 </thead>
                 <tbody class="list">

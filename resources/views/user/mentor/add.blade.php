@@ -18,7 +18,7 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-12">
-                            <h3 class="mb-0">Tambahkan Pendamping </h3>
+                            <h3 class="mb-0">Add Mentor Teacher </h3>
                         </div>
 
                     </div>
@@ -26,15 +26,15 @@
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{route('pendamping.store')}}">
                         @csrf
-                            <h6 class="heading-small text-muted mb-4">Informasi Pendamping</h6>
+                            <h6 class="heading-small text-muted mb-4">Mentor Teacher Information</h6>
                             <div class="pl-lg-4">
                             {{-- Nama --}}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-name">Nama Pendamping</label>
+                                        <label class="form-control-label" for="input-name">Mentor Teacher Name</label>
                                         <input type="text" id="input-name" class="form-control" name="name"
-                                        placeholder="Masukkan Nama Pendamping Anda" required>
+                                        placeholder="Input Your Mentor Teacher Name" required>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-initial">NIP</label>
                                         <input type="text" id="input-initial" class="form-control @error('identity_code') is-invalid @enderror" name="identity_code"
-                                        placeholder="Masukkan NIP Pendamping Anda" required>
+                                        placeholder="Input Your Mentor Teacher NIP" required>
                                         @error('identity_code')
                                             <div class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -57,9 +57,9 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-initial">No HP Pendamping</label>
+                                        <label class="form-control-label" for="input-initial">Mentor Teacher Phone Number</label>
                                         <input type="text" id="input-initial" class="form-control" name="phone"
-                                        placeholder="Masukkan No HP Pendamping Anda" required>
+                                        placeholder="Input Your Mentor Teacher Phone Number" required>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                     </div>
                                 </div>
                             </div> --}}
-                            <button type="submit" class="btn btn-warning w-100">Simpan Data</button>
+                            <button type="submit" class="btn btn-warning w-100">Save Data</button>
 
                     </form>
                 </div>

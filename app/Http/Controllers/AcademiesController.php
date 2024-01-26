@@ -49,7 +49,7 @@ class AcademiesController extends Controller
                 'address' => $request->address
             ]);
             $academy_name = $request->academy_name;
-            return view('register.academy.success',compact('academy_name'))->with('success', 'Data Berhasil Ditambah');
+            return view('register.academy.success',compact('academy_name'))->with('success', 'Data Added Successfully');
 
         } catch (\Throwable $th) {
             throw $th;

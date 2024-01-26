@@ -4,10 +4,10 @@
 
 <div class="max-w-screen-xl px-2 py-5 mx-auto sm:px-6 lg:px-8 my-10">
     <div class="max-w-lg mx-auto">
-      <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">Daftarkan Kampusmu</h1>
+      <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">Register your college</h1>
 
       <p class="max-w-md mx-auto mt-4 text-center text-gray-500">
-        Kampusmu belum terdaftar ? Daftarkan sekarang
+        Your campus is not yet registered? Register Now
       </p>
 
       {{-- success --}}
@@ -30,7 +30,7 @@
         <div class="bg-input flex justify-center">
             <div class="input flex flex-col w-10/12 xl:w-11/12">
                 <form action="{{route('academies.store')}}" method="POST">
-                    <label for="text" class="font-medium font-semibold">Nama Universitas/Instansi</label>
+                    <label for="text" class="font-medium font-semibold">University/Institution Name</label>
                     <div class="relative">
                       <input type="hidden" name="academy_type" value="university">
                       @csrf
@@ -38,33 +38,33 @@
                           type="text"
                           id="name"
                           name="academy_name"
-                          placeholder="Masukkan Nama Universitas/Instansi Anda"
+                          placeholder="Input University/Institution Name"
                           class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                           required
                         />
                     </div>
 
-                    <label for="number" class="font-medium font-semibold mt-5">No Telepon Universitas/Instansi</label>
+                    <label for="number" class="font-medium font-semibold mt-5">University/Institution Phone Number</label>
                     <div class="relative">
 
                           <input
                             type="number"
                             id="handphone"
                             name="phone"
-                            placeholder="Masukkan Telepon Universitas/Instansi anda"
+                            placeholder="Input University/Institution Phone Number"
                             class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                             required
                           />
                     </div>
 
-                    <label for="textarea" class="font-medium font-semibold ">Alamat Universitas/Instansi</label>
+                    <label for="textarea" class="font-medium font-semibold ">University/Agency Address</label>
                     <div class="relative">
 
                       <textarea
                         rows="4"
                         id="addres"
                         name="address"
-                        placeholder="Masukkan Alamat Universitas/Instansi Anda"
+                        placeholder="Input University/Institution Address"
                         class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm"
                         required
                       ></textarea>
@@ -73,7 +73,7 @@
                     <div class="text-center mt-10">
                         <button type="submit" class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
                             <span class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                                Daftarkan
+                                Register
                             </span>
                         </button>
                     </div>

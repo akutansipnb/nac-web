@@ -7,7 +7,7 @@
         <h1 class="text-2xl font-bold text-center gradient-text sm:text-3xl">{{$data['event_name']}} ({{$data['aliases']}})</h1>
 
         <p class="max-w-md mx-auto mt-4 text-center text-gray-500">
-            Pendaftaran cabang lomba Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, voluptas?
+            Registration for Competition Branches
         </p>
 
         <div class="p-8 mt-6 mb-5 space-y-4 rounded-lg shadow-2xl">
@@ -20,10 +20,10 @@
 
                         {{-- Nama Peserta --}}
                         <input type="hidden" name="id_events" value="{{ $data['id'] }}">
-                        <label for="text" class="font-medium font-semibold">Nama Peserta</label>
+                        <label for="text" class="font-medium font-semibold">Name</label>
                         <div class="relative">
 
-                            <input type="text" id="name" name="name" placeholder="Masukkan Nama Anda"
+                            <input type="text" id="name" name="name" placeholder="Input Your Name"
                                 class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm" required/>
                         </div>
 
@@ -31,7 +31,7 @@
                         <label for="email" class="font-medium font-semibold">Email</label>
                         <div class="relative">
 
-                            <input type="email" id="email" name="email" placeholder="Masukkan Email Anda"
+                            <input type="email" id="email" name="email" placeholder="Input Your Email"
                                 class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm  @error('email') border-red-300 @enderror" required/>
                                 @error('email')
                                     <div class="mb-5">
@@ -44,7 +44,7 @@
                         <label for="text" class="font-medium font-semibold">Password</label>
                         <div class="relative">
 
-                            <input type="password" id="password" name="password" placeholder="Masukkan Password Anda"
+                            <input type="password" id="password" name="password" placeholder="Input Your Password"
                                 class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm" required/>
                         </div>
 
@@ -52,7 +52,7 @@
                         <label for="number" class="font-medium font-semibold">NIS</label>
                         <div class="relative">
 
-                            <input type="number" name="identity_code" placeholder="Masukkan NIS Anda"
+                            <input type="number" name="identity_code" placeholder="Input Your NIS"
                                 class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm @error('identity_code') border-red-300 @enderror" required/>
                                 @error('identity_code')
                                     <div class="mb-5">
@@ -62,15 +62,15 @@
                         </div>
 
                         {{-- Jurusan --}}
-                        <label for="text" class="font-medium font-semibold">Jurusan</label>
+                        <label for="text" class="font-medium font-semibold">Department</label>
                         <div class="relative">
 
-                            <input type="text" id="department" name="department" placeholder="Masukkan Jurusan Anda"
+                            <input type="text" id="department" name="department" placeholder="Input Your Departement"
                                 class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm" required/>
                         </div>
 
                         {{-- Kelas --}}
-                        <label for="select" class="font-medium font-semibold">Kelas</label>
+                        <label for="select" class="font-medium font-semibold">Class</label>
                         <div class="relative">
 
                             <select id="semester" name="edu_stage" placeholder="Masukkan Textarea"
@@ -82,50 +82,50 @@
                         </div>
 
                         {{-- Sekolah/Instansi --}}
-                        <label for="select" class="font-medium font-semibold">Sekolah/Instansi</label>
+                        <label for="select" class="font-medium font-semibold">School/Institution</label>
                         <div class="relative mb-5">
 
                             <select id="school" name="id_academy" placeholder="Masukkan universitas anda"
                                 class="w-full mt-2 mb-2 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm" required>
-                                <option value="" disabled>Masukan Sekolah Anda</option>
+                                <option value="" disabled>Select your school here</option>
                                 @foreach ($academies as $item)
                                 <option value={{ $item->id }}>{{$item->academy_name}}</option>
                                 @endforeach
                             </select>
 
                             <small for="text" class="font-medium font-semibold">
-                                Sekolahmu tidak terdaftar ? Daftarkan
-                                <a href="{{ route('academies.scholl') }}" class="text-blue-400">Disini</a>
+                                Your school is not registered yet? Register now
+                                <a href="{{ route('academies.scholl') }}" class="text-blue-400">Click Here</a>
                             </small>
                         </div>
 
                         {{-- NO HP Peserta --}}
-                        <label for="number" class="font-medium font-semibold ">No HP Peserta</label>
+                        <label for="number" class="font-medium font-semibold ">Participant's Phone Number</label>
                         <div class="relative">
 
-                            <input type="number" id="phone" name="phone" placeholder="Masukkan No HP anda"
+                            <input type="number" id="phone" name="phone" placeholder="Input Your Phone Number"
                                 class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm" required/>
                         </div>
 
                         {{-- Jenis Kelamin --}}
-                        <label for="Radio" class="font-medium font-semibold">Jenis Kelamin</label>
+                        <label for="Radio" class="font-medium font-semibold">Gender</label>
                         <div class="relative mb-5">
                             <div>
                                 <label class="inline-flex items-center">
                                     <input type="radio" class="form-radio" name="gender" value="1" checked required/>
-                                    <span class="ml-2">Laki-laki</span>
+                                    <span class="ml-2">Male</span>
                                 </label>
                             </div>
                             <div>
                                 <label class="inline-flex items-center">
                                     <input type="radio" class="form-radio" name="gender" value="2" required/>
-                                    <span class="ml-2">Perempuan</span>
+                                    <span class="ml-2">Female</span>
                                 </label>
                             </div>
                         </div>
 
                         {{-- Tanggal Lahir --}}
-                        <label for="text" class="font-medium font-semibold mt-5">Tanggal Lahir</label>
+                        <label for="text" class="font-medium font-semibold mt-5">Date of Birth</label>
                         <div class="relative">
 
                             <input type="date" id="date" name="birth_date" placeholder="Masukkan Nama Anda"
@@ -133,10 +133,10 @@
                         </div>
 
                         {{-- Alamat --}}
-                        <label for="textarea" class="font-medium font-semibold ">Alamat</label>
+                        <label for="textarea" class="font-medium font-semibold ">Address</label>
                         <div class="relative">
 
-                            <textarea rows="4" id="addres" name="adress" placeholder="Masukkan Alamat Anda"
+                            <textarea rows="4" id="addres" name="adress" placeholder="Input Your Address"
                                 class="w-full mt-2 mb-5 p-4 pr-4 border-2 border-gray-200 rounded-lg sm:text-sm" required></textarea>
                         </div>
 
@@ -146,7 +146,7 @@
                                 class="inline-block p-0.5 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
                                 <span
                                     class="block px-8 py-3 font-medium text-white bg-gray-900 rounded-full hover:bg-opacity-75">
-                                    Daftar Sekarang
+                                    Register Now
                                 </span>
                             </button>
                         </div>

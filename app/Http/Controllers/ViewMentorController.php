@@ -50,7 +50,7 @@ class ViewMentorController extends Controller
             'phone' => 'required',
             'identity_code' => 'required|unique:mentors,identity_code'
         ],[
-            'identity_code.unique' => "Data Sudah Ada !"
+            'identity_code.unique' => "Data already exists!"
         ]);
 
         try {
@@ -61,7 +61,7 @@ class ViewMentorController extends Controller
                 'phone' => $request->phone,
                 'identity_code' => $request->identity_code
             ]);
-            return redirect()->route('pendamping.index')->with('success', 'Data Berhasil Ditambah');
+            return redirect()->route('pendamping.index')->with('success', 'Data Added Successfully');
 
         } catch (\Throwable $th) {
             return $th;
@@ -116,7 +116,7 @@ class ViewMentorController extends Controller
                 'phone' => $request->phone,
                 'identity_code' => $request->identity_code
             ]);
-            return redirect()->route('pendamping.index')->with('success', 'Data Berhasil Diubah');
+            return redirect()->route('pendamping.index')->with('success', 'Data Successfully Changed');
 
         } catch (\Throwable $th) {
             return $th;
@@ -135,7 +135,7 @@ class ViewMentorController extends Controller
             Mentor::find($id)->delete();
             return redirect()->route('pendamping.index');
         } catch (\Throwable $th) {
-            echo 'gagal';
+            echo 'Failed';
         }
     }
 }

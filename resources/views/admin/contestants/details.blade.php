@@ -101,24 +101,24 @@
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_1'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_1'])}} alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Kartu Tanda Siswa</h5>
+                      <p class="card-text">Periksa Kartu Tanda Siswa Peserta Ini</p>
 
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_2'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_2'])}} alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Surat Delegasi Sekolah</h5>
+                      <p class="card-text">Periksa Surat Delegasi Sekolah Peserta Ini</p>
 
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_3'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_3'])}} alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Bukti Pembayaran</h5>
+                      <p class="card-text">Periksa Bukti Pembayaran Peserta Ini</p>
 
                     </div>
                   </div></div>
@@ -126,16 +126,16 @@
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_4'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_4'])}} alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Foto Diri</h5>
+                      <p class="card-text">Periksa Foto Diri Peserta Ini</p>
 
                     </div>
                   </div></div>
                   <div class="col-12 col-md-6"><div class="card card {{ ($data['validation_5'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_5'])}} alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Fakta Integritas</h5>
+                      <p class="card-text">Periksa Fakta Integritas Peserta Ini</p>
 
                     </div>
                   </div></div>

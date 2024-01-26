@@ -49,7 +49,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('pendamping.index') }}">
                 <i class="ni ni-badge text-orange"></i>
-                <span class="nav-link-text">Pendamping</span>
+                <span class="nav-link-text">Mentor Teacher</span>
               </a>
             </li>
 
@@ -115,10 +115,10 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-                <a href="{{route('dashboard.edit',['id',Auth::user()->id])}}" class="dropdown-item">
+                {{-- <a href="{{route('dashboard.edit',['id',Auth::user()->id])}}" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
-                </a>
+                </a> --}}
                 {{-- <a href="#!" class="dropdown-item">
                   <i class="ni ni-settings-gear-65"></i>
                   <span>Settings</span>

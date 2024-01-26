@@ -3,7 +3,7 @@
 <div class="header bg-primary pb-6">
   <div class="container-fluid">
     <div class="header-body">
-     
+
       <!-- Card stats -->
       <div class="row">
         <div class="col-xl-3 col-md-6">
@@ -100,7 +100,7 @@
 </div>
 <!-- Page content -->
 <div class="container-fluid mt--6">
- 
+
   <div class="row">
     <div class="col-xl-7">
       <div class="card">
@@ -110,7 +110,7 @@
               <h3 class="mb-0">Pendaftar Terakhir</h3>
             </div>
             <div class="col text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Lihat Semua</a>
+              <a href={{route('contestants.index')}} class="btn btn-sm btn-primary">Lihat Semua</a>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@
               <h3 class="mb-0">Pencapaian Lomba</h3>
             </div>
             <div class="col text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Lihat Semua</a>
+              <a href={{route('events.index')}} class="btn btn-sm btn-primary">Lihat Semua</a>
             </div>
           </div>
         </div>
@@ -183,8 +183,8 @@
                 </td>
               </tr>
               @endforeach
-              
-              
+
+
             </tbody>
           </table>
         </div>

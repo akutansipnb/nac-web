@@ -29,6 +29,11 @@ class LandingController extends Controller
         return view("landing",compact('event','blogs','bcount','theme','quotes','desc_quotes','url_video'));
     }
 
+    public function listblog() {
+        $blogs = Blog::orderBy('id','desc')->paginate(9);
+        return view("listblog",compact('blogs'));
+    }
+
     public function detail($id){
         $blog = Blog::find($id);
         return view("blog",compact('blog'));

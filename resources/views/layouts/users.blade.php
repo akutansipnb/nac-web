@@ -35,12 +35,12 @@
             </a>
         </div>
         <div class="flex flex-col items-center space-y-4 text-gray-700">
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}" onclick="closeNav()">Beranda</a>
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#tentang" onclick="closeNav()">Tentang</a>
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#lomba" onclick="closeNav()">Daftar</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}" onclick="closeNav()">Home</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#tentang" onclick="closeNav()">About</a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#lomba" onclick="closeNav()">Register</a>
             <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="{{ url('/') }}#berita" onclick="closeNav()">Blogs</a>
-            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#kontak" onclick="closeNav()">Kontak</a>
-            <a href="{{ route('login') }}"><button class="uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold px-16 py-3 text-white text-sm focus:outline-none">Masuk</button></a>
+            <a class="hover:text-black duration-500 ease-in-out text-lg font-semibold" href="#kontak" onclick="closeNav()">Contact</a>
+            <a href="{{ route('login') }}"><button class="uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold px-16 py-3 text-white text-sm focus:outline-none">Login</button></a>
         </div>
 
     </div>
@@ -54,12 +54,12 @@
                     </span>
 
                     <nav class="hidden text-sm font-medium space-x-8 lg:flex">
-                        <a href="{{ url('/') }}">Beranda</a>
-                        <a href="{{ url('/') }}#tentang">Tentang</a>
-                        <a href="{{ url('/') }}#lomba">Daftar</a>
+                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/') }}#tentang">About</a>
+                        <a href="{{ url('/') }}#lomba">Register</a>
                         {{-- <a href="">Galeri</a> --}}
                         <a href="{{ url('/') }}#berita">Blogs</a>
-                        <a href="#kontak">Kontak</a>
+                        <a href="#kontak">Contact</a>
                     </nav>
                 </div>
 
@@ -72,7 +72,7 @@
                     @else
                     <a href={{route('login')}}
                     class="inline-flex items-center h-16 px-12 text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold">
-                    Masuk
+                    Login
                 </a>
                     @endif
                 </div>
