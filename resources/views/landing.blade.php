@@ -46,9 +46,9 @@
             </div>
         </div>
 
-        <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-auto">
-            <img src="{{asset('img/theme/cta_icon.jpg')}}" alt="Accounting Tools"
-                class="absolute inset-0 object-cover w-full h-full" />
+        <div class="flex flex-row content-center items-center justify-center w-full h-42 sm:h-96 lg:w-1/2 lg:h-auto bg-white">
+            <img src="{{asset('img/theme/Logo_Nac.png')}}" alt="Accounting Tools"
+                class=" w-3/4" />
         </div>
     </aside>
 

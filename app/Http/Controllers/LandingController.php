@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\Blog;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,7 +17,7 @@ class LandingController extends Controller
         // GetConfig
         $path = Storage::disk('local')->get('public/landing_page_config.json');
         $data = json_decode($path,true);
-
+        $date = Carbon::now()->year;
         $theme = $data['theme'];
         $quotes = $data['quotes'];
         $desc_quotes = $data['desc_quotes'];
@@ -25,7 +26,7 @@ class LandingController extends Controller
 
         $blogs = Blog::orderBy('id','desc')->paginate(3);
         $bcount = count(Blog::all());
-        $event = Event::all();
+        $event = Event::where('year', $date)->get();
         return view("landing",compact('event','blogs','bcount','theme','quotes','desc_quotes','url_video'));
     }
 

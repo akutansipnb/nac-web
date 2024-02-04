@@ -9,9 +9,11 @@
             <div class="col-xl-6 col-md-6">
                 <div class="card">
                   <!-- Card body -->
-                    <img class="card-img-top img-fluid" style="max-height: 500px;" src="{{asset('img/theme/user-cover.jpg')}}" alt="Card cover">
+                  <div class="card-img-top">
+                      <img class=" img-fluid m-5" style="max-height: 15em!important" src="{{asset('img/theme/Logo_Nac.png')}}" alt="Card cover">
+                  </div>
                     <div class="card-body">
-                      <h3 class="card-title" style="font-weight: 700">Hello, {{Auth::user()->name}}</h3>
+                      <h3 class="card-title" style="font-weight: 700">Hello, {{Auth::user()->name}}</h>
 
                       @if (Auth::user()->details->validation_status == 'unactive')
                       <p class="card-text">Please complete the requirements to finalize your registration!</p>
