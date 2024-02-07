@@ -152,8 +152,8 @@
                   <div class="col-12 col-md-6"><div class="card {{ ($data['validation_2'] == NULL)? "d-none" : " " }}" >
                     <img class="card-img-top" src={{asset($data['validation_2'])}} alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Pernyataan Aktiv</h5>
-                      <p class="card-text">Periksa Surat Pernyataan Mahasiswa aktiv dari Peserta Ini</p>
+                      <h5 class="card-title">Pernyataan Aktif</h5>
+                      <p class="card-text">Periksa Surat Pernyataan Mahasiswa aktif dari Peserta Ini</p>
 
                     </div>
                   </div></div>

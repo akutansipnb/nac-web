@@ -130,7 +130,7 @@
                             <label for="text" class="font-medium font-semibold">Email</label>
                             <div class="relative mb-5">
                                 @csrf
-                                <input type="text" id="username" name="email" placeholder="Input Your Username"
+                                <input type="text" id="username" name="email" placeholder="Input Your Email"
                                     class="w-full mt-2 p-4 pr-4 border-2 border-gray-200  rounded-lg sm:text-sm @error('email') border-red-500 @enderror"/>
                                     @error('email')
                                     <small class="text-red-500 font-bold">{{ $message }} </small>

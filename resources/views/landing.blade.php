@@ -248,7 +248,7 @@
             <!--header-->
             <div class="flex items-start justify-between p-2 md:p-8 border-b border-solid border-blueGray-200 rounded-t">
               <h3 class="text-2xl font-pbold leading-tight">
-                NAC Opening Video
+                Opening Video National Accounting Competition
               </h3>
               <button class="pl-7 2xl:pl-12 ml-auto bg-transparent border-0 text-red-500 hover:text-red-800 duration-500 ease-in-out float-right text-2xl 2xl:text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id2')">
                 <x-vaadin-close class="w-7 h-7 text-gray-900 hover:text-red-500"/>

@@ -100,7 +100,7 @@
             <p class="text-4xl font-extrabold sm:text-5xl">
               National Accounting Competition
             </p>
-            <p class="text-base mt-12 font-thin">Himpunan Mahasiswa Jurusan Akutansi </p>
+            <p class="text-base mt-12 font-thin">Himpunan Mahasiswa Jurusan Akuntansi </p>
 
             {{-- <a
               href=""
