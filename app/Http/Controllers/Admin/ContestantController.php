@@ -65,7 +65,7 @@ class ContestantController extends Controller
     {
         $userdetail = UserDetail::find($id);
         $user = User::all();
-        $academy = Academy::where('academy_type',$userdetail['id_academy'])->get();
+        $academy = Academy::orderByDesc('academy_type')->get();
         return view('admin.contestants.edit')->with(compact('id','userdetail','user','academy'));//
     }
 
@@ -123,7 +123,7 @@ class ContestantController extends Controller
     public function destroy($id)
     {
         try {
-            
+
             $data = UserDetail::where('id',$id)->first();
             User::where('id',$data['id_users'])->delete();
             UserDetail::find($id)->delete();

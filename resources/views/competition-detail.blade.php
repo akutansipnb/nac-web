@@ -73,7 +73,7 @@
         <section class="text-white bg-gray-900">
             <div class="max-w-screen-2xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
               <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl gradient-text">
+                <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl gradient-text py-3">
                     {{ $data['quotes']}}
                 </h1>
 

@@ -5,7 +5,7 @@
 <section class="hero-section">
     <div class="banner-logo">
         <h1>National</h1>
-        <h1 class="gradient-text">Accounting</h1>
+        <h1 class="gradient-text py-3">Accounting</h1>
         <h1>Competition</h1>
     </div>
     <div class="px-10 md:px-52 text-center my-10">
@@ -39,7 +39,7 @@
                     {{ $quotes }}
                 </p>
 
-                <p class="hidden lg:mt-4 lg:block">
+                <p class="hidden lg:mt-4 lg:block text-justify">
                     {{ $desc_quotes }}
                 </p>
 

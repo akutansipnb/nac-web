@@ -50,9 +50,14 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-initial">Asal Sekolah</label>
                         <select id="school" name="id_academy"class="form-control" required>
-                            @foreach ($academy as $item)
+                            {{-- @foreach ($academy as $item)
                                 <option value={{ $item->id }}>{{$item->academy_name}}</option>
-                            @endforeach
+                            @endforeach --}}
+                            @foreach ($academy as $value)
+                            <option value="{{ $value->id }}" {{ ( $value->id == $userdetail['id_academy']) ? 'selected' : '' }}>
+                                {{ $value->academy_name }}
+                            </option>
+                        @endforeach
                         </select>
                     </div>
                   </div>
@@ -99,8 +104,9 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                          <label class="form-control-label" for="input-targe">Alamat</label>
-                          <input type="text" id="input-target" name="adress" class="form-control" value={{$userdetail->adress}} required>
+                          <label class="form-control-label" >Alamat</label>
+                          <textarea rows="1" id="addres" name="adress" placeholder="Input Your Address"
+                          class="form-control" required>{{$userdetail->adress}} </textarea>
                         </div>
                       </div>
 

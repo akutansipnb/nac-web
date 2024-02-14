@@ -119,7 +119,7 @@
     <div class="max-w-full mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
             <div class="flex flex-col justify-center content-center h-full">
-                <h1 class="text-3xl md:text-7xl font-bold text-center gradient-text mt-5">Check your Dashboard Page</h1>
+                <h1 class="text-3xl md:text-7xl font-bold text-center gradient-text mt-5 py-3">Check your Dashboard Page</h1>
                 <p class="text-center font-medium text-gray-500 text-base my-5">Check the status of your registration, cross time and other important things about competition on your dashboard page!</p>
             </div>
             <div class="p-10 mt-6 mb-5 bg-gray-100 space-y-4 rounded-lg shadow-lg">

@@ -46,7 +46,9 @@
                   <td>
                     <div class="d-flex align-items-center">
                       <div>
-                          <?= $item->desc ?>
+                        <p class="line-clamp-3">
+                          <?= Str::limit($item->desc, 100, ' ...') ?>
+                        </p>
                       </div>
                     </div>
                   </td>
@@ -60,7 +62,7 @@
                           <a class="dropdown-item" href="{{ route('blogs.show',['blog' => $item->id]) }}">Lihat Dokumen</a>
                         @endif
                         <a class="dropdown-item" href="{{ route('blogs.edit',['blog' => $item->id]) }}">Edit Berita</a>
-                        
+
                           <form action="{{route('blogs.destroy',['blog' => $item->id])}}" method="post">
                             @csrf
                             @method('delete')

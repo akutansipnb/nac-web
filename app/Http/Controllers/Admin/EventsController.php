@@ -215,26 +215,19 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-
         $data = Event::find($id);
         unlink($data['icon_url']);
         unlink($data['background_url']);
         unlink($data['booklet_url']);
         $data = Event::destroy($id);
-
-
-
         return redirect()->back();
-
     }
 
     public function cetak_pdf($id)
     {
         $e = Event::where('id',$id)->first();
     	$datas = UserDetail::where('id_events',$id)->get();
-
         $comp = $e['event_name'];
-
     	$pdf = PDF::loadview('pesertalomba_pdf',compact('datas','comp'))->setPaper('a4', 'landscape');
     	return $pdf->download(date('dmyhm').'-'.strtoupper(str_replace(' ','_',$e['event_name'])).'.pdf');
     }

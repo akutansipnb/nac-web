@@ -15,8 +15,8 @@ class CreateUserDetailsTable extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_users');
-            $table->foreignId('id_events');
+            $table->foreignId('id_users')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('id_events')->references('id')->on('events')->onDelete('cascade');
             $table->foreignId('id_academy');
             $table->string('identity_code',20);
             $table->string('edu_stage');
