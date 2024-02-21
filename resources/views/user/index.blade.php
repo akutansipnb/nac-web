@@ -9,9 +9,9 @@
             <div class="col-xl-6 col-md-6">
                 <div class="card">
                   <!-- Card body -->
-                  <div class="card-img-top">
-                      <img class=" img-fluid m-5" style="max-height: 15em!important" src="{{asset('img/theme/Logo_Nac.png')}}" alt="Card cover">
-                  </div>
+
+                      <img class="card-img-top img-fluid p-5" src="{{asset('img/theme/Logo_Nac.png')}}" alt="Card cover">
+
                     <div class="card-body">
                       <h3 class="card-title" style="font-weight: 700">Hello, {{Auth::user()->name}}</h>
 
