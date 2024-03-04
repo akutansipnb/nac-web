@@ -19,7 +19,7 @@
 
                     <img src="{{asset($blog->background_url)}}" alt="" class="bg-blog" srcset="">
 
-                    <div class="prose prose-lg max-w-none">
+                    <div class="prose prose-lg max-w-none text-justify">
                       <p>
                         <?= $blog->desc ?>
                       </p>
