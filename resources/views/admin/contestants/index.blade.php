@@ -83,12 +83,12 @@
                                                     @method('put')
                                                     <button class="dropdown-item">Reset Password</button>
                                                 </form> --}}
-                                                <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
+                                                {{-- <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
                                                     method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button class="dropdown-item">Hapus Data</button>
-                                                </form>
+                                                </form> --}}
                                             </div>
                                         </div>
                                     </td>

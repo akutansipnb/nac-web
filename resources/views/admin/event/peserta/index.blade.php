@@ -82,12 +82,12 @@
                             <a class="dropdown-item" href={{route('contestants.show',$item->id)}}>Details</a>
                             <a class="dropdown-item" href={{ route('contestants.edit',$item->id) }}>Edit Data</a>
                             <a class="dropdown-item" href={{ route('reset_password.resetpsd',$item->id) }}>Reset Password</a>
-                            <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
+                            {{-- <form action="{{route('contestants.destroy',['contestant' => $item->id])}}"
                                 method="post">
                                 @csrf
                                 @method('delete')
                                 <button class="dropdown-item">Hapus Data</button>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </td>
