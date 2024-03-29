@@ -35,31 +35,31 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href={{ route('admin.dashboard') }}>
+              <a class="nav-link {{ Route::is('admin.dashboard') ? 'active' : '' }}" href={{ route('admin.dashboard') }}>
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={{route('university.index')}}>
+              <a class="nav-link {{ Route::is('university.index') ? 'active' : '' }}" href={{route('university.index')}}>
                 <i class="ni ni-spaceship text-warning"></i>
                 <span class="nav-link-text">Perguruan Tinggi</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={{route('school.index')}}>
+              <a class="nav-link {{ Route::is('school.index') ? 'active' : '' }}" href={{route('school.index')}}>
                 <i class="ni ni-tie-bow text-danger"></i>
                 <span class="nav-link-text">Sekolah</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={{route('contestants.index')}}>
+              <a class="nav-link {{ Route::is('contestants.index') ? 'active' : '' }}" href={{route('contestants.index')}}>
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">Peserta</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('mentors.index') }}">
+              <a class="nav-link {{ Route::is('mentors.index') ? 'active' : '' }}" href="{{ route('mentors.index') }}">
                 <i class="ni ni-briefcase-24 text-info"></i>
                 <span class="nav-link-text">Pendamping</span>
               </a>
@@ -71,7 +71,7 @@
               </a>
             </li> --}}
             <li class="nav-item">
-              <a class="nav-link" href={{route('member.index')}}>
+              <a class="nav-link {{ Route::is('member.index') ? 'active' : '' }}" href={{route('member.index')}}>
                 <i class="ni ni-badge text-orange"></i>
                 <span class="nav-link-text">Admin</span>
               </a>
@@ -104,21 +104,21 @@
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
             <li class="nav-item">
-              <a class="nav-link" href={{route('events.index')}}>
+              <a class="nav-link {{ Route::is('events.index') ? 'active' : '' }}" href={{route('events.index')}}>
                 <i class="ni ni-trophy text-orange"></i>
                 <span class="nav-link-text">Perlombaan</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href={{route('blogs.index')}}>
+              <a class="nav-link {{ Route::is('blogs.index') ? 'active' : '' }}" href={{route('blogs.index')}}>
                 <i class="ni ni-collection text-orange"></i>
                 <span class="nav-link-text">Berita</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('schedules.index') }}">
+              <a class="nav-link {{ Route::is('schedules.index') ? 'active' : '' }}" href="{{ route('schedules.index') }}">
                 <i class="ni ni-calendar-grid-58 text-info"></i>
                 <span class="nav-link-text">Lintas Waktu</span>
               </a>
@@ -126,7 +126,7 @@
 
 
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('landing.index') }}" >
+              <a class="nav-link {{ Route::is('landing.index') ? 'active' : '' }}" href="{{ route('landing.index') }}" >
                 <i class="ni ni-settings-gear-65 text-danger"></i>
                 <span class="nav-link-text">Landing Page Setting</span>
               </a>
